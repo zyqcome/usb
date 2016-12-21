@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E2D1E0A80C50074ACBA /* NetworkTools.m */; };
+		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -197,9 +199,14 @@
 		24F8B0BB1E0A232D0084926E /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0031E0A232C0084926E /* 58.png */; };
 		24F8B0BC1E0A232D0084926E /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0041E0A232C0084926E /* 80.png */; };
 		24F8B0BD1E0A232D0084926E /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0051E0A232C0084926E /* 87.png */; };
+		C790FF03DEB944AC07141622 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180E0E2C1E0A80C50074ACBA /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
+		180E0E2D1E0A80C50074ACBA /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
+		180E0E2F1E0A80CE0074ACBA /* UITextField+TextFieldRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldRange.h"; sourceTree = "<group>"; };
+		180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextFieldRange.m"; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -394,6 +401,9 @@
 		24F8B0031E0A232C0084926E /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		24F8B0041E0A232C0084926E /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		24F8B0051E0A232C0084926E /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
+		A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,17 +411,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C790FF03DEB944AC07141622 /* libPods-TinyShop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180E0E2A1E0A80C10074ACBA /* CateGary */ = {
+			isa = PBXGroup;
+			children = (
+				180E0E2F1E0A80CE0074ACBA /* UITextField+TextFieldRange.h */,
+				180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */,
+			);
+			path = CateGary;
+			sourceTree = "<group>";
+		};
+		180E0E2B1E0A80C10074ACBA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				180E0E2C1E0A80C50074ACBA /* NetworkTools.h */,
+				180E0E2D1E0A80C50074ACBA /* NetworkTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		1861E4AC5949F9C4257E7067 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24F8AD8F1E0A19D10084926E = {
 			isa = PBXGroup;
 			children = (
 				24F8AD9A1E0A19D10084926E /* TinyShop */,
 				24F8AD991E0A19D10084926E /* Products */,
+				CA13D0CA9EE6478E49E1F67F /* Pods */,
+				1861E4AC5949F9C4257E7067 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -447,9 +486,8 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				24F8ADBF1E0A1D560084926E /* Extension */,
-				24F8ADC01E0A1D560084926E /* General */,
-				24F8ADC11E0A1D560084926E /* Tool */,
+				180E0E2A1E0A80C10074ACBA /* CateGary */,
+				180E0E2B1E0A80C10074ACBA /* Tools */,
 				24F8ADB31E0A1C4D0084926E /* Other */,
 			);
 			path = Class;
@@ -483,28 +521,6 @@
 				24F8B0001E0A232C0084926E /* icon */,
 			);
 			path = Resouce;
-			sourceTree = "<group>";
-		};
-		24F8ADBF1E0A1D560084926E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		24F8ADC01E0A1D560084926E /* General */ = {
-			isa = PBXGroup;
-			children = (
-				24F8B0BE1E0A2A560084926E /* Model */,
-			);
-			path = General;
-			sourceTree = "<group>";
-		};
-		24F8ADC11E0A1D560084926E /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		24F8AF401E0A232C0084926E /* 登录页面 */ = {
@@ -793,18 +809,20 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
-		24F8B0BE1E0A2A560084926E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		24F8B0BF1E0A2A720084926E /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CA13D0CA9EE6478E49E1F67F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */,
+				522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -814,9 +832,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24F8ADAF1E0A19D10084926E /* Build configuration list for PBXNativeTarget "TinyShop" */;
 			buildPhases = (
+				1C34117A1508A661BE297AF4 /* [CP] Check Pods Manifest.lock */,
 				24F8AD941E0A19D10084926E /* Sources */,
 				24F8AD951E0A19D10084926E /* Frameworks */,
 				24F8AD961E0A19D10084926E /* Resources */,
+				BE95C2A2F4CA3BCA8E285EB9 /* [CP] Embed Pods Frameworks */,
+				81C9894E8DA1AB75B430F2C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -833,12 +854,11 @@
 		24F8AD901E0A19D10084926E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = cc.zyqblog;
 				TargetAttributes = {
 					24F8AD971E0A19D10084926E = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = Z4752JFW6B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1058,12 +1078,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C34117A1508A661BE297AF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		81C9894E8DA1AB75B430F2C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE95C2A2F4CA3BCA8E285EB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24F8AD941E0A19D10084926E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
+				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				24F8ADBE1E0A1C4D0084926E /* ViewController.m in Sources */,
 			);
@@ -1109,6 +1179,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1156,6 +1227,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1181,9 +1253,10 @@
 		};
 		24F8ADB01E0A19D10084926E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z4752JFW6B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/TinyShop/Class/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zyqcome.TinyShop;
@@ -1193,9 +1266,10 @@
 		};
 		24F8ADB11E0A19D10084926E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z4752JFW6B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/TinyShop/Class/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zyqcome.TinyShop;
