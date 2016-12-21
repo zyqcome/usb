@@ -38,13 +38,13 @@
 
 #pragma mark  商品运营分析
 //APP日常运营分析(主图) GET
-//#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
-//
-////APP日常运营分析(主图)
-//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
-//
-////APP日常运营分析(主图)
-//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
+
+//APP商品运营分析(子图) 
+#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+
+//APP日常运营分析(主图)
+#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
 
 
 #endif /* NetWorkConfig_h */
