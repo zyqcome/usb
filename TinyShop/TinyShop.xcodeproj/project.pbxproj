@@ -401,6 +401,7 @@
 		24F8B0031E0A232C0084926E /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		24F8B0041E0A232C0084926E /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		24F8B0051E0A232C0084926E /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		24F8B0C11E0A8F030084926E /* NetWorkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkConfig.h; sourceTree = "<group>"; };
 		522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -486,6 +487,7 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				24F8B0C01E0A8F030084926E /* Config */,
 				180E0E2A1E0A80C10074ACBA /* CateGary */,
 				180E0E2B1E0A80C10074ACBA /* Tools */,
 				24F8ADB31E0A1C4D0084926E /* Other */,
@@ -814,6 +816,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		24F8B0C01E0A8F030084926E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				24F8B0C11E0A8F030084926E /* NetWorkConfig.h */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		CA13D0CA9EE6478E49E1F67F /* Pods */ = {
