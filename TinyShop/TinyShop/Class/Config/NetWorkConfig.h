@@ -37,6 +37,7 @@
 #defime AppdailySubgraph @"/appdaily_analysis/subgraph"
 
 #pragma mark  商品运营分析
+<<<<<<< HEAD
 //APP日常运营分析(主图) GET
 #defime AppproductMainfigure @"/appproduct_analysis/main_figure"
 
@@ -45,6 +46,16 @@
 
 //APP日常运营分析(主图)
 #defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+=======
+////APP日常运营分析(主图) GET
+//#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
+//
+////APP日常运营分析(主图)
+//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+//
+////APP日常运营分析(主图)
+//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+>>>>>>> master
 
 
 #endif /* NetWorkConfig_h */
