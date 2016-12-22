@@ -103,6 +103,9 @@
                         <constraint firstAttribute="width" constant="325" id="TBi-c3-o6G"/>
                     </constraints>
                     <state key="normal" backgroundImage="登录按钮-.png"/>
+                    <connections>
+                        <action selector="loginButtonClicked:" destination="-1" eventType="touchUpInside" id="6ur-au-Aei"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-K7-6Fa">
                     <rect key="frame" x="307" y="405" width="30" height="18"/>
@@ -128,7 +131,7 @@
                     <rect key="frame" x="113" y="401" width="186" height="27"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

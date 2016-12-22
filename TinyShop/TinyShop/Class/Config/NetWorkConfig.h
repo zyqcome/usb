@@ -17,7 +17,7 @@
 
 // **************** 后台地址 ***************
 //#define BaseUrl @"https://service.icloudmatrix.com/service"
-#define BaseUrl @"http://service.icloudmatrix.com/service"
+#define BaseUrl @"http://service.icloudmatrix.com/service/user"
 
 
 //登录接口
@@ -31,22 +31,22 @@
 #define ApporderSubgraph @"/apporder_statistical/subgraph"
 
 //APP日常运营分析(主图)
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+#define AppdailyMainfigure @"/appdaily_analysis/main_figure"
 
 //APP日常运营分析(子图)
-#defime AppdailySubgraph @"/appdaily_analysis/subgraph"
+#define AppdailySubgraph @"/appdaily_analysis/subgraph"
 
 #pragma mark  商品运营分析
-<<<<<<< HEAD
+///<<<<< HEAD
 //APP日常运营分析(主图) GET
-#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
+#define AppproductMainfigure @"/appproduct_analysis/main_figure"
 
 //APP商品运营分析(子图) 
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+#define AppdailyMainfigure @"/appdaily_analysis/main_figure"
 
 //APP日常运营分析(主图)
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
-=======
+#define AppdailyMainfigure @"/appdaily_analysis/main_figure"
+//=======
 ////APP日常运营分析(主图) GET
 //#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
 //
@@ -55,7 +55,7 @@
 //
 ////APP日常运营分析(主图)
 //#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
->>>>>>> master
+//>>>>>>> master
 
 
 #endif /* NetWorkConfig_h */
