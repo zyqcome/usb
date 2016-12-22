@@ -20,7 +20,7 @@ static LoginViewMode *userInfo;
     return userInfo;
 }
 
--(BOOL)intwithDiction:(NSDictionary *)Dic  {
+-(BOOL)intwithDictionary:(NSDictionary *)Dic  {
     self.user = (UserModel *)[ReflectionClassTools getModelArry:Dic[@"body"] pickStr:@"user" Class:@"UserModel"];
     
     self.rightsArry = [NSArray arrayWithArray:[ReflectionClassTools getModelsArry:Dic[@"body"] pickStr:@"rights" Class:@"RightsModel"]];

@@ -140,7 +140,7 @@
     }
     NSLog(@"%@",data);
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
-    [loginViewMode intwithDiction:data];
+    [loginViewMode intwithDictionary:data];
     }];
     
 }

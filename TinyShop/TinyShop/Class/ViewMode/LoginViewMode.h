@@ -23,5 +23,5 @@
  @param Dic 传入字典
  @return 是否转换成功
  */
--(BOOL)intwithDiction:(NSDictionary *)Dic;
+-(BOOL)intwithDictionary:(NSDictionary *)Dic;
 @end
