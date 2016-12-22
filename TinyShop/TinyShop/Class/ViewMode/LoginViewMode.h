@@ -16,4 +16,12 @@
 @property (nonatomic, strong) UserModel *user;
 //单例
 + (instancetype)shareUserInfo;
+
+/**
+ 根据字典数据初始化
+
+ @param Dic 传入字典
+ @return 是否转换成功
+ */
+-(BOOL)intwithDiction:(NSDictionary *)Dic;
 @end
