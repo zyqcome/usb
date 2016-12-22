@@ -8,7 +8,7 @@
 
 #import "LoginController.h"
 #import "NetworkTools.h"
-
+#import "HomeController.h"
 @interface LoginController ()
 //iphone7为110
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoTop;
@@ -134,13 +134,21 @@
     NSDictionary * dict = @{@"client_type":@"ios",@"client_version":@"2.0",@"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",@"shop_account":@"ymtxtshg",@"user_account":@"001",@"user_password":@"12345678"};
     
     [[NetworkTools sharedTooles]requestMethod:POST isJson:YES WithUrl:LoginUrl parematers:dict finished:^(id data, NSError *error) {
-    if (error) {
-        NSLog(@"%@",error);
-        return ;
-    }
-    NSLog(@"%@",data);
-    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
-    [loginViewMode intwithDictionary:data];
+//    if (error) {
+//        NSLog(@"%@",error);
+//        return ;
+//    }
+//    NSLog(@"%@",data);
+//    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+//    [loginViewMode intwithDictionary:data];
+//        
+        //创建标签控制器
+        UIStoryboard * storyHomeVC = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        HomeController * homeVC =  [storyHomeVC instantiateViewControllerWithIdentifier:@"HomeController"];
+        UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:homeVC];
+        [UIApplication sharedApplication].keyWindow.rootViewController = navigationVC;
+        [self presentViewController:navigationVC animated:YES completion:nil];
+        
     }];
     
 }

@@ -1,11 +1,139 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Home Controller-->
+        <scene sceneID="A68-oJ-zJ1">
+            <objects>
+                <tableViewController storyboardIdentifier="HomeController" id="ulN-rh-Cup" customClass="HomeController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNT-Vi-yKr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="C0v-Ic-AUg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="80" id="iJB-uE-Hb9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iJB-uE-Hb9" id="H3D-Sn-XAL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="时段收入分析.png" translatesAutoresizingMaskIntoConstraints="NO" id="EOK-aY-j83">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EOK-aY-j83" firstAttribute="leading" secondItem="H3D-Sn-XAL" secondAttribute="leading" id="VA4-v6-OB7"/>
+                                                <constraint firstAttribute="trailing" secondItem="EOK-aY-j83" secondAttribute="trailing" id="VAV-pN-ogu"/>
+                                                <constraint firstItem="EOK-aY-j83" firstAttribute="top" secondItem="H3D-Sn-XAL" secondAttribute="top" id="W1L-d9-T2U"/>
+                                                <constraint firstAttribute="bottom" secondItem="EOK-aY-j83" secondAttribute="bottom" id="q4h-St-VDY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="80" id="bM8-DQ-090">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bM8-DQ-090" id="RKI-ao-51r">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日常运营分析.png" translatesAutoresizingMaskIntoConstraints="NO" id="dLP-FE-OEG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dLP-FE-OEG" firstAttribute="leading" secondItem="RKI-ao-51r" secondAttribute="leading" id="B1K-5w-KyO"/>
+                                                <constraint firstAttribute="trailing" secondItem="dLP-FE-OEG" secondAttribute="trailing" id="GPA-Un-C0H"/>
+                                                <constraint firstItem="dLP-FE-OEG" firstAttribute="top" secondItem="RKI-ao-51r" secondAttribute="top" id="k0I-Zh-npS"/>
+                                                <constraint firstAttribute="bottom" secondItem="dLP-FE-OEG" secondAttribute="bottom" id="zvK-L4-veJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="80" id="oym-ZM-I11">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oym-ZM-I11" id="DSi-jY-Px8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="商品运营分析.png" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-tL-6Qc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="AXK-tL-6Qc" secondAttribute="bottom" id="5DB-jT-7EQ"/>
+                                                <constraint firstItem="AXK-tL-6Qc" firstAttribute="top" secondItem="DSi-jY-Px8" secondAttribute="top" id="NX2-Ec-o1M"/>
+                                                <constraint firstItem="AXK-tL-6Qc" firstAttribute="leading" secondItem="DSi-jY-Px8" secondAttribute="leading" id="XfM-pP-ea7"/>
+                                                <constraint firstAttribute="trailing" secondItem="AXK-tL-6Qc" secondAttribute="trailing" id="ZoR-Gu-j0q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="80" id="DSt-Ju-oJF">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSt-Ju-oJF" id="Ltd-Vx-8Jn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="会员信息.png" translatesAutoresizingMaskIntoConstraints="NO" id="NoW-LP-Tbe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NoW-LP-Tbe" firstAttribute="top" secondItem="Ltd-Vx-8Jn" secondAttribute="top" id="8rA-qU-e74"/>
+                                                <constraint firstAttribute="trailing" secondItem="NoW-LP-Tbe" secondAttribute="trailing" id="b06-I3-Zvd"/>
+                                                <constraint firstItem="NoW-LP-Tbe" firstAttribute="leading" secondItem="Ltd-Vx-8Jn" secondAttribute="leading" id="j1c-xf-2JM"/>
+                                                <constraint firstAttribute="bottom" secondItem="NoW-LP-Tbe" secondAttribute="bottom" id="jPT-lG-XrF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="80" id="FM9-Bq-95G">
+                                        <rect key="frame" x="0.0" y="320" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FM9-Bq-95G" id="eD5-lZ-FTI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="历史记录.png" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-mE-L6g">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hoq-mE-L6g" secondAttribute="trailing" id="Brj-PW-JVb"/>
+                                                <constraint firstItem="hoq-mE-L6g" firstAttribute="top" secondItem="eD5-lZ-FTI" secondAttribute="top" id="EMO-GR-YqP"/>
+                                                <constraint firstItem="hoq-mE-L6g" firstAttribute="leading" secondItem="eD5-lZ-FTI" secondAttribute="leading" id="Q8N-oJ-KjQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="hoq-mE-L6g" secondAttribute="bottom" id="mmJ-gu-j6A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ulN-rh-Cup" id="Mym-n5-Cs9"/>
+                            <outlet property="delegate" destination="ulN-rh-Cup" id="5we-ha-2SA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mO4-MA-gra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.5" y="-23.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="会员信息.png" width="375" height="82"/>
+        <image name="历史记录.png" width="375" height="83"/>
+        <image name="商品运营分析.png" width="375" height="82"/>
+        <image name="日常运营分析.png" width="375" height="83"/>
+        <image name="时段收入分析.png" width="375" height="82"/>
+    </resources>
 </document>

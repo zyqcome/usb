@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4341E0B694B00BC85E1 /* LogCategory.m */; };
 		1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B43B1E0B76FF00BC85E1 /* NSString+MD5.m */; };
+		1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4591E0BE89C00BC85E1 /* DrawerController.m */; };
+		1805B45C1E0BE89C00BC85E1 /* DrawerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1805B45A1E0BE89C00BC85E1 /* DrawerController.xib */; };
+		1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4621E0BF10800BC85E1 /* HomeController.m */; };
 		180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E2D1E0A80C50074ACBA /* NetworkTools.m */; };
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
@@ -218,6 +221,11 @@
 		1805B4341E0B694B00BC85E1 /* LogCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategory.m; sourceTree = "<group>"; };
 		1805B43A1E0B76FF00BC85E1 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		1805B43B1E0B76FF00BC85E1 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		1805B4581E0BE89C00BC85E1 /* DrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerController.h; sourceTree = "<group>"; };
+		1805B4591E0BE89C00BC85E1 /* DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerController.m; sourceTree = "<group>"; };
+		1805B45A1E0BE89C00BC85E1 /* DrawerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerController.xib; sourceTree = "<group>"; };
+		1805B4611E0BF10800BC85E1 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		1805B4621E0BF10800BC85E1 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		180E0E2C1E0A80C50074ACBA /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
 		180E0E2D1E0A80C50074ACBA /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
 		180E0E2F1E0A80CE0074ACBA /* UITextField+TextFieldRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldRange.h"; sourceTree = "<group>"; };
@@ -470,6 +478,25 @@
 			path = MD5;
 			sourceTree = "<group>";
 		};
+		1805B4571E0BE88300BC85E1 /* DrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				1805B4581E0BE89C00BC85E1 /* DrawerController.h */,
+				1805B4591E0BE89C00BC85E1 /* DrawerController.m */,
+				1805B45A1E0BE89C00BC85E1 /* DrawerController.xib */,
+			);
+			path = DrawerController;
+			sourceTree = "<group>";
+		};
+		1805B45D1E0BE8C600BC85E1 /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				1805B4611E0BF10800BC85E1 /* HomeController.h */,
+				1805B4621E0BF10800BC85E1 /* HomeController.m */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
 		180E0E2A1E0A80C10074ACBA /* CateGary */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,7 +592,6 @@
 		24F8AD9A1E0A19D10084926E /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
-				24F8B0BF1E0A2A720084926E /* View */,
 				24F8ADB21E0A1C4D0084926E /* Class */,
 				24F8ADBA1E0A1C4D0084926E /* Resouce */,
 				24F8ADA41E0A19D10084926E /* Main.storyboard */,
@@ -592,6 +618,8 @@
 				1805B4321E0B694B00BC85E1 /* LogCategory */,
 				180E0E401E0AA7B50074ACBA /* Common */,
 				180E0E3A1E0AA79E0074ACBA /* LoginController */,
+				1805B4571E0BE88300BC85E1 /* DrawerController */,
+				1805B45D1E0BE8C600BC85E1 /* HomeController */,
 				24F8B0C01E0A8F030084926E /* Config */,
 				180E0E2A1E0A80C10074ACBA /* CateGary */,
 				180E0E2B1E0A80C10074ACBA /* Tools */,
@@ -914,13 +942,6 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
-		24F8B0BF1E0A2A720084926E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		24F8B0C01E0A8F030084926E /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -1133,6 +1154,7 @@
 				24F8B01C1E0A232D0084926E /* 搜索图标@2x.png in Resources */,
 				24F8B03B1E0A232D0084926E /* 人均-选中.png in Resources */,
 				24F8B04F1E0A232D0084926E /* 桌数-未选.png in Resources */,
+				1805B45C1E0BE89C00BC85E1 /* DrawerController.xib in Resources */,
 				24F8B0221E0A232D0084926E /* 日历框@2x.png in Resources */,
 				24F8B09F1E0A232D0084926E /* 绿.png in Resources */,
 				24F8B04D1E0A232D0084926E /* 支付类型2-选中.png in Resources */,
@@ -1252,11 +1274,13 @@
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
+				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
+				1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
