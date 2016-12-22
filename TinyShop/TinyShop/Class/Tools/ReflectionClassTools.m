@@ -114,4 +114,40 @@
     return classModearry;
 }
 
+/**
+ 字典数组转对象数组
+ @param mutin 输入字典
+ @param cls 数据模型
+ @return 返回数组
+ */
++ (NSArray *)DicArrygetModelsArry:(NSArray *)mutin Class:(NSString *)cls {
+    //返回数组
+    NSMutableArray *classModearry = [NSMutableArray new];
+    //获取属性列表
+    NSMutableArray *arry = [ReflectionClassTools getClassModePropertyList:cls];
+    //查找待分解数组
+    //NSArray  *d = (NSArray *)[mutin valueForKey:pickstr];
+    //实例化对象名
+    Class getid = [ReflectionClassTools GetClassName:cls];
+    //数据填充
+    for (NSDictionary *dic in mutin) {
+        id classmode = [getid new];
+        for (NSArray *str in arry) {
+            NSString *srrrt = [NSString stringWithString:str[1]];
+            if ([srrrt rangeOfString:@"NSString"].length >0) {
+                [classmode setValue:[NSString stringWithFormat:@"%@",[dic valueForKey:str[0]]] forKey:str[0]];
+            }
+            if ([srrrt rangeOfString:@"NSArray"].length >0) {
+                [classmode setValue:[NSArray arrayWithArray:[dic valueForKey:str[0]]] forKey:str[0]];
+            }
+            if ([srrrt rangeOfString:@"NSDictionary"].length >0) {
+                [classmode setValue:[NSDictionary dictionaryWithDictionary:[dic valueForKey:str[0]]] forKey:str[0]];
+            }
+        }
+        [classModearry addObject:classmode];
+    }
+    return classModearry;
+}
+
+
 @end

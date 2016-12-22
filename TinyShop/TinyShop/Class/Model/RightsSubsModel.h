@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SubsModel : NSObject
+@interface RightsSubsModel : NSObject
 @property (nonatomic, strong) NSString *mod_id;// = "822";
 @property (nonatomic, strong) NSArray *subs;// = [];
 @property (nonatomic, strong) NSString *mod_type;// = "3";

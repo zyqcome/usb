@@ -31,7 +31,7 @@
 
 //model
 #import "UserModel.h"
-#import "SubsModel.h"
+#import "RightsSubsModel.h"
 #import "RightsModel.h"
 #import "RoleDiscountsModel.h"
 #import "RoleDiscountsModel.h"

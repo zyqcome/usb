@@ -17,4 +17,11 @@
  */
 + (NSArray *)getModelArry:(NSDictionary *)mutin pickStr:(NSString *)pickstr Class:(NSString *)cls;
 + (NSArray *)getModelsArry:(NSDictionary *)mutin pickStr:(NSString *)pickstr Class:(NSString *)cls;
+/**
+ 字典数组转对象数组
+ @param mutin 输入字典
+ @param cls 数据模型
+ @return 返回数组
+ */
++ (NSArray *)DicArrygetModelsArry:(NSArray *)mutin Class:(NSString *)cls;
 @end
