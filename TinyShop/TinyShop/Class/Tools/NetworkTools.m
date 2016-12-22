@@ -27,6 +27,7 @@
 //
 ////封装网络数据请求的方法
 - (void)requestMethod:(requestMethod)method  isJson:(BOOL)json WithUrl:(NSString *)url parematers:(id)param finished:(networkCallback)finish{
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer  = [AFJSONRequestSerializer  serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
