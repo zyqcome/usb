@@ -22,7 +22,19 @@
 #define dismissKeyBoard [self.textView resignFirstResponder]
 
 #import "NetWorkConfig.h"
+#import "ReflectionClassTools.h"
+//ViewMode
+#import "LoginViewMode.h"
 
 
+
+
+//model
+#import "UserModel.h"
+#import "SubsModel.h"
+#import "RightsModel.h"
+#import "RoleDiscountsModel.h"
+#import "RoleDiscountsModel.h"
+#import "ShopModel.h"
 
 #endif /* PrefixHeader_pch */

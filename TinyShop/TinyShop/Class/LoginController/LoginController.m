@@ -139,11 +139,16 @@
         return ;
     }
     NSLog(@"%@",data);
+    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+    loginViewMode.user = (UserModel *)[ReflectionClassTools getModelArry:data[@"body"] pickStr:@"user" Class:@"UserModel"];
+        
+    loginViewMode.rightsArry = [NSArray arrayWithArray:[ReflectionClassTools getModelsArry:data[@"body"] pickStr:@"rights" Class:@"RightsModel"]];
+        
+    loginViewMode.roleDiscountsArry = [NSArray arrayWithArray:[ReflectionClassTools getModelsArry:data[@"body"] pickStr:@"roleDiscounts" Class:@"RoleDiscountsModel"]];
+        
+    loginViewMode.shopArry = (ShopModel *)[ReflectionClassTools getModelArry:data[@"body"] pickStr:@"shop" Class:@"ShopModel"];
+    NSLog(@"OK");
     }];
-    
-    
-    
-    
     
 }
 

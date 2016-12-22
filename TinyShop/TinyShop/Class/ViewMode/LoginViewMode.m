@@ -7,8 +7,6 @@
 //
 
 #import "LoginViewMode.h"
-#import "NetLoginHelper.h"
-#import "NetworkTools.h"
 static LoginViewMode *userInfo;
 
 @implementation LoginViewMode
@@ -20,10 +18,6 @@ static LoginViewMode *userInfo;
         userInfo = [[self alloc]  init];
     });
     return userInfo;
-}
-
--(void)getLoginin {
-//    NetLoginHelper *netLoginHelper = [NetLoginHelper new];
 }
 
 @end

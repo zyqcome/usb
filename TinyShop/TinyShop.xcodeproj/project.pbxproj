@@ -13,6 +13,13 @@
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
 		180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E0E3D1E0AA79E0074ACBA /* LoginController.xib */; };
+		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
+		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
+		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
+		2460EB1E1E0B960300539038 /* SubsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1D1E0B960300539038 /* SubsModel.m */; };
+		2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB201E0B96C100539038 /* RoleDiscountsModel.m */; };
+		2460EB241E0B974D00539038 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB231E0B974D00539038 /* ShopModel.m */; };
+		2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB271E0B9B1F00539038 /* LoginViewMode.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -218,6 +225,20 @@
 		180E0E3C1E0AA79E0074ACBA /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		180E0E3D1E0AA79E0074ACBA /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
+		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
+		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		2460EB171E0B84D700539038 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		2460EB191E0B952800539038 /* RightsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightsModel.h; sourceTree = "<group>"; };
+		2460EB1A1E0B952800539038 /* RightsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightsModel.m; sourceTree = "<group>"; };
+		2460EB1C1E0B960300539038 /* SubsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsModel.h; sourceTree = "<group>"; };
+		2460EB1D1E0B960300539038 /* SubsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsModel.m; sourceTree = "<group>"; };
+		2460EB1F1E0B96C100539038 /* RoleDiscountsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleDiscountsModel.h; sourceTree = "<group>"; };
+		2460EB201E0B96C100539038 /* RoleDiscountsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleDiscountsModel.m; sourceTree = "<group>"; };
+		2460EB221E0B974D00539038 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		2460EB231E0B974D00539038 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
+		2460EB261E0B9B1F00539038 /* LoginViewMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewMode.h; sourceTree = "<group>"; };
+		2460EB271E0B9B1F00539038 /* LoginViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewMode.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -460,6 +481,8 @@
 			children = (
 				180E0E2C1E0A80C50074ACBA /* NetworkTools.h */,
 				180E0E2D1E0A80C50074ACBA /* NetworkTools.m */,
+				2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */,
+				2460EB101E0B7F2100539038 /* ReflectionClassTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -488,6 +511,32 @@
 				A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2460EB121E0B84B000539038 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB161E0B84D700539038 /* UserModel.h */,
+				2460EB171E0B84D700539038 /* UserModel.m */,
+				2460EB1C1E0B960300539038 /* SubsModel.h */,
+				2460EB1D1E0B960300539038 /* SubsModel.m */,
+				2460EB191E0B952800539038 /* RightsModel.h */,
+				2460EB1A1E0B952800539038 /* RightsModel.m */,
+				2460EB1F1E0B96C100539038 /* RoleDiscountsModel.h */,
+				2460EB201E0B96C100539038 /* RoleDiscountsModel.m */,
+				2460EB221E0B974D00539038 /* ShopModel.h */,
+				2460EB231E0B974D00539038 /* ShopModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2460EB251E0B9B1F00539038 /* ViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB261E0B9B1F00539038 /* LoginViewMode.h */,
+				2460EB271E0B9B1F00539038 /* LoginViewMode.m */,
+			);
+			path = ViewMode;
 			sourceTree = "<group>";
 		};
 		24F8AD8F1E0A19D10084926E = {
@@ -532,6 +581,8 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2460EB251E0B9B1F00539038 /* ViewMode */,
+				2460EB121E0B84B000539038 /* Model */,
 				1805B4391E0B76FF00BC85E1 /* MD5 */,
 				1805B4321E0B694B00BC85E1 /* LogCategory */,
 				180E0E401E0AA7B50074ACBA /* Common */,
@@ -1189,13 +1240,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
+				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
+				2460EB1E1E0B960300539038 /* SubsModel.m in Sources */,
+				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
+				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
+				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
+				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
