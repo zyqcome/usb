@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface NetLoginHelper : NSObject
-
+#import "NetworkTools.h"
+@interface NetLoginHelper : NetworkTools
+-(void)getlogin ;
 @end

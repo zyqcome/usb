@@ -32,28 +32,28 @@
 
 #pragma mark  日常运营分析接口（订单数、人数、人均消费、平均餐时）
 //APP日常运营分析(主图)
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+#define AppdailyMainfigure @"/appdaily_analysis/main_figure"
 
 //APP日常运营分析(子图)
-#defime AppdailySubgraph @"/appdaily_analysis/subgraph"
+#define AppdailySubgraph @"/appdaily_analysis/subgraph"
 
 #pragma mark  商品运营分析
 //APP日常运营分析(主图) GET
-#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
+#define AppproductMainfigure @"/appproduct_analysis/main_figure"
 
 //APP商品运营分析(子图) 
-#defime AppproductSubgraph @"/appproduct_analysis/subgraph"
+#define AppproductSubgraph @"/appproduct_analysis/subgraph"
 
 #pragma mark  会员消费信息
 //APP会员消费信息列表
-#defime Appviplist @"/appvip_consumption/list"
+#define Appviplist @"/appvip_consumption/list"
 
 //APP会员订单列表
-#defime AppdailyDetailedOrders @"/appvip_consumption/detailed_orders"
+#define AppdailyDetailedOrders @"/appvip_consumption/detailed_orders"
 
 #pragma mark  历史记录列表
 //APP历史记录列表
-#defime ApphistoricalList @"/apphistorical_record/list"
+#define ApphistoricalList @"/apphistorical_record/list"
 
 
 #endif /* NetWorkConfig_h */
