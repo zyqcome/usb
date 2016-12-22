@@ -18,7 +18,7 @@ typedef void(^networkCallback)(id data, NSError *error);
 @interface NetworkTools : AFHTTPSessionManager
 
 + (instancetype)sharedTooles;
-- (void)requestMethod:(requestMethod)method WithUrl:(NSString *)url parematers:(id)param finished:(networkCallback)finish;
+- (void)requestMethod:(requestMethod)method isJson:(BOOL)json WithUrl:(NSString *)url parematers:(id)param finished:(networkCallback)finish;
 
 
 @end

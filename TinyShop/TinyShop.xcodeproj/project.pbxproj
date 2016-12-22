@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4341E0B694B00BC85E1 /* LogCategory.m */; };
+		1805B4381E0B694B00BC85E1 /* NewsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4361E0B694B00BC85E1 /* NewsListTableViewCell.m */; };
 		180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E2D1E0A80C50074ACBA /* NetworkTools.m */; };
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
@@ -204,6 +206,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1805B4331E0B694B00BC85E1 /* LogCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCategory.h; sourceTree = "<group>"; };
+		1805B4341E0B694B00BC85E1 /* LogCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategory.m; sourceTree = "<group>"; };
+		1805B4351E0B694B00BC85E1 /* NewsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListTableViewCell.h; sourceTree = "<group>"; };
+		1805B4361E0B694B00BC85E1 /* NewsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewCell.m; sourceTree = "<group>"; };
 		180E0E2C1E0A80C50074ACBA /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
 		180E0E2D1E0A80C50074ACBA /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
 		180E0E2F1E0A80CE0074ACBA /* UITextField+TextFieldRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldRange.h"; sourceTree = "<group>"; };
@@ -422,6 +428,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1805B4321E0B694B00BC85E1 /* LogCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1805B4331E0B694B00BC85E1 /* LogCategory.h */,
+				1805B4341E0B694B00BC85E1 /* LogCategory.m */,
+				1805B4351E0B694B00BC85E1 /* NewsListTableViewCell.h */,
+				1805B4361E0B694B00BC85E1 /* NewsListTableViewCell.m */,
+			);
+			path = LogCategory;
+			sourceTree = "<group>";
+		};
 		180E0E2A1E0A80C10074ACBA /* CateGary */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +525,7 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				1805B4321E0B694B00BC85E1 /* LogCategory */,
 				180E0E401E0AA7B50074ACBA /* Common */,
 				180E0E3A1E0AA79E0074ACBA /* LoginController */,
 				24F8B0C01E0A8F030084926E /* Config */,
@@ -1165,7 +1183,9 @@
 			files = (
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
+				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
+				1805B4381E0B694B00BC85E1 /* NewsListTableViewCell.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 			);
