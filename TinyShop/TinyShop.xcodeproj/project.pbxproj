@@ -21,6 +21,11 @@
 		2460EB241E0B974D00539038 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB231E0B974D00539038 /* ShopModel.m */; };
 		2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB271E0B9B1F00539038 /* LoginViewMode.m */; };
 		2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB601E0BB10A00539038 /* ShopSubModel.m */; };
+		2460EB711E0BF4AB00539038 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB6F1E0BF4AB00539038 /* TimeperiodVC.m */; };
+		2460EB721E0BF4AB00539038 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2460EB701E0BF4AB00539038 /* TimeperiodVC.xib */; };
+		2460EB771E0BFAA400539038 /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB751E0BFAA400539038 /* CheckoutVC.m */; };
+		2460EB781E0BFAA400539038 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2460EB761E0BFAA400539038 /* CheckoutVC.xib */; };
+		2460EB7C1E0BFD8600539038 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB7B1E0BFD8600539038 /* TableViewCell.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -242,6 +247,14 @@
 		2460EB271E0B9B1F00539038 /* LoginViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewMode.m; sourceTree = "<group>"; };
 		2460EB5F1E0BB10A00539038 /* ShopSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopSubModel.h; sourceTree = "<group>"; };
 		2460EB601E0BB10A00539038 /* ShopSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopSubModel.m; sourceTree = "<group>"; };
+		2460EB6E1E0BF4AB00539038 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
+		2460EB6F1E0BF4AB00539038 /* TimeperiodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodVC.m; sourceTree = "<group>"; };
+		2460EB701E0BF4AB00539038 /* TimeperiodVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeperiodVC.xib; sourceTree = "<group>"; };
+		2460EB741E0BFAA400539038 /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
+		2460EB751E0BFAA400539038 /* CheckoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutVC.m; sourceTree = "<group>"; };
+		2460EB761E0BFAA400539038 /* CheckoutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
+		2460EB7A1E0BFD8600539038 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		2460EB7B1E0BFD8600539038 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -544,6 +557,45 @@
 			path = ViewMode;
 			sourceTree = "<group>";
 		};
+		2460EB661E0BEE2100539038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB6D1E0BF4AB00539038 /* Timeperiod */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2460EB6D1E0BF4AB00539038 /* Timeperiod */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB731E0BFA8F00539038 /* CheckoutVC */,
+				2460EB6E1E0BF4AB00539038 /* TimeperiodVC.h */,
+				2460EB6F1E0BF4AB00539038 /* TimeperiodVC.m */,
+				2460EB701E0BF4AB00539038 /* TimeperiodVC.xib */,
+			);
+			path = Timeperiod;
+			sourceTree = "<group>";
+		};
+		2460EB731E0BFA8F00539038 /* CheckoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB791E0BFD0F00539038 /* cell */,
+				2460EB741E0BFAA400539038 /* CheckoutVC.h */,
+				2460EB751E0BFAA400539038 /* CheckoutVC.m */,
+				2460EB761E0BFAA400539038 /* CheckoutVC.xib */,
+			);
+			path = CheckoutVC;
+			sourceTree = "<group>";
+		};
+		2460EB791E0BFD0F00539038 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2460EB7A1E0BFD8600539038 /* TableViewCell.h */,
+				2460EB7B1E0BFD8600539038 /* TableViewCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		24F8AD8F1E0A19D10084926E = {
 			isa = PBXGroup;
 			children = (
@@ -565,7 +617,7 @@
 		24F8AD9A1E0A19D10084926E /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
-				24F8B0BF1E0A2A720084926E /* View */,
+				2460EB661E0BEE2100539038 /* View */,
 				24F8ADB21E0A1C4D0084926E /* Class */,
 				24F8ADBA1E0A1C4D0084926E /* Resouce */,
 				24F8ADA41E0A19D10084926E /* Main.storyboard */,
@@ -914,13 +966,6 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
-		24F8B0BF1E0A2A720084926E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		24F8B0C01E0A8F030084926E /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -1057,6 +1102,7 @@
 				24F8B06D1E0A232D0084926E /* 餐时-选中.png in Resources */,
 				24F8B08F1E0A232D0084926E /* 会员信息图标1.png in Resources */,
 				24F8B0161E0A232D0084926E /* 会员信息wzg@2x.png in Resources */,
+				2460EB721E0BF4AB00539038 /* TimeperiodVC.xib in Resources */,
 				24F8B0801E0A232D0084926E /* 返回按钮.png in Resources */,
 				24F8B0BC1E0A232D0084926E /* 80.png in Resources */,
 				24F8B0A71E0A232D0084926E /* 商品运营分析.png in Resources */,
@@ -1141,6 +1187,7 @@
 				24F8B0431E0A232D0084926E /* 会员消费2-选中.png in Resources */,
 				24F8B0141E0A232D0084926E /* 滚动条.png in Resources */,
 				24F8B0501E0A232D0084926E /* 桌数-未选@2x.png in Resources */,
+				2460EB781E0BFAA400539038 /* CheckoutVC.xib in Resources */,
 				24F8B0741E0A232D0084926E /* 销售额未选.png in Resources */,
 				24F8B0791E0A232D0084926E /* 影子@2x.png in Resources */,
 				24F8B0711E0A232D0084926E /* 份数-选中.png in Resources */,
@@ -1250,6 +1297,7 @@
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
+				2460EB711E0BF4AB00539038 /* TimeperiodVC.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
@@ -1258,9 +1306,11 @@
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
+				2460EB7C1E0BFD8600539038 /* TableViewCell.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
+				2460EB771E0BFAA400539038 /* CheckoutVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,4 +24,7 @@
  @return 是否转换成功
  */
 -(BOOL)intwithDictionary:(NSDictionary *)Dic;
+
+
+
 @end
