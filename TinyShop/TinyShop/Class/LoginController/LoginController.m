@@ -59,7 +59,7 @@
     [self setupUI];
     
 }
-
+#pragma mark - ui设置约束
 //约束设置颜色
 -(void)setupUI{
     _stroeTextField.textColor = Color_RGBA(240, 0, 0, 1);
@@ -120,5 +120,33 @@
         _passwordTextField.font = [UIFont systemFontOfSize:24];
     }
 }
+
+#pragma mark - 登录按钮
+- (IBAction)loginButtonClicked:(UIButton *)sender {
+    [self netRequest];
+    
+}
+
+
+#pragma mark - 网络请求
+
+-(void)netRequest{
+    NSDictionary * dict = @{@"client_type":@"ios",@"client_version":@"2.0",@"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",@"shop_account":@"ymtxtshg",@"user_account":@"001",@"user_password":@"12345678"};
+    
+    [[NetworkTools sharedTooles]requestMethod:POST isJson:YES WithUrl:LoginUrl parematers:dict finished:^(id data, NSError *error) {
+    if (error) {
+        NSLog(@"%@",error);
+        return ;
+    }
+    NSLog(@"%@",data);
+    }];
+    
+    
+    
+    
+    
+}
+
+
 
 @end

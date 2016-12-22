@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B4341E0B694B00BC85E1 /* LogCategory.m */; };
+		1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805B43B1E0B76FF00BC85E1 /* NSString+MD5.m */; };
 		180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E2D1E0A80C50074ACBA /* NetworkTools.m */; };
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
 		180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E0E3D1E0AA79E0074ACBA /* LoginController.xib */; };
-		2460EB0E1E0B696F00539038 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB0D1E0B696F00539038 /* LoginModel.m */; };
-		24D3C10D1E0B62C1005DD858 /* NetLoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D3C10C1E0B62C1005DD858 /* NetLoginHelper.m */; };
-		24D3C1101E0B62DC005DD858 /* LoginViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D3C10F1E0B62DC005DD858 /* LoginViewMode.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -207,6 +206,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1805B4331E0B694B00BC85E1 /* LogCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCategory.h; sourceTree = "<group>"; };
+		1805B4341E0B694B00BC85E1 /* LogCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategory.m; sourceTree = "<group>"; };
+		1805B43A1E0B76FF00BC85E1 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		1805B43B1E0B76FF00BC85E1 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		180E0E2C1E0A80C50074ACBA /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
 		180E0E2D1E0A80C50074ACBA /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
 		180E0E2F1E0A80CE0074ACBA /* UITextField+TextFieldRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldRange.h"; sourceTree = "<group>"; };
@@ -215,12 +218,6 @@
 		180E0E3C1E0AA79E0074ACBA /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		180E0E3D1E0AA79E0074ACBA /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		2460EB0C1E0B696F00539038 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
-		2460EB0D1E0B696F00539038 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
-		24D3C10B1E0B62C1005DD858 /* NetLoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetLoginHelper.h; sourceTree = "<group>"; };
-		24D3C10C1E0B62C1005DD858 /* NetLoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetLoginHelper.m; sourceTree = "<group>"; };
-		24D3C10E1E0B62DC005DD858 /* LoginViewMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewMode.h; sourceTree = "<group>"; };
-		24D3C10F1E0B62DC005DD858 /* LoginViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewMode.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -431,6 +428,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1805B4321E0B694B00BC85E1 /* LogCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1805B4331E0B694B00BC85E1 /* LogCategory.h */,
+				1805B4341E0B694B00BC85E1 /* LogCategory.m */,
+			);
+			path = LogCategory;
+			sourceTree = "<group>";
+		};
+		1805B4391E0B76FF00BC85E1 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				1805B43A1E0B76FF00BC85E1 /* NSString+MD5.h */,
+				1805B43B1E0B76FF00BC85E1 /* NSString+MD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
 		180E0E2A1E0A80C10074ACBA /* CateGary */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,33 +490,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2460EB0B1E0B694300539038 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2460EB0C1E0B696F00539038 /* LoginModel.h */,
-				2460EB0D1E0B696F00539038 /* LoginModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		24D3C1091E0B6286005DD858 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				24D3C10B1E0B62C1005DD858 /* NetLoginHelper.h */,
-				24D3C10C1E0B62C1005DD858 /* NetLoginHelper.m */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		24D3C10A1E0B6291005DD858 /* ViewMode */ = {
-			isa = PBXGroup;
-			children = (
-				24D3C10E1E0B62DC005DD858 /* LoginViewMode.h */,
-				24D3C10F1E0B62DC005DD858 /* LoginViewMode.m */,
-			);
-			path = ViewMode;
-			sourceTree = "<group>";
-		};
 		24F8AD8F1E0A19D10084926E = {
 			isa = PBXGroup;
 			children = (
@@ -544,9 +532,8 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				2460EB0B1E0B694300539038 /* Model */,
-				24D3C10A1E0B6291005DD858 /* ViewMode */,
-				24D3C1091E0B6286005DD858 /* Helper */,
+				1805B4391E0B76FF00BC85E1 /* MD5 */,
+				1805B4321E0B694B00BC85E1 /* LogCategory */,
 				180E0E401E0AA7B50074ACBA /* Common */,
 				180E0E3A1E0AA79E0074ACBA /* LoginController */,
 				24F8B0C01E0A8F030084926E /* Config */,
@@ -1203,11 +1190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
-				2460EB0E1E0B696F00539038 /* LoginModel.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
-				24D3C1101E0B62DC005DD858 /* LoginViewMode.m in Sources */,
+				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
+				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
-				24D3C10D1E0B62C1005DD858 /* NetLoginHelper.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 			);
