@@ -21,15 +21,16 @@
 
 
 //登录接口
-#define LoginUrl @"/login"
-/**帐户、员工号、密码进行登录*/
+#define LoginUrl @"/user/login"
 
+#pragma mark  时段收入分析统计接口（销售额）
 //APP时段收入分析(主图)
 #define ApporderMainfigure @"/apporder_statistical/main_figure"
 
-//APP时段收入分析(子图)
+//APP时段收入分析(子图) 子图（分店占比、菜类销售额比）
 #define ApporderSubgraph @"/apporder_statistical/subgraph"
 
+#pragma mark  日常运营分析接口（订单数、人数、人均消费、平均餐时）
 //APP日常运营分析(主图)
 #defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
 
@@ -37,25 +38,22 @@
 #defime AppdailySubgraph @"/appdaily_analysis/subgraph"
 
 #pragma mark  商品运营分析
-<<<<<<< HEAD
 //APP日常运营分析(主图) GET
 #defime AppproductMainfigure @"/appproduct_analysis/main_figure"
 
 //APP商品运营分析(子图) 
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
+#defime AppproductSubgraph @"/appproduct_analysis/subgraph"
 
-//APP日常运营分析(主图)
-#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
-=======
-////APP日常运营分析(主图) GET
-//#defime AppproductMainfigure @"/appproduct_analysis/main_figure"
-//
-////APP日常运营分析(主图)
-//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
-//
-////APP日常运营分析(主图)
-//#defime AppdailyMainfigure @"/appdaily_analysis/main_figure"
->>>>>>> master
+#pragma mark  会员消费信息
+//APP会员消费信息列表
+#defime Appviplist @"/appvip_consumption/list"
+
+//APP会员订单列表
+#defime AppdailyDetailedOrders @"/appvip_consumption/detailed_orders"
+
+#pragma mark  历史记录列表
+//APP历史记录列表
+#defime ApphistoricalList @"/apphistorical_record/list"
 
 
 #endif /* NetWorkConfig_h */
