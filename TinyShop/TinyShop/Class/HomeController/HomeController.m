@@ -9,7 +9,10 @@
 #import "HomeController.h"
 
 #import "DrawerController.h"
-
+//日常运营分析
+#import "StatisticalViewController.h"
+//时段收入分析
+#import "TimeperiodVC.h"
 @interface HomeController ()
 @property (nonatomic,strong) DrawerController *leftVc;
 @property (nonatomic,strong) UIButton *coverBtn;
@@ -168,26 +171,32 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",(long)indexPath.row);
-//    switch (indexPath.row) {
-//        case 0:
-//            
-//            break;
-//        case 1:
-//            
-//            break;
-//        case 2:
-//            
-//            break;
-//        case 3:
-//            
-//            break;
-//        case 4:
-//        
-//            break;
-//        default
-//            :
-//            break;
-//    }
+    switch (indexPath.row) {
+        case 0:
+        {
+            TimeperiodVC *svc = [TimeperiodVC new];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
+            break;
+        case 1:
+        {
+            StatisticalViewController *svc = [StatisticalViewController new];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+        
+            break;
+        default
+            :
+            break;
+    }
 }
 
 

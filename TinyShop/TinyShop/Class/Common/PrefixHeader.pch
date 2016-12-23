@@ -29,7 +29,8 @@
 #import "LoginViewMode.h"
 
 
-
+//约束三房库
+#import <Masonry.h>
 
 //model
 #import "UserModel.h"

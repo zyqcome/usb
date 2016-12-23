@@ -16,6 +16,11 @@
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
 		180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E0E3D1E0AA79E0074ACBA /* LoginController.xib */; };
+		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
+		2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574281E0CBDF5004F1369 /* CheckoutVC.m */; };
+		2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242574291E0CBDF5004F1369 /* CheckoutVC.xib */; };
+		242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */; };
+		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -214,6 +219,7 @@
 		24F8B0BC1E0A232D0084926E /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0041E0A232C0084926E /* 80.png */; };
 		24F8B0BD1E0A232D0084926E /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0051E0A232C0084926E /* 87.png */; };
 		C790FF03DEB944AC07141622 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */; };
+		F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +240,14 @@
 		180E0E3C1E0AA79E0074ACBA /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		180E0E3D1E0AA79E0074ACBA /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		242574271E0CBDF5004F1369 /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
+		242574281E0CBDF5004F1369 /* CheckoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutVC.m; sourceTree = "<group>"; };
+		242574291E0CBDF5004F1369 /* CheckoutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
+		2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
+		2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodVC.m; sourceTree = "<group>"; };
+		2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeperiodVC.xib; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -446,6 +460,8 @@
 		522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticalViewController.h; sourceTree = "<group>"; };
+		F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +559,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		242574221E0CBDF5004F1369 /* Timeperiod */ = {
+			isa = PBXGroup;
+			children = (
+				242574231E0CBDF5004F1369 /* CheckoutVC */,
+				2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */,
+				2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */,
+				2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */,
+			);
+			path = Timeperiod;
+			sourceTree = "<group>";
+		};
+		242574231E0CBDF5004F1369 /* CheckoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				242574241E0CBDF5004F1369 /* cell */,
+				242574271E0CBDF5004F1369 /* CheckoutVC.h */,
+				242574281E0CBDF5004F1369 /* CheckoutVC.m */,
+				242574291E0CBDF5004F1369 /* CheckoutVC.xib */,
+			);
+			path = CheckoutVC;
+			sourceTree = "<group>";
+		};
+		242574241E0CBDF5004F1369 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				242574251E0CBDF5004F1369 /* TableViewCell.h */,
+				242574261E0CBDF5004F1369 /* TableViewCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		2460EB121E0B84B000539038 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +639,7 @@
 		24F8AD9A1E0A19D10084926E /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				F30D1A361E0CBA7D008A1158 /* View */,
 				24F8ADB21E0A1C4D0084926E /* Class */,
 				24F8ADBA1E0A1C4D0084926E /* Resouce */,
 				24F8ADA41E0A19D10084926E /* Main.storyboard */,
@@ -959,6 +1007,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F30D1A361E0CBA7D008A1158 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				242574221E0CBDF5004F1369 /* Timeperiod */,
+				F30D1A371E0CBA7D008A1158 /* Statistical */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30D1A371E0CBA7D008A1158 /* Statistical */ = {
+			isa = PBXGroup;
+			children = (
+				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
+				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
+			);
+			path = Statistical;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1156,6 +1222,7 @@
 				24F8B04F1E0A232D0084926E /* 桌数-未选.png in Resources */,
 				1805B45C1E0BE89C00BC85E1 /* DrawerController.xib in Resources */,
 				24F8B0221E0A232D0084926E /* 日历框@2x.png in Resources */,
+				242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */,
 				24F8B09F1E0A232D0084926E /* 绿.png in Resources */,
 				24F8B04D1E0A232D0084926E /* 支付类型2-选中.png in Resources */,
 				24F8B0751E0A232D0084926E /* 销售额未选@2x.png in Resources */,
@@ -1163,6 +1230,7 @@
 				24F8B0431E0A232D0084926E /* 会员消费2-选中.png in Resources */,
 				24F8B0141E0A232D0084926E /* 滚动条.png in Resources */,
 				24F8B0501E0A232D0084926E /* 桌数-未选@2x.png in Resources */,
+				2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */,
 				24F8B0741E0A232D0084926E /* 销售额未选.png in Resources */,
 				24F8B0791E0A232D0084926E /* 影子@2x.png in Resources */,
 				24F8B0711E0A232D0084926E /* 份数-选中.png in Resources */,
@@ -1268,16 +1336,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
+				242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */,
+				2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
+				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */,
