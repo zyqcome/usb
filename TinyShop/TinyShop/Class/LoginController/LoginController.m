@@ -9,6 +9,8 @@
 #import "LoginController.h"
 #import "NetworkTools.h"
 #import "HomeController.h"
+#import "DrawerController.h"
+#import "DHControllerViewController.h"
 @interface LoginController ()
 //iphone7为110
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoTop;
@@ -143,11 +145,13 @@
 //    [loginViewMode intwithDictionary:data];
 //        
         //创建标签控制器
-        UIStoryboard * storyHomeVC = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        HomeController * homeVC =  [storyHomeVC instantiateViewControllerWithIdentifier:@"HomeController"];
-        UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:homeVC];
-        [UIApplication sharedApplication].keyWindow.rootViewController = navigationVC;
-        [self presentViewController:navigationVC animated:YES completion:nil];
+        DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
+        [self presentViewController:dhVC animated:YES completion:nil];
+        
+//        UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:dhVC];
+//        dhVC.navigationVC = navigationVC;
+//        [UIApplication sharedApplication].keyWindow.rootViewController = navigationVC;
+
         
     }];
     

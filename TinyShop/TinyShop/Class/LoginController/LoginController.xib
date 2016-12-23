@@ -40,50 +40,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="AmE-4d-us9">
-                    <rect key="frame" x="113" y="110" width="150" height="110"/>
+                    <rect key="frame" x="118" y="110" width="140" height="105"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="RYI-fQ-pcx"/>
-                        <constraint firstAttribute="height" constant="110" id="SyJ-3w-1nk"/>
+                        <constraint firstAttribute="width" constant="140" id="RYI-fQ-pcx"/>
+                        <constraint firstAttribute="height" constant="105" id="SyJ-3w-1nk"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="确----定背景框.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-ct-k5n">
-                    <rect key="frame" x="25" y="314" width="325" height="2"/>
+                    <rect key="frame" x="25" y="309" width="325" height="2"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1.5" id="kWh-TI-IkG"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="确----定背景框.png" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-so-dge">
-                    <rect key="frame" x="25" y="376" width="325" height="1"/>
+                    <rect key="frame" x="25" y="371" width="325" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="2SL-ua-1JL"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="确----定背景框.png" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-6n-kGU">
-                    <rect key="frame" x="25" y="437" width="325" height="1"/>
+                    <rect key="frame" x="25" y="432" width="325" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="54e-0Z-d76"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店铺：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61V-Th-ENL">
-                    <rect key="frame" x="40" y="277" width="73" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <rect key="frame" x="40" y="273.5" width="70" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.94006799768518523" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnG-td-un5">
-                    <rect key="frame" x="40" y="339" width="73" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <rect key="frame" x="40" y="335.5" width="70" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.94006799770000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p7-Ek-2gd">
-                    <rect key="frame" x="40" y="400" width="73" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <rect key="frame" x="40" y="396.5" width="70" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.94006799770000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gr-Kx-NIU">
-                    <rect key="frame" x="310" y="458" width="25" height="25"/>
+                    <rect key="frame" x="310" y="453" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="Mqt-SC-Pyh"/>
                         <constraint firstAttribute="height" constant="25" id="xw4-1O-zxa"/>
@@ -91,16 +91,16 @@
                     <state key="normal" backgroundImage="记住密码框.png"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-lE-Cm5">
-                    <rect key="frame" x="226.5" y="460.5" width="73.5" height="21.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <rect key="frame" x="234.5" y="456.5" width="65.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KE-Xv-JPx">
-                    <rect key="frame" x="25" y="511" width="325" height="50"/>
+                    <rect key="frame" x="37.5" y="506" width="300" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Chm-nf-UBr"/>
-                        <constraint firstAttribute="width" constant="325" id="TBi-c3-o6G"/>
+                        <constraint firstAttribute="height" constant="45" id="Chm-nf-UBr"/>
+                        <constraint firstAttribute="width" constant="300" id="TBi-c3-o6G"/>
                     </constraints>
                     <state key="normal" backgroundImage="登录按钮-.png"/>
                     <connections>
@@ -108,7 +108,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-K7-6Fa">
-                    <rect key="frame" x="307" y="405" width="30" height="18"/>
+                    <rect key="frame" x="307" y="401" width="30" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="BOM-aJ-MGL"/>
                         <constraint firstAttribute="width" constant="30" id="QSz-zZ-Knw"/>
@@ -116,19 +116,19 @@
                     <state key="normal" backgroundImage="隐藏密码图标.png"/>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-Fc-6dD">
-                    <rect key="frame" x="113" y="278" width="222" height="27"/>
+                    <rect key="frame" x="110" y="274" width="225" height="27"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLw-5t-gJd">
-                    <rect key="frame" x="113" y="340" width="222" height="27"/>
+                    <rect key="frame" x="110" y="336" width="225" height="27"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiT-di-qLW">
-                    <rect key="frame" x="113" y="401" width="186" height="27"/>
+                    <rect key="frame" x="110" y="397" width="189" height="27"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
