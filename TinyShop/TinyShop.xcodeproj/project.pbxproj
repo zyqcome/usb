@@ -23,6 +23,7 @@
 		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
 		242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574341E0CC034004F1369 /* TimeperiodNethelper.m */; };
 		242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574381E0CC668004F1369 /* TimeperiodGetModel.m */; };
+		242574621E0D10F4004F1369 /* EntityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574611E0D10F4004F1369 /* EntityTools.m */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -254,6 +255,8 @@
 		242574341E0CC034004F1369 /* TimeperiodNethelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodNethelper.m; sourceTree = "<group>"; };
 		242574371E0CC668004F1369 /* TimeperiodGetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodGetModel.h; sourceTree = "<group>"; };
 		242574381E0CC668004F1369 /* TimeperiodGetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodGetModel.m; sourceTree = "<group>"; };
+		242574601E0D10F4004F1369 /* EntityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityTools.h; sourceTree = "<group>"; };
+		242574611E0D10F4004F1369 /* EntityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityTools.m; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -535,6 +538,8 @@
 				180E0E2D1E0A80C50074ACBA /* NetworkTools.m */,
 				2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */,
 				2460EB101E0B7F2100539038 /* ReflectionClassTools.m */,
+				242574601E0D10F4004F1369 /* EntityTools.h */,
+				242574611E0D10F4004F1369 /* EntityTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1384,6 +1389,7 @@
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
+				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
