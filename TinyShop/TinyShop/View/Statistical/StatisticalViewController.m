@@ -9,7 +9,9 @@
 #import "StatisticalViewController.h"
 
 @interface StatisticalViewController ()
-@property(nonatomic,strong)NSArray *buttonImageArray; //按钮图片
+@property(nonatomic,strong)NSArray *buttonImageArray; //未选中按钮图片
+@property(nonatomic,strong)NSArray *buttonSelImageArray;//选中的按钮图片
+@property(nonatomic,strong)NSMutableArray *buttonMutableAry;//存放按钮
 @property(nonatomic,strong)UILabel *label;   //统计文字
 
 @end
@@ -26,11 +28,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     //五个按钮
     for (NSInteger index = 0; index < 5; index++) {
+        //第一个按钮默认选中
+        if (index == 0) {
+            UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 70, Screen_W/5, 80)];
+            btn.tag = 1000;
+            [btn setImage:[UIImage imageNamed:self.buttonSelImageArray[0]] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(statisticalClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.buttonMutableAry addObject:btn];
+            [self.view addSubview:btn];
+        }else{
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(Screen_W/5*index, 70, Screen_W/5, 80)];
         btn.tag = 1000+index;
         [btn setImage:[UIImage imageNamed:self.buttonImageArray[index]] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(statisticalClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.buttonMutableAry addObject:btn];
         [self.view addSubview:btn];
+        }
     }
     //两根横线
     UIView *lineView = [UIView new];
@@ -64,8 +77,14 @@
 }
 //5个按钮
 -(void)statisticalClicked:(UIButton *)button{
-    NSLog(@"%ld",button.tag);
-    [button setImage:[UIImage imageNamed:@"销售额-选中"] forState:UIControlStateNormal];
+    //先将所有按钮的图片设置为未选中
+    NSInteger index = 0;
+    for (UIButton *btn in self.buttonMutableAry) {
+        [btn setImage:[UIImage imageNamed:self.buttonImageArray[index%5]] forState:UIControlStateNormal];
+        index++;
+    }
+    //再将点击的按钮图片替换为选中
+    [button setImage:[UIImage imageNamed:self.buttonSelImageArray[button.tag-1000]] forState:UIControlStateNormal];
 }
 
 #pragma 懒加载
@@ -75,6 +94,17 @@
     }
     return _buttonImageArray;
 }
-
+-(NSArray *)buttonSelImageArray{
+    if (!_buttonSelImageArray) {
+        _buttonSelImageArray = @[@"销售额-选中",@"桌数-选中-",@"人数-选中-",@"人均-选中",@"餐时-选中"];
+    }
+    return _buttonSelImageArray;
+}
+-(NSMutableArray *)buttonMutableAry{
+    if (!_buttonMutableAry) {
+        _buttonMutableAry = [NSMutableArray new];
+    }
+    return _buttonMutableAry;
+}
 
 @end
