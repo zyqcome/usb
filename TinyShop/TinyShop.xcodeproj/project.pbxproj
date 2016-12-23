@@ -260,6 +260,7 @@
 		242574611E0D10F4004F1369 /* EntityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityTools.m; sourceTree = "<group>"; };
 		242574631E0D252E004F1369 /* DHControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHControllerViewController.h; sourceTree = "<group>"; };
 		242574641E0D252E004F1369 /* DHControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHControllerViewController.m; sourceTree = "<group>"; };
+		242574671E0D51B0004F1369 /* TimeperiodProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodProtocol.h; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -578,6 +579,7 @@
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
 			isa = PBXGroup;
 			children = (
+				242574661E0D5192004F1369 /* TimeperiodProtocol */,
 				242574321E0CC010004F1369 /* TimeperiodNethelper */,
 				242574231E0CBDF5004F1369 /* CheckoutVC */,
 				2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */,
@@ -624,6 +626,14 @@
 				242574381E0CC668004F1369 /* TimeperiodGetModel.m */,
 			);
 			path = TimeperiodGetModel;
+			sourceTree = "<group>";
+		};
+		242574661E0D5192004F1369 /* TimeperiodProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				242574671E0D51B0004F1369 /* TimeperiodProtocol.h */,
+			);
+			path = TimeperiodProtocol;
 			sourceTree = "<group>";
 		};
 		2460EB121E0B84B000539038 /* Model */ = {
