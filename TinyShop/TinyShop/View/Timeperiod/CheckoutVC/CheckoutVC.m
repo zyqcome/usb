@@ -1,22 +1,21 @@
 //
-//  DrawerController.m
+//  CheckoutVC.m
 //  TinyShop
 //
-//  Created by 韩舟昱 on 2016/12/22.
+//  Created by rimi on 16/12/22.
 //  Copyright © 2016年 cc.zyqblog. All rights reserved.
 //
 
-#import "DrawerController.h"
+#import "CheckoutVC.h"
 
-@interface DrawerController ()
+@interface CheckoutVC ()
 
 @end
 
-@implementation DrawerController
+@implementation CheckoutVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
 }
 

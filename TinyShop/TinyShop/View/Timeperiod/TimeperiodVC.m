@@ -1,23 +1,24 @@
 //
-//  DrawerController.m
+//  TimeperiodVC.m
 //  TinyShop
 //
-//  Created by 韩舟昱 on 2016/12/22.
+//  Created by rimi on 16/12/22.
 //  Copyright © 2016年 cc.zyqblog. All rights reserved.
 //
 
-#import "DrawerController.h"
-
-@interface DrawerController ()
+#import "TimeperiodVC.h"
+#import "TimeperiodNethelper.h"
+@interface TimeperiodVC ()
 
 @end
 
-@implementation DrawerController
+@implementation TimeperiodVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
+    TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    [timeperiodNethelper getTimeperiodDate];
 }
 
 - (void)didReceiveMemoryWarning {

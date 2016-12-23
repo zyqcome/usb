@@ -16,6 +16,15 @@
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
 		180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E0E3D1E0AA79E0074ACBA /* LoginController.xib */; };
+		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
+		2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574281E0CBDF5004F1369 /* CheckoutVC.m */; };
+		2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242574291E0CBDF5004F1369 /* CheckoutVC.xib */; };
+		242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */; };
+		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
+		242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574341E0CC034004F1369 /* TimeperiodNethelper.m */; };
+		242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574381E0CC668004F1369 /* TimeperiodGetModel.m */; };
+		242574621E0D10F4004F1369 /* EntityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574611E0D10F4004F1369 /* EntityTools.m */; };
+		242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574641E0D252E004F1369 /* DHControllerViewController.m */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -239,6 +248,22 @@
 		180E0E3C1E0AA79E0074ACBA /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		180E0E3D1E0AA79E0074ACBA /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		242574271E0CBDF5004F1369 /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
+		242574281E0CBDF5004F1369 /* CheckoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutVC.m; sourceTree = "<group>"; };
+		242574291E0CBDF5004F1369 /* CheckoutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
+		2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
+		2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodVC.m; sourceTree = "<group>"; };
+		2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeperiodVC.xib; sourceTree = "<group>"; };
+		242574331E0CC034004F1369 /* TimeperiodNethelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodNethelper.h; sourceTree = "<group>"; };
+		242574341E0CC034004F1369 /* TimeperiodNethelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodNethelper.m; sourceTree = "<group>"; };
+		242574371E0CC668004F1369 /* TimeperiodGetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodGetModel.h; sourceTree = "<group>"; };
+		242574381E0CC668004F1369 /* TimeperiodGetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodGetModel.m; sourceTree = "<group>"; };
+		242574601E0D10F4004F1369 /* EntityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityTools.h; sourceTree = "<group>"; };
+		242574611E0D10F4004F1369 /* EntityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityTools.m; sourceTree = "<group>"; };
+		242574631E0D252E004F1369 /* DHControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHControllerViewController.h; sourceTree = "<group>"; };
+		242574641E0D252E004F1369 /* DHControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHControllerViewController.m; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -505,6 +530,8 @@
 		1805B45D1E0BE8C600BC85E1 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
+				242574631E0D252E004F1369 /* DHControllerViewController.h */,
+				242574641E0D252E004F1369 /* DHControllerViewController.m */,
 				1805B4611E0BF10800BC85E1 /* HomeController.h */,
 				1805B4621E0BF10800BC85E1 /* HomeController.m */,
 			);
@@ -531,6 +558,8 @@
 				180E0E2D1E0A80C50074ACBA /* NetworkTools.m */,
 				2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */,
 				2460EB101E0B7F2100539038 /* ReflectionClassTools.m */,
+				242574601E0D10F4004F1369 /* EntityTools.h */,
+				242574611E0D10F4004F1369 /* EntityTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -559,6 +588,57 @@
 				A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		242574221E0CBDF5004F1369 /* Timeperiod */ = {
+			isa = PBXGroup;
+			children = (
+				242574321E0CC010004F1369 /* TimeperiodNethelper */,
+				242574231E0CBDF5004F1369 /* CheckoutVC */,
+				2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */,
+				2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */,
+				2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */,
+			);
+			path = Timeperiod;
+			sourceTree = "<group>";
+		};
+		242574231E0CBDF5004F1369 /* CheckoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				242574241E0CBDF5004F1369 /* cell */,
+				242574271E0CBDF5004F1369 /* CheckoutVC.h */,
+				242574281E0CBDF5004F1369 /* CheckoutVC.m */,
+				242574291E0CBDF5004F1369 /* CheckoutVC.xib */,
+			);
+			path = CheckoutVC;
+			sourceTree = "<group>";
+		};
+		242574241E0CBDF5004F1369 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				242574251E0CBDF5004F1369 /* TableViewCell.h */,
+				242574261E0CBDF5004F1369 /* TableViewCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		242574321E0CC010004F1369 /* TimeperiodNethelper */ = {
+			isa = PBXGroup;
+			children = (
+				242574361E0CC655004F1369 /* TimeperiodGetModel */,
+				242574331E0CC034004F1369 /* TimeperiodNethelper.h */,
+				242574341E0CC034004F1369 /* TimeperiodNethelper.m */,
+			);
+			path = TimeperiodNethelper;
+			sourceTree = "<group>";
+		};
+		242574361E0CC655004F1369 /* TimeperiodGetModel */ = {
+			isa = PBXGroup;
+			children = (
+				242574371E0CC668004F1369 /* TimeperiodGetModel.h */,
+				242574381E0CC668004F1369 /* TimeperiodGetModel.m */,
+			);
+			path = TimeperiodGetModel;
 			sourceTree = "<group>";
 		};
 		2460EB121E0B84B000539038 /* Model */ = {
@@ -981,6 +1061,7 @@
 		F30D1A361E0CBA7D008A1158 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				242574221E0CBDF5004F1369 /* Timeperiod */,
 				F30D1A371E0CBA7D008A1158 /* Statistical */,
 			);
 			path = View;
@@ -1196,6 +1277,7 @@
 				24F8B04F1E0A232D0084926E /* 桌数-未选.png in Resources */,
 				1805B45C1E0BE89C00BC85E1 /* DrawerController.xib in Resources */,
 				24F8B0221E0A232D0084926E /* 日历框@2x.png in Resources */,
+				242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */,
 				24F8B09F1E0A232D0084926E /* 绿.png in Resources */,
 				24F8B04D1E0A232D0084926E /* 支付类型2-选中.png in Resources */,
 				24F8B0751E0A232D0084926E /* 销售额未选@2x.png in Resources */,
@@ -1203,6 +1285,7 @@
 				24F8B0431E0A232D0084926E /* 会员消费2-选中.png in Resources */,
 				24F8B0141E0A232D0084926E /* 滚动条.png in Resources */,
 				24F8B0501E0A232D0084926E /* 桌数-未选@2x.png in Resources */,
+				2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */,
 				24F8B0741E0A232D0084926E /* 销售额未选.png in Resources */,
 				24F8B0791E0A232D0084926E /* 影子@2x.png in Resources */,
 				24F8B0711E0A232D0084926E /* 份数-选中.png in Resources */,
@@ -1316,11 +1399,17 @@
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
+				242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */,
+				242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */,
+				2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
+				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
+				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
+				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */,
@@ -1328,6 +1417,7 @@
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
+				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

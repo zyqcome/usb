@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UserModel : NSObject
-@property (nonatomic, strong) NSString *mgr_base_idz;
+@property (nonatomic, strong) NSString *mgr_base_id;
 @property (nonatomic, strong) NSString *mgr_account;
 @property (nonatomic, strong) NSString *mgr_type;
 @property (nonatomic, strong) NSString *mgr_login_token;

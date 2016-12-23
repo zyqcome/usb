@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeperiodVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D21-Up-nLb">
+                    <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnt-cM-g5G">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-jr-vxu">
+                                    <rect key="frame" x="165" y="194" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="EZ7-jr-vxu" secondAttribute="bottom" constant="62" id="PfR-pp-FCq"/>
+                                <constraint firstAttribute="trailing" secondItem="EZ7-jr-vxu" secondAttribute="trailing" constant="164" id="YQm-CJ-Rk6"/>
+                                <constraint firstItem="EZ7-jr-vxu" firstAttribute="top" secondItem="qnt-cM-g5G" secondAttribute="top" constant="194" id="mdl-Hv-IOL"/>
+                                <constraint firstItem="EZ7-jr-vxu" firstAttribute="centerX" secondItem="qnt-cM-g5G" secondAttribute="centerX" id="qLK-cV-4j1"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qnt-cM-g5G" firstAttribute="top" secondItem="D21-Up-nLb" secondAttribute="top" id="AQg-VA-9bn"/>
+                        <constraint firstItem="qnt-cM-g5G" firstAttribute="leading" secondItem="D21-Up-nLb" secondAttribute="leading" id="RVo-HH-un1"/>
+                        <constraint firstAttribute="trailing" secondItem="qnt-cM-g5G" secondAttribute="trailing" id="xsZ-CP-prU"/>
+                        <constraint firstAttribute="bottom" secondItem="qnt-cM-g5G" secondAttribute="bottom" constant="181" id="y1w-A2-a1r"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAF-Jh-CNR">
+                    <rect key="frame" x="0.0" y="64" width="375" height="136"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="所有店铺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-he-SCS">
+                            <rect key="frame" x="36" y="26" width="81" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时总收入： 0.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxP-Wd-iSQ">
+                            <rect key="frame" x="36" y="71" width="172" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oAF-Jh-CNR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GOm-jT-L4t"/>
+                <constraint firstAttribute="trailing" secondItem="D21-Up-nLb" secondAttribute="trailing" id="GZf-ra-yfE"/>
+                <constraint firstItem="D21-Up-nLb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QKM-sl-lJn"/>
+                <constraint firstAttribute="bottom" secondItem="D21-Up-nLb" secondAttribute="bottom" id="Qnw-RL-gE0"/>
+                <constraint firstItem="oAF-Jh-CNR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="VLI-DZ-Q1b"/>
+                <constraint firstItem="D21-Up-nLb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="awi-YN-z7n"/>
+                <constraint firstItem="D21-Up-nLb" firstAttribute="top" secondItem="oAF-Jh-CNR" secondAttribute="bottom" id="db3-2C-yEW"/>
+                <constraint firstAttribute="trailing" secondItem="oAF-Jh-CNR" secondAttribute="trailing" id="eTW-hI-5dc"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

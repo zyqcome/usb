@@ -23,11 +23,13 @@
 // 偏移屏幕0.8
 #define LeftVcOffSet Screen_W * 0.8
 
+
 #import "NetWorkConfig.h"
 #import "ReflectionClassTools.h"
 //ViewMode
 #import "LoginViewMode.h"
-
+//对象转字典工具
+#import "EntityTools.h"
 
 //约束三房库
 #import <Masonry.h>
@@ -39,5 +41,6 @@
 #import "RoleDiscountsModel.h"
 #import "RoleDiscountsModel.h"
 #import "ShopModel.h"
+#import "ShopSubModel.h"
 
 #endif /* PrefixHeader_pch */
