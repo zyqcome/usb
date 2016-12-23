@@ -215,6 +215,10 @@
 		24F8B0BD1E0A232D0084926E /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F8B0051E0A232C0084926E /* 87.png */; };
 		C790FF03DEB944AC07141622 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */; };
 		F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */; };
+		F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A541E0CCDF5008A1158 /* PopupView.m */; };
+		F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */; };
+		F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */; };
+		F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -449,6 +453,13 @@
 		EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
 		F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticalViewController.h; sourceTree = "<group>"; };
 		F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticalViewController.m; sourceTree = "<group>"; };
+		F30D1A531E0CCDF5008A1158 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
+		F30D1A541E0CCDF5008A1158 /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
+		F30D1A551E0CCDF5008A1158 /* PopupViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewCell.h; sourceTree = "<group>"; };
+		F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewCell.m; sourceTree = "<group>"; };
+		F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewCell.h; sourceTree = "<group>"; };
+		F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewCell.m; sourceTree = "<group>"; };
+		F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +523,10 @@
 		180E0E2B1E0A80C10074ACBA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F30D1A531E0CCDF5008A1158 /* PopupView.h */,
+				F30D1A541E0CCDF5008A1158 /* PopupView.m */,
+				F30D1A551E0CCDF5008A1158 /* PopupViewCell.h */,
+				F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */,
 				180E0E2C1E0A80C50074ACBA /* NetworkTools.h */,
 				180E0E2D1E0A80C50074ACBA /* NetworkTools.m */,
 				2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */,
@@ -976,6 +991,9 @@
 			children = (
 				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
 				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
+				F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */,
+				F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */,
+				F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */,
 			);
 			path = Statistical;
 			sourceTree = "<group>";
@@ -1073,6 +1091,7 @@
 				24F8B0AC1E0A232D0084926E /* 时段收入分析@2x.png in Resources */,
 				24F8B0551E0A232D0084926E /* 线1.png in Resources */,
 				24F8B08D1E0A232D0084926E /* 选中.png in Resources */,
+				F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */,
 				24F8B0651E0A232D0084926E /* 按月-选中.png in Resources */,
 				24F8B05C1E0A232D0084926E /* 按年-未选@2x.png in Resources */,
 				24F8B0861E0A232D0084926E /* 关闭icon@2x副本.png in Resources */,
@@ -1291,9 +1310,11 @@
 			files = (
 				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
+				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
+				F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
@@ -1303,6 +1324,7 @@
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */,
+				F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
