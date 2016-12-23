@@ -10,18 +10,14 @@
 #import "UserModel.h"
 #import "ShopModel.h"
 @interface LoginViewMode : NSObject
+//登陆店铺名称
+@property (nonatomic, strong) NSString *shop_account;
+@property (nonatomic, strong) NSString *user_account;
 @property (nonatomic, strong) NSArray *rightsArry;
 @property (nonatomic, strong) NSArray *roleDiscountsArry;
-@property (nonatomic, strong) ShopModel *shopArry;
+@property (nonatomic, strong) ShopModel *shop;
 @property (nonatomic, strong) UserModel *user;
 //单例
 + (instancetype)shareUserInfo;
-
-/**
- 根据字典数据初始化
-
- @param Dic 传入字典
- @return 是否转换成功
- */
 -(BOOL)intwithDictionary:(NSDictionary *)Dic;
 @end

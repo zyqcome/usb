@@ -7,7 +7,7 @@
 //
 
 #import "TimeperiodVC.h"
-
+#import "TimeperiodNethelper.h"
 @interface TimeperiodVC ()
 
 @end
@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    [timeperiodNethelper getTimeperiodDate];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -29,7 +29,8 @@
 #import "ReflectionClassTools.h"
 //ViewMode
 #import "LoginViewMode.h"
-
+//对象转字典工具
+#import "EntityTools.h"
 
 //约束三房库
 #import <Masonry.h>
@@ -41,5 +42,6 @@
 #import "RoleDiscountsModel.h"
 #import "RoleDiscountsModel.h"
 #import "ShopModel.h"
+#import "ShopSubModel.h"
 
 #endif /* PrefixHeader_pch */
