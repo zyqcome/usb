@@ -29,7 +29,7 @@
 +(NSMutableArray *) getClassModePropertyList:(NSString *)classmode {
     unsigned int nCount = 0;
     NSMutableArray *mutarry = [NSMutableArray new];
-    objc_objectptr_t *popertylist = class_copyPropertyList([ReflectionClassTools  GetClassName:classmode],&nCount);
+    objc_objectptr_t * popertylist = class_copyPropertyList([ReflectionClassTools  GetClassName:classmode],&nCount);
     for (int i = 0; i < nCount; i++)
     {
         objc_objectptr_t property = popertylist[i];
