@@ -30,7 +30,7 @@
     timeperiodGetModel.shop_id = loginViewMode.shop.shop_id;
     timeperiodGetModel.mgr_base_id=loginViewMode.user.mgr_base_id;
     timeperiodGetModel.access_token=loginViewMode.user.mgr_login_token;
-    timeperiodGetModel.mac_code=@"";
+    timeperiodGetModel.mac_code=@"2132314324234";
     //get 参数字典
     NSDictionary *dic = [EntityTools entityToDictionary:timeperiodGetModel];
     NSString *myString = [TimeperiodNethelper stringWithDictionary:dic];

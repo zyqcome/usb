@@ -24,6 +24,7 @@
 		242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574341E0CC034004F1369 /* TimeperiodNethelper.m */; };
 		242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574381E0CC668004F1369 /* TimeperiodGetModel.m */; };
 		242574621E0D10F4004F1369 /* EntityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574611E0D10F4004F1369 /* EntityTools.m */; };
+		242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574641E0D252E004F1369 /* DHControllerViewController.m */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -257,6 +258,8 @@
 		242574381E0CC668004F1369 /* TimeperiodGetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodGetModel.m; sourceTree = "<group>"; };
 		242574601E0D10F4004F1369 /* EntityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityTools.h; sourceTree = "<group>"; };
 		242574611E0D10F4004F1369 /* EntityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityTools.m; sourceTree = "<group>"; };
+		242574631E0D252E004F1369 /* DHControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHControllerViewController.h; sourceTree = "<group>"; };
+		242574641E0D252E004F1369 /* DHControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHControllerViewController.m; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -516,6 +519,8 @@
 		1805B45D1E0BE8C600BC85E1 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
+				242574631E0D252E004F1369 /* DHControllerViewController.h */,
+				242574641E0D252E004F1369 /* DHControllerViewController.m */,
 				1805B4611E0BF10800BC85E1 /* HomeController.h */,
 				1805B4621E0BF10800BC85E1 /* HomeController.m */,
 			);
@@ -1382,6 +1387,7 @@
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
+				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
 				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
