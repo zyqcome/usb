@@ -14,6 +14,9 @@
 @property (nonatomic,strong) DrawerController *leftVc;
 @property (nonatomic,strong) UIButton *coverBtn;
 @property (nonatomic,assign) CGPoint beginP;
+
+
+//约束
 @end
 
 @implementation HomeController
