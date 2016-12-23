@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    //获取所有店铺信息
     [timeperiodNethelper getTimeperiodDate];
 }
 
