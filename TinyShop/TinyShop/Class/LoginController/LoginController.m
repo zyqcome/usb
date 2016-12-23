@@ -69,58 +69,58 @@
     _passwordTextField.textColor = Color_RGBA(240, 0, 0, 1);
     
     
-//    if (Screen_W == 320){
+    if (Screen_W == 320){
         //高度设置
-        _logoTop.constant = _logoTop.constant * ScreenScale;
-        _firstRedViewTop.constant = _firstRedViewTop.constant * ScreenScale;
-        _SecondRedViewTop.constant = _SecondRedViewTop.constant * ScreenScale;
-        _thirdRedViewTop.constant = _thirdRedViewTop.constant * ScreenScale;
+        _logoTop.constant = 80;
+        _firstRedViewTop.constant = 85;
+        _SecondRedViewTop.constant = 50;
+        _thirdRedViewTop.constant = 50;
         //字体大小设置
-        _storeLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
-        _jobNumberLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
-        _passwordLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
-        _rememberLabel.font = [UIFont systemFontOfSize:16*ScreenScale];
+        _storeLabel.font = [UIFont systemFontOfSize:19];
+        _jobNumberLabel.font = [UIFont systemFontOfSize:19];
+        _passwordLabel.font = [UIFont systemFontOfSize:19];
+        _rememberLabel.font = [UIFont systemFontOfSize:14];
         //按钮图片大小设置
-        _LoginHeight.constant = _LoginHeight.constant * ScreenScale;
-        _LoginWidth.constant = _LoginWidth.constant * ScreenScale;
-        _logoWidth.constant = _logoWidth.constant * ScreenScale;
-        _logoHeight.constant = _logoHeight.constant * ScreenScale;
-        _lookWidth.constant = _lookWidth.constant * ScreenScale;
-        _lookHeight.constant = _lookHeight.constant * ScreenScale;
-        _rememberButtonWidth.constant = _rememberButtonWidth.constant * ScreenScale;
-        _rememberButtonHeight.constant = _rememberButtonHeight.constant * ScreenScale;
+        _LoginHeight.constant = 43;
+        _LoginWidth.constant = 270;
+        _logoWidth.constant = 130;
+        _logoHeight.constant = 90;
+        _lookWidth.constant = 25;
+        _lookHeight.constant = 15;
+        _rememberButtonWidth.constant = 22;
+        _rememberButtonHeight.constant = 22;
         //设置输入框字体大小
-        _stroeTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
-        _jobNumberTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
-        _passwordTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
-//        
-//    }
-//    
-//    if (Screen_W == 414) {
-//        //高度设置
-//        _logoTop.constant = 110;
-//        _firstRedViewTop.constant = 100;
-//        _SecondRedViewTop.constant = 65;
-//        _thirdRedViewTop.constant = 65;
-//        //字体大小设置
-//        _storeLabel.font = [UIFont systemFontOfSize:24];
-//        _jobNumberLabel.font = [UIFont systemFontOfSize:24];
-//        _passwordLabel.font = [UIFont systemFontOfSize:24];
-//        _rememberLabel.font = [UIFont systemFontOfSize:18];
-//        //按钮图片大小设置
-//        _LoginHeight.constant = 56;
-//        _LoginWidth.constant = 360;
-//        _logoWidth.constant = 170;
-//        _logoHeight.constant = 130;
-//        _lookWidth.constant = 35;
-//        _lookHeight.constant = 20;
-//        _rememberButtonWidth.constant = 30;
-//        _rememberButtonHeight.constant = 30;
-//        //设置输入框字体大小
-//        _stroeTextField.font = [UIFont systemFontOfSize:24];
-//        _jobNumberTextField.font = [UIFont systemFontOfSize:24];
-//        _passwordTextField.font = [UIFont systemFontOfSize:24];
-//    }
+        _stroeTextField.font = [UIFont systemFontOfSize:19];
+        _jobNumberTextField.font = [UIFont systemFontOfSize:19];
+        _passwordTextField.font = [UIFont systemFontOfSize:19];
+        
+    }
+    
+    if (Screen_W == 414) {
+        //高度设置
+        _logoTop.constant = 110;
+        _firstRedViewTop.constant = 100;
+        _SecondRedViewTop.constant = 65;
+        _thirdRedViewTop.constant = 65;
+        //字体大小设置
+        _storeLabel.font = [UIFont systemFontOfSize:24];
+        _jobNumberLabel.font = [UIFont systemFontOfSize:24];
+        _passwordLabel.font = [UIFont systemFontOfSize:24];
+        _rememberLabel.font = [UIFont systemFontOfSize:18];
+        //按钮图片大小设置
+        _LoginHeight.constant = 56;
+        _LoginWidth.constant = 360;
+        _logoWidth.constant = 170;
+        _logoHeight.constant = 130;
+        _lookWidth.constant = 35;
+        _lookHeight.constant = 20;
+        _rememberButtonWidth.constant = 30;
+        _rememberButtonHeight.constant = 30;
+        //设置输入框字体大小
+        _stroeTextField.font = [UIFont systemFontOfSize:24];
+        _jobNumberTextField.font = [UIFont systemFontOfSize:24];
+        _passwordTextField.font = [UIFont systemFontOfSize:24];
+    }
 }
 
 #pragma mark - 登录按钮
@@ -140,15 +140,18 @@
         NSLog(@"%@",error);
         return ;
     }
-        NSLog(@"%@",data);
-        LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
-        [loginViewMode intwithDictionary:data];
-        
-        
+    NSLog(@"%@",data);
+    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+    [loginViewMode intwithDictionary:data];
         
         //创建标签控制器
         DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
         [self presentViewController:dhVC animated:YES completion:nil];
+        
+//        UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:dhVC];
+//        dhVC.navigationVC = navigationVC;
+//        [UIApplication sharedApplication].keyWindow.rootViewController = navigationVC;
+
         
     }];
     

@@ -9,6 +9,8 @@
 #import "HomeController.h"
 #import "DrawerController.h"
 #import "DHControllerViewController.h"
+#import "TimeperiodVC.h"
+#import "StatisticalViewController.h"
 @interface HomeController ()
 @property (nonatomic,strong)  HomeController * homeVc;
 @property (nonatomic,strong) DrawerController *leftVc;
@@ -35,10 +37,16 @@
     NSLog(@"%ld",(long)indexPath.row);
     switch (indexPath.row) {
         case 0:
-            
+        {
+            TimeperiodVC *svc = [TimeperiodVC new];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
             break;
         case 1:
-            
+        {
+            StatisticalViewController *svc = [StatisticalViewController new];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
             break;
         case 2:
             
