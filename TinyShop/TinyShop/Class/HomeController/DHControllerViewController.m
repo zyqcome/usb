@@ -9,6 +9,8 @@
 #import "DHControllerViewController.h"
 #import "DrawerController.h"
 #import "HomeController.h"
+#import "LoginController.h"
+
 @interface DHControllerViewController ()
 @property (nonatomic,strong)  HomeController * homeVc;
 @property (nonatomic,strong) DrawerController *leftVc;
@@ -150,6 +152,9 @@
 }
 
 -(void)rightBarButtonClicked{
+    LoginController * login = [LoginController new];
+    [self presentViewController:login animated:NO completion:nil];
+    
 }
 
 

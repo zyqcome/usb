@@ -50,6 +50,20 @@
 @property (weak, nonatomic) IBOutlet UITextField *jobNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+//记住密码image
+
+@property (weak, nonatomic) IBOutlet UIImageView *RPasswordImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *RPImagew;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *RPImageH;
+
+//看密码image
+
+@property (weak, nonatomic) IBOutlet UIImageView *lookPasswordImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rpImageH;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rpImageW;
+
+@property (nonatomic,assign) BOOL isLook;
+@property (nonatomic,assign) BOOL isRemember;
 
 
 @end
@@ -60,6 +74,7 @@
     [super viewDidLoad];
     [self setupUI];
     
+    
 }
 #pragma mark - ui设置约束
 //约束设置颜色
@@ -67,73 +82,103 @@
     _stroeTextField.textColor = Color_RGBA(240, 0, 0, 1);
     _jobNumberTextField.textColor = Color_RGBA(240, 0, 0, 1);
     _passwordTextField.textColor = Color_RGBA(240, 0, 0, 1);
+
+
+    //高度设置
+    _logoTop.constant =_logoTop.constant*ScreenScale;
+    _firstRedViewTop.constant = _firstRedViewTop.constant * ScreenScale;
+    _SecondRedViewTop.constant = _SecondRedViewTop.constant * ScreenScale;
+    _thirdRedViewTop.constant = _thirdRedViewTop.constant * ScreenScale;
+    //字体大小设置
+    _storeLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
+    _jobNumberLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
+    _passwordLabel.font = [UIFont systemFontOfSize:23*ScreenScale];
+    _rememberLabel.font = [UIFont systemFontOfSize:16*ScreenScale];
+    //按钮图片大小设置
+    _LoginHeight.constant = _LoginHeight.constant * ScreenScale;
+    _LoginWidth.constant = _LoginWidth.constant * ScreenScale;
+    _logoWidth.constant = _logoWidth.constant * ScreenScale;
+    _logoHeight.constant = _logoHeight.constant * ScreenScale;
+    _lookWidth.constant = _lookWidth.constant * ScreenScale;
+    _lookHeight.constant = _lookHeight.constant * ScreenScale;
+    _rememberButtonWidth.constant = _rememberButtonWidth.constant * ScreenScale;
+    _rememberButtonHeight.constant = _rememberButtonHeight.constant * ScreenScale;
+    //设置输入框字体大小
+    _stroeTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
+    _jobNumberTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
+    _passwordTextField.font = [UIFont systemFontOfSize:23*ScreenScale];
     
+    //
+    _RPImagew.constant =  _RPImagew.constant*ScreenScale;
+    _RPImageH.constant =  _RPImageH.constant *ScreenScale;
+    _rpImageW.constant = _rpImageW.constant * ScreenScale;
+    _rpImageH.constant = _rpImageH.constant *ScreenScale;
     
-    if (Screen_W == 320){
-        //高度设置
-        _logoTop.constant = 80;
-        _firstRedViewTop.constant = 85;
-        _SecondRedViewTop.constant = 50;
-        _thirdRedViewTop.constant = 50;
-        //字体大小设置
-        _storeLabel.font = [UIFont systemFontOfSize:19];
-        _jobNumberLabel.font = [UIFont systemFontOfSize:19];
-        _passwordLabel.font = [UIFont systemFontOfSize:19];
-        _rememberLabel.font = [UIFont systemFontOfSize:14];
-        //按钮图片大小设置
-        _LoginHeight.constant = 43;
-        _LoginWidth.constant = 270;
-        _logoWidth.constant = 130;
-        _logoHeight.constant = 90;
-        _lookWidth.constant = 25;
-        _lookHeight.constant = 15;
-        _rememberButtonWidth.constant = 22;
-        _rememberButtonHeight.constant = 22;
-        //设置输入框字体大小
-        _stroeTextField.font = [UIFont systemFontOfSize:19];
-        _jobNumberTextField.font = [UIFont systemFontOfSize:19];
-        _passwordTextField.font = [UIFont systemFontOfSize:19];
+    //获取注册的账号和密码
+    InitNSUserDefaults;
+    if ([userDefaults boolForKey:@"isRemember"] == YES ) {
+        _isRemember = YES;
+        NSString*stroeTextField = [userDefaults objectForKey:@"stroeTextField"];
+        NSString*jobNumberTextField = [userDefaults objectForKey:@"jobNumberTextField"];
+        NSString * passwordTextField = [userDefaults objectForKey:@"passwordTextField"];
+        [userDefaults synchronize];//立即同步存储
         
+        _stroeTextField.text = stroeTextField;
+        _jobNumberTextField.text = jobNumberTextField;
+        _passwordTextField.text = passwordTextField;
+        
+        self.RPasswordImage.image = [UIImage imageNamed:@"记住密码"];
     }
     
-    if (Screen_W == 414) {
-        //高度设置
-        _logoTop.constant = 110;
-        _firstRedViewTop.constant = 100;
-        _SecondRedViewTop.constant = 65;
-        _thirdRedViewTop.constant = 65;
-        //字体大小设置
-        _storeLabel.font = [UIFont systemFontOfSize:24];
-        _jobNumberLabel.font = [UIFont systemFontOfSize:24];
-        _passwordLabel.font = [UIFont systemFontOfSize:24];
-        _rememberLabel.font = [UIFont systemFontOfSize:18];
-        //按钮图片大小设置
-        _LoginHeight.constant = 56;
-        _LoginWidth.constant = 360;
-        _logoWidth.constant = 170;
-        _logoHeight.constant = 130;
-        _lookWidth.constant = 35;
-        _lookHeight.constant = 20;
-        _rememberButtonWidth.constant = 30;
-        _rememberButtonHeight.constant = 30;
-        //设置输入框字体大小
-        _stroeTextField.font = [UIFont systemFontOfSize:24];
-        _jobNumberTextField.font = [UIFont systemFontOfSize:24];
-        _passwordTextField.font = [UIFont systemFontOfSize:24];
-    }
-}
+ }
 
 #pragma mark - 登录按钮
 - (IBAction)loginButtonClicked:(UIButton *)sender {
     [self netRequest];
     
 }
+- (IBAction)LookPassword:(UIButton *)sender {
+    _isLook = !_isLook;
+    if (_isLook) {
+        self.lookPasswordImage.image = [UIImage imageNamed:@"显示密码图标"];
+        self.passwordTextField.secureTextEntry = NO;
+    }else{
+        self.lookPasswordImage.image = [UIImage imageNamed:@"隐藏密码图标.png"];
+        self.passwordTextField.secureTextEntry = YES;
+    }
+    
+    
+    
+}
+- (IBAction)rememberPassword:(id)sender {
+    InitNSUserDefaults;
+    if (_isRemember == NO) {
+                NSLog(@"yes");
+        self.RPasswordImage.image = [UIImage imageNamed:@"记住密码"];
+        [userDefaults setObject:self.stroeTextField.text forKey:@"stroeTextField"];
+        [userDefaults setObject:self.jobNumberTextField.text forKey:@"jobNumberTextField"];
+        [userDefaults setObject:self.passwordTextField.text forKey:@"passwordTextField"];
+        [userDefaults synchronize];//立即同步存储
+    }
+    
+    if (_isRemember == YES) {
+        NSLog(@"no");
+         [userDefaults setBool:NO forKey:@"isRemember"];
+//        [[NSUserDefaults standardUserDefaults] removeObjectForKey:NSURLNameKey];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.RPasswordImage.image = [UIImage imageNamed:@"记住密码框"];
+
+    }
+    _isRemember = !_isRemember;
+
+}
 
 
 #pragma mark - 网络请求
 
 -(void)netRequest{
-    NSDictionary * dict = @{@"client_type":@"ios",@"client_version":@"2.0",@"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",@"shop_account":@"ymtxtshg",@"user_account":@"001",@"user_password":@"12345678"};
+    
+      NSDictionary * dict = @{@"client_type":@"ios",@"client_version":@"2.0",@"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",@"shop_account":self.stroeTextField.text,@"user_account":_jobNumberTextField.text,@"user_password":_passwordTextField.text};
     
     [[NetworkTools sharedTooles]requestMethod:POST isJson:YES WithUrl:LoginUrl parematers:dict finished:^(id data, NSError *error) {
     if (error) {
@@ -143,20 +188,31 @@
     NSLog(@"%@",data);
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     [loginViewMode intwithDictionary:data];
+        InitNSUserDefaults;
+        if ([data[@"status"] isEqual: @"0"]) {
+            //登录成功
+            if (_isRemember == YES ) {
+                [userDefaults setBool:YES forKey:@"isRemember"];
+                
+            }
+
+            
+        }
         
-        //创建标签控制器
-        DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
-        [self presentViewController:dhVC animated:YES completion:nil];
-        
-//        UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:dhVC];
-//        dhVC.navigationVC = navigationVC;
-//        [UIApplication sharedApplication].keyWindow.rootViewController = navigationVC;
+    //创建标签控制器
+    DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
+    [self presentViewController:dhVC animated:NO completion:nil];
 
         
     }];
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self removeFromParentViewController];
+    [self.view removeFromSuperview];
+}
 
 
 @end

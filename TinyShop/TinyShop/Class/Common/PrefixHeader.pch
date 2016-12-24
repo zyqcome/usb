@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define ScreenScale Screen_W/375
 //NSuserDefaults
 #define InitNSUserDefaults NSUserDefaults*userDefaults=[NSUserDefaults standardUserDefaults]
 //屏幕宽
