@@ -12,4 +12,5 @@ pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'MJExtension'
 pod 'Masonry'
+pod ‘MBProgressHUD’
 end
