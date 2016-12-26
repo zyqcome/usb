@@ -33,6 +33,10 @@
 		2460EB241E0B974D00539038 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB231E0B974D00539038 /* ShopModel.m */; };
 		2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB271E0B9B1F00539038 /* LoginViewMode.m */; };
 		2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB601E0BB10A00539038 /* ShopSubModel.m */; };
+		2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A31E10E92300C4E0FB /* GrayWhiteView.m */; };
+		2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A51E10E92300C4E0FB /* MZLineView.m */; };
+		2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */; };
+		2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A91E10E92300C4E0FB /* ZFCirque.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -281,6 +285,15 @@
 		2460EB271E0B9B1F00539038 /* LoginViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewMode.m; sourceTree = "<group>"; };
 		2460EB5F1E0BB10A00539038 /* ShopSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopSubModel.h; sourceTree = "<group>"; };
 		2460EB601E0BB10A00539038 /* ShopSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopSubModel.m; sourceTree = "<group>"; };
+		2467D7A11E10E92300C4E0FB /* ColorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefine.h; sourceTree = "<group>"; };
+		2467D7A21E10E92300C4E0FB /* GrayWhiteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayWhiteView.h; sourceTree = "<group>"; };
+		2467D7A31E10E92300C4E0FB /* GrayWhiteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayWhiteView.m; sourceTree = "<group>"; };
+		2467D7A41E10E92300C4E0FB /* MZLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLineView.h; sourceTree = "<group>"; };
+		2467D7A51E10E92300C4E0FB /* MZLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZLineView.m; sourceTree = "<group>"; };
+		2467D7A61E10E92300C4E0FB /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
+		2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
+		2467D7A81E10E92300C4E0FB /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
+		2467D7A91E10E92300C4E0FB /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -594,6 +607,7 @@
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
 			isa = PBXGroup;
 			children = (
+				2467D7A01E10E7F400C4E0FB /* LineChart */,
 				242574661E0D5192004F1369 /* TimeperiodProtocol */,
 				242574321E0CC010004F1369 /* TimeperiodNethelper */,
 				242574231E0CBDF5004F1369 /* CheckoutVC */,
@@ -677,6 +691,22 @@
 				2460EB271E0B9B1F00539038 /* LoginViewMode.m */,
 			);
 			path = ViewMode;
+			sourceTree = "<group>";
+		};
+		2467D7A01E10E7F400C4E0FB /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				2467D7A11E10E92300C4E0FB /* ColorDefine.h */,
+				2467D7A21E10E92300C4E0FB /* GrayWhiteView.h */,
+				2467D7A31E10E92300C4E0FB /* GrayWhiteView.m */,
+				2467D7A41E10E92300C4E0FB /* MZLineView.h */,
+				2467D7A51E10E92300C4E0FB /* MZLineView.m */,
+				2467D7A61E10E92300C4E0FB /* UIView+Addtions.h */,
+				2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */,
+				2467D7A81E10E92300C4E0FB /* ZFCirque.h */,
+				2467D7A91E10E92300C4E0FB /* ZFCirque.m */,
+			);
+			path = LineChart;
 			sourceTree = "<group>";
 		};
 		24F8AD8F1E0A19D10084926E = {
@@ -1414,10 +1444,13 @@
 				2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
+				2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */,
+				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
+				2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */,
 				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
 				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
@@ -1429,6 +1462,7 @@
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
+				2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
