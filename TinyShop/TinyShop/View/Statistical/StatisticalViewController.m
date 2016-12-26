@@ -40,7 +40,7 @@
     //五个按钮
     for (NSInteger index = 0; index < 5; index++) {
         //第一个按钮默认选中
-        if (index == 0) {
+        if (index == 0) { 
             UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 70, Screen_W/5, 80)];
             btn.tag = 1000;
             [btn setImage:[UIImage imageNamed:self.buttonSelImageArray[0]] forState:UIControlStateNormal];
