@@ -178,7 +178,12 @@
 
 -(void)netRequest{
     
-      NSDictionary * dict = @{@"client_type":@"ios",@"client_version":@"2.0",@"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",@"shop_account":self.stroeTextField.text,@"user_account":_jobNumberTextField.text,@"user_password":_passwordTextField.text};
+      NSDictionary * dict = @{@"client_type":@"ios",
+                              @"client_version":@"2.0",
+                              @"client_token":@"2a8242f0858bbbde9c5dcbd0a0008e5a",
+                              @"shop_account":self.stroeTextField.text,
+                              @"user_account":_jobNumberTextField.text,
+                              @"user_password":_passwordTextField.text};
     
     [[NetworkTools sharedTooles]requestMethod:POST isJson:YES WithUrl:LoginUrl parematers:dict finished:^(id data, NSError *error) {
     if (error) {
@@ -187,6 +192,8 @@
     }
     NSLog(@"%@",data);
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+    loginViewMode.shop_account = self.stroeTextField.text;
+    loginViewMode.user_account = _jobNumberTextField.text;
     [loginViewMode intwithDictionary:data];
         InitNSUserDefaults;
         if ([data[@"status"] isEqual: @"0"]) {

@@ -21,9 +21,9 @@
     //数据模拟
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     //登陆名
-    loginViewMode.shop_account = @"ymtxtshg";
+    loginViewMode.shop_account = loginViewMode.shop_account;//@"yljkrg";//@"ymtxtshg";
     //员工id
-    loginViewMode.user_account = @"001";
+    loginViewMode.user_account = loginViewMode.user_account;//@"ymtx";//@"001";
     //登陆配置信息
     TimeperiodGetModel *timeperiodGetModel = [TimeperiodGetModel new];
     timeperiodGetModel.client_type=@"ios";//固定参数
