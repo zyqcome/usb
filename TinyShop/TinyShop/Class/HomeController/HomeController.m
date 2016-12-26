@@ -11,6 +11,7 @@
 #import "DHControllerViewController.h"
 #import "TimeperiodVC.h"
 #import "StatisticalViewController.h"
+#import "CommodityController.h"
 @interface HomeController ()
 @property (nonatomic,strong)  HomeController * homeVc;
 @property (nonatomic,strong) DrawerController *leftVc;
@@ -98,7 +99,10 @@
         }
             break;
         case 2:
-            
+        {
+            CommodityController * cvc = [CommodityController new];
+            [self.navigationController pushViewController:cvc animated:YES];
+        }
             break;
         case 3:
             

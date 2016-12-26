@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DHControllerViewController : UIViewController
-@property (nonatomic,strong)  UINavigationController * navigationVC;
 
 @end
