@@ -57,7 +57,7 @@
     [self.view addSubview:scrollView];
     self.automaticallyAdjustsScrollViewInsets = NO;
     scrollView.delegate = self;
-    
+    //scollview
     _TitleLableArray = [NSArray array];
     _TitleLableArray = @[@"川菜",@"家常菜",@"小吃",@"热菜",@"凉菜",@"汤菜",@"哈哈",@"哈哈",@"哈哈",@"哈哈"];
     scrollView.TitleLableArray = self.TitleLableArray;
