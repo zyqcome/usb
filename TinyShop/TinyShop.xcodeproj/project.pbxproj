@@ -16,6 +16,11 @@
 		180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E301E0A80CE0074ACBA /* UITextField+TextFieldRange.m */; };
 		180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E0E3C1E0AA79E0074ACBA /* LoginController.m */; };
 		180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E0E3D1E0AA79E0074ACBA /* LoginController.xib */; };
+		18C846FE1E0FAB540094325E /* 点.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C846FD1E0FAB540094325E /* 点.png */; };
+		18D963721E0E037100A04AAB /* CommodityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D963701E0E037100A04AAB /* CommodityController.m */; };
+		18D963731E0E037100A04AAB /* CommodityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D963711E0E037100A04AAB /* CommodityController.xib */; };
+		18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D963791E0E0B5400A04AAB /* NavigationController.m */; };
+		18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9637C1E0E230600A04AAB /* MyScrollView.m */; };
 		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
 		2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574281E0CBDF5004F1369 /* CheckoutVC.m */; };
 		2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242574291E0CBDF5004F1369 /* CheckoutVC.xib */; };
@@ -248,6 +253,14 @@
 		180E0E3C1E0AA79E0074ACBA /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		180E0E3D1E0AA79E0074ACBA /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		18C846FD1E0FAB540094325E /* 点.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "点.png"; sourceTree = "<group>"; };
+		18D9636F1E0E037100A04AAB /* CommodityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityController.h; sourceTree = "<group>"; };
+		18D963701E0E037100A04AAB /* CommodityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityController.m; sourceTree = "<group>"; };
+		18D963711E0E037100A04AAB /* CommodityController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommodityController.xib; sourceTree = "<group>"; };
+		18D963781E0E0B5400A04AAB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		18D963791E0E0B5400A04AAB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		18D9637B1E0E230600A04AAB /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		18D9637C1E0E230600A04AAB /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
 		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		242574271E0CBDF5004F1369 /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
@@ -577,6 +590,8 @@
 		180E0E401E0AA7B50074ACBA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				18D9637B1E0E230600A04AAB /* MyScrollView.h */,
+				18D9637C1E0E230600A04AAB /* MyScrollView.m */,
 				180E0E411E0AA7B50074ACBA /* PrefixHeader.pch */,
 			);
 			path = Common;
@@ -588,6 +603,25 @@
 				A28ADA49E3F37A5C58DF29B7 /* libPods-TinyShop.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18D9636E1E0E035800A04AAB /* Commodity */ = {
+			isa = PBXGroup;
+			children = (
+				18D9636F1E0E037100A04AAB /* CommodityController.h */,
+				18D963701E0E037100A04AAB /* CommodityController.m */,
+				18D963711E0E037100A04AAB /* CommodityController.xib */,
+			);
+			path = Commodity;
+			sourceTree = "<group>";
+		};
+		18D963771E0E0B4800A04AAB /* NavgitionContrller */ = {
+			isa = PBXGroup;
+			children = (
+				18D963781E0E0B5400A04AAB /* NavigationController.h */,
+				18D963791E0E0B5400A04AAB /* NavigationController.m */,
+			);
+			path = NavgitionContrller;
 			sourceTree = "<group>";
 		};
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
@@ -711,6 +745,7 @@
 		24F8ADB21E0A1C4D0084926E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				18D963771E0E0B4800A04AAB /* NavgitionContrller */,
 				2460EB251E0B9B1F00539038 /* ViewMode */,
 				2460EB121E0B84B000539038 /* Model */,
 				1805B4391E0B76FF00BC85E1 /* MD5 */,
@@ -898,6 +933,7 @@
 		24F8AFAE1E0A232C0084926E /* 商品运营分析 */ = {
 			isa = PBXGroup;
 			children = (
+				18C846FD1E0FAB540094325E /* 点.png */,
 				24F8AFAF1E0A232C0084926E /* 份数-未选.png */,
 				24F8AFB01E0A232C0084926E /* 份数-未选@2x.png */,
 				24F8AFB11E0A232C0084926E /* 份数-选中.png */,
@@ -1063,6 +1099,7 @@
 			children = (
 				242574221E0CBDF5004F1369 /* Timeperiod */,
 				F30D1A371E0CBA7D008A1158 /* Statistical */,
+				18D9636E1E0E035800A04AAB /* Commodity */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1206,6 +1243,7 @@
 				24F8B0681E0A232D0084926E /* 销售额-未选@2x.png in Resources */,
 				24F8B0561E0A232D0084926E /* 线1@2x.png in Resources */,
 				24F8B0351E0A232D0084926E /* 订单记录图标.png in Resources */,
+				18D963731E0E037100A04AAB /* CommodityController.xib in Resources */,
 				24F8B0721E0A232D0084926E /* 份数-选中@2x.png in Resources */,
 				24F8B0901E0A232D0084926E /* 会员信息图标1@2x.png in Resources */,
 				24F8B0811E0A232D0084926E /* 返回按钮@2x.png in Resources */,
@@ -1215,6 +1253,7 @@
 				24F8B00B1E0A232D0084926E /* 显示密码图标@2x.png in Resources */,
 				24F8B0611E0A232D0084926E /* 按日-选中.png in Resources */,
 				24F8B0661E0A232D0084926E /* 按月-选中@2x.png in Resources */,
+				18C846FE1E0FAB540094325E /* 点.png in Resources */,
 				24F8B0531E0A232D0084926E /* 箭头.png in Resources */,
 				24F8B0A21E0A232D0084926E /* 蓝@2x.png in Resources */,
 				24F8B06E1E0A232D0084926E /* 餐时-选中@2x.png in Resources */,
@@ -1394,6 +1433,7 @@
 				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
 				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
+				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
@@ -1407,6 +1447,7 @@
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
+				18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
 				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
 				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
@@ -1417,6 +1458,7 @@
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
+				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 			);
