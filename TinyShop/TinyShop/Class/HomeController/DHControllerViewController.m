@@ -10,12 +10,15 @@
 #import "DrawerController.h"
 #import "HomeController.h"
 #import "LoginController.h"
+#import "NavigationController.h"
 
 @interface DHControllerViewController ()
 @property (nonatomic,strong)  HomeController * homeVc;
 @property (nonatomic,strong) DrawerController *leftVc;
 @property (nonatomic,strong) UIButton *coverBtn;
 @property (nonatomic,assign) CGPoint beginP;
+@property (nonatomic,strong)  NavigationController * navigationVC;
+
 @end
 
 @implementation DHControllerViewController
@@ -111,8 +114,13 @@
     
     UIStoryboard * storyHomeVC = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     self.homeVc =  [storyHomeVC instantiateViewControllerWithIdentifier:@"HomeController"];
-    UINavigationController * navigationVC = [[UINavigationController alloc]initWithRootViewController:self.homeVc];
-    self.navigationVC = navigationVC;
+    //创建导航栏
+    self.navigationVC = [[NavigationController alloc]initWithRootViewController:self.homeVc];
+
+    
+    //    UIBarButtonItem * backButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStylePlain target:self action:nil];
+//    
+    self.homeVc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
     
     // 设置左边视图frame
     self.leftVc.view.frame = CGRectMake(-LeftVcOffSet, 0, LeftVcOffSet, Screen_H);
@@ -123,17 +131,16 @@
     [self addChildViewController:self.leftVc];
     [self.view addSubview:self.leftVc.view];
     
-    [self addChildViewController:navigationVC];
+    [self addChildViewController:self.navigationVC];
     [self.view addSubview:self.homeVc.view];
     
-    [self addChildViewController:navigationVC];
-    [self.view addSubview:navigationVC.view];
+    [self.view addSubview:self.navigationVC.view];
     
-    UIBarButtonItem * leftBar = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"抽屉按钮"] style:(UIBarButtonItemStyleDone) target:self action:@selector(leftBarButtonClicked)];
+    UIBarButtonItem * leftBar = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"抽屉按钮"] style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonClicked)];
     
     self.homeVc.navigationItem.leftBarButtonItem = leftBar;
     
-    UIBarButtonItem * rightBar = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonClicked)];
+    UIBarButtonItem * rightBar = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarButtonClicked)];
     self.homeVc.navigationItem.rightBarButtonItem = rightBar;
     self.homeVc.navigationItem.rightBarButtonItem.tintColor = [UIColor redColor];
     
@@ -142,7 +149,7 @@
     self.navigationVC.view.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.navigationVC.view.layer.shadowOffset = CGSizeMake(-3, 0);
     self.navigationVC.view.layer.shadowOpacity = 0.9;
-    
+ 
 }
 
 -(void)leftBarButtonClicked{

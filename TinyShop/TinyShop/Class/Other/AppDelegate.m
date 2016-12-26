@@ -29,10 +29,6 @@
     
     //第一种,获得系统全局的导航条,单例
     UINavigationBar* navBar=[UINavigationBar appearance];
-    //设置标题属性  这个界面的导航控制器的导航条
-    //    [UINavigationItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor colorWithRed:31/255.0 green:185/255.0 blue:34/255.0 alpha:1]}];
-    
-    
     //设置导航按钮颜色
     navBar.tintColor=[UIColor redColor];
     

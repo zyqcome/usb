@@ -41,8 +41,8 @@ static CGFloat iconSize = 16;
         [self.contentView addSubview:self.iconView];
         
         self.titleLable = [[UILabel alloc] init];
-        self.titleLable.textColor = [UIColor whiteColor];
-        self.titleLable.font = [UIFont systemFontOfSize:14];
+        self.titleLable.textColor = [UIColor grayColor];
+        self.titleLable.font = [UIFont systemFontOfSize:17*ScreenScale];
         [self.contentView addSubview:self.titleLable];
         
         //添加分割线
@@ -62,7 +62,7 @@ static CGFloat iconSize = 16;
     [super layoutSubviews];
     
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.contentView).offset(padding);
+        make.leading.equalTo(self.contentView).offset(0);
         make.centerY.equalTo(self.contentView);
         make.width.equalTo(@(iconSize));
         make.height.equalTo(@(iconSize));
@@ -77,7 +77,7 @@ static CGFloat iconSize = 16;
     
     [self.separatorLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(10);
-        make.trailing.equalTo(self.contentView.mas_trailing).offset(-10);
+        make.trailing.equalTo(self.contentView.mas_trailing).offset(0);
         make.bottom.equalTo(self.contentView.mas_bottom);
         make.height.equalTo(@(1 / ([UIScreen mainScreen].scale)));
         

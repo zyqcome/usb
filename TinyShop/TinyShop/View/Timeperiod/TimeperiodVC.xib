@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeperiodVC">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewLineChart" destination="D21-Up-nLb" id="0j0-Gv-zpz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,30 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D21-Up-nLb">
                     <rect key="frame" x="0.0" y="200" width="375" height="467"/>
-                    <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnt-cM-g5G">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-jr-vxu">
-                                    <rect key="frame" x="165" y="194" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="EZ7-jr-vxu" secondAttribute="bottom" constant="62" id="PfR-pp-FCq"/>
-                                <constraint firstAttribute="trailing" secondItem="EZ7-jr-vxu" secondAttribute="trailing" constant="164" id="YQm-CJ-Rk6"/>
-                                <constraint firstItem="EZ7-jr-vxu" firstAttribute="top" secondItem="qnt-cM-g5G" secondAttribute="top" constant="194" id="mdl-Hv-IOL"/>
-                                <constraint firstItem="EZ7-jr-vxu" firstAttribute="centerX" secondItem="qnt-cM-g5G" secondAttribute="centerX" id="qLK-cV-4j1"/>
-                            </constraints>
-                        </scrollView>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="qnt-cM-g5G" firstAttribute="top" secondItem="D21-Up-nLb" secondAttribute="top" id="AQg-VA-9bn"/>
-                        <constraint firstItem="qnt-cM-g5G" firstAttribute="leading" secondItem="D21-Up-nLb" secondAttribute="leading" id="RVo-HH-un1"/>
-                        <constraint firstAttribute="trailing" secondItem="qnt-cM-g5G" secondAttribute="trailing" id="xsZ-CP-prU"/>
-                        <constraint firstAttribute="bottom" secondItem="qnt-cM-g5G" secondAttribute="bottom" constant="181" id="y1w-A2-a1r"/>
-                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAF-Jh-CNR">
                     <rect key="frame" x="0.0" y="64" width="375" height="136"/>
