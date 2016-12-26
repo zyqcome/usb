@@ -228,6 +228,7 @@
 		F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */; };
 		F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */; };
 		F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */; };
+		F31FBC561E0E15C900285E23 /* OperatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F31FBC551E0E15C900285E23 /* OperatingModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -486,6 +487,8 @@
 		F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewCell.h; sourceTree = "<group>"; };
 		F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewCell.m; sourceTree = "<group>"; };
 		F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
+		F31FBC541E0E15C900285E23 /* OperatingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatingModel.h; sourceTree = "<group>"; };
+		F31FBC551E0E15C900285E23 /* OperatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,6 +1083,7 @@
 		F30D1A371E0CBA7D008A1158 /* Statistical */ = {
 			isa = PBXGroup;
 			children = (
+				F31FBC531E0E15B900285E23 /* OperatingModel */,
 				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
 				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
 				F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */,
@@ -1087,6 +1091,15 @@
 				F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */,
 			);
 			path = Statistical;
+			sourceTree = "<group>";
+		};
+		F31FBC531E0E15B900285E23 /* OperatingModel */ = {
+			isa = PBXGroup;
+			children = (
+				F31FBC541E0E15C900285E23 /* OperatingModel.h */,
+				F31FBC551E0E15C900285E23 /* OperatingModel.m */,
+			);
+			path = OperatingModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1404,6 +1417,7 @@
 				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
 				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
+				F31FBC561E0E15C900285E23 /* OperatingModel.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
