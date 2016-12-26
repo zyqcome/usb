@@ -13,7 +13,7 @@ static CGFloat devicePadding = 20.0f;
 static CGFloat popupViewWidth = 130.f;
 static CGFloat popupViewpadding = 8.0f;
 static CGFloat Trianglewidth = 3;
-static CGFloat rowHeight = 32.f;
+static CGFloat rowHeight = 38.0f ;
 
 @interface PopupView() <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) NSInteger rows;
@@ -73,7 +73,6 @@ BOOL isShow = NO;
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-//        _tableView.backgroundColor = [UIColor grayColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = popupView;
         _tableView.delegate = popupView;
@@ -97,7 +96,7 @@ BOOL isShow = NO;
     //关闭路径，闭环，（连接起点和最后一个点）
     CGContextSetLineWidth(context, 2);
     CGContextClosePath(context);
-    [Color_RGBA(50, 50, 50, 1) setFill];
+    [[UIColor whiteColor] setFill];
     
     CGContextFillPath(context);
 
@@ -131,12 +130,12 @@ BOOL isShow = NO;
         popupView = [PopupView shareInstance];
     }
     
-    popupView.bgView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
+    popupView.bgView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:popupView action:@selector(clickBgViewToHide)];
     [popupView.bgView addGestureRecognizer:tap];
     [window addSubview:popupView.bgView];
     
-    popupView.Triangle.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - devicePadding - Trianglewidth * 2, 64 + 2, Trianglewidth * 2, Trianglewidth * 2);
+    popupView.Triangle.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - devicePadding - Trianglewidth * 2-10, 64 + 2, Trianglewidth * 2, Trianglewidth * 2);
     popupView.layer.cornerRadius = 4;
     popupView.layer.masksToBounds = YES;
     [window addSubview:popupView.Triangle];
@@ -172,9 +171,10 @@ BOOL isShow = NO;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PopupViewCell *cell = [PopupViewCell popupViewCellWithTableView:tableView];
-    cell.backgroundColor = Color_RGBA(50, 50, 50, 1);
+    cell.backgroundColor = [UIColor whiteColor];
     cell.iconView.image = self.iconArray[indexPath.row];
     cell.titleLable.text = self.textArray[indexPath.row];
+
     
     if (indexPath.row == self.textArray.count - 1) {
         cell.haveSeparatorLine = YES;
