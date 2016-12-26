@@ -28,7 +28,7 @@
     //lineView.titleStore = @[@"2016-11-11",@"2016-11-12",@"2016-11-13",@"2016-11-14",@"4时",@"5时",@"6时",@"7时",@"8时",@"9时",@"10时",@"11时",@"12时",@"13时",@"14时",@"15时",@"16时",@"17时",@"18时",@"19时",@"20时",@"21时",@"22时",@"23时"];
 //    CGAffineTransform transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 15, 40);
 //    transform = CGAffineTransformRotate(transform, M_PI*0.31);
-//    lineView.labelTransform = transform;
+//    lineView.labelTransform = transform;//
     lineView.bottomMargin = 65;
     lineView.incomeBottomMargin = 20;
     lineView.incomeStore = @[@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",];
