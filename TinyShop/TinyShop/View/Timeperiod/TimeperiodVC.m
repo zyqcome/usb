@@ -10,9 +10,10 @@
 #import "TimeperiodNethelper.h"
 #import "MZLineView.h"
 #import "UIView+Addtions.h"
-#import "CheckoutVC.h"
+#import "presentView.h"
 @interface TimeperiodVC ()
 {
+    presentView *vw;
 }
 @property (weak, nonatomic) IBOutlet UIView *viewLineChart;
 @end
@@ -73,13 +74,24 @@
 }
 
 - (void)btnSection {
-    //回调或者说是通知主线程刷新，
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Timeperiod" bundle:nil];
-    CheckoutVC *checkVC = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
+    /***
+    vw = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
+    vw.backgroundColor = [UIColor grayColor];
+    UIButton *tb = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [tb addTarget:self action:@selector(tbAction) forControlEvents:UIControlEventTouchUpInside];
+    tb.backgroundColor = [UIColor blackColor];
+    [vw addSubview:tb];
+    [self.view addSubview:vw];
+     */
+    vw = [[presentView alloc] initWithFrame:CGRectMake(50, 80, 200, 200)];//initWithWidth:100 Height:200];
+    vw.backgroundColor = [UIColor grayColor];
+    [vw ViewInit];
+    [self.view addSubview:vw];
     
-    [self presentViewController:checkVC animated:YES completion:^{
-        
-    }];
+}
+
+-(void)tbAction {
+    [vw removeFromSuperview];
 }
 
 @end

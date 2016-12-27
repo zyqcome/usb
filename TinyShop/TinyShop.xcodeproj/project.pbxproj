@@ -28,6 +28,7 @@
 		242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574381E0CC668004F1369 /* TimeperiodGetModel.m */; };
 		242574621E0D10F4004F1369 /* EntityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574611E0D10F4004F1369 /* EntityTools.m */; };
 		242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574641E0D252E004F1369 /* DHControllerViewController.m */; };
+		2441635E1E120C1D00F1B5D6 /* presentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441635D1E120C1D00F1B5D6 /* presentView.m */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -40,8 +41,6 @@
 		2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A51E10E92300C4E0FB /* MZLineView.m */; };
 		2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */; };
 		2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A91E10E92300C4E0FB /* ZFCirque.m */; };
-		2467D7D21E110C3800C4E0FB /* Timeperiod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2467D7D11E110C3800C4E0FB /* Timeperiod.storyboard */; };
-		2467D7D51E11107A00C4E0FB /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7D41E11107A00C4E0FB /* CheckoutVC.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -279,6 +278,8 @@
 		242574631E0D252E004F1369 /* DHControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHControllerViewController.h; sourceTree = "<group>"; };
 		242574641E0D252E004F1369 /* DHControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHControllerViewController.m; sourceTree = "<group>"; };
 		242574671E0D51B0004F1369 /* TimeperiodProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodProtocol.h; sourceTree = "<group>"; };
+		2441635C1E120C1D00F1B5D6 /* presentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presentView.h; sourceTree = "<group>"; };
+		2441635D1E120C1D00F1B5D6 /* presentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presentView.m; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -304,9 +305,6 @@
 		2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
 		2467D7A81E10E92300C4E0FB /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
 		2467D7A91E10E92300C4E0FB /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
-		2467D7D11E110C3800C4E0FB /* Timeperiod.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timeperiod.storyboard; sourceTree = "<group>"; };
-		2467D7D31E11107A00C4E0FB /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
-		2467D7D41E11107A00C4E0FB /* CheckoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutVC.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -647,19 +645,19 @@
 				2467D7A01E10E7F400C4E0FB /* LineChart */,
 				242574661E0D5192004F1369 /* TimeperiodProtocol */,
 				242574321E0CC010004F1369 /* TimeperiodNethelper */,
-				242574231E0CBDF5004F1369 /* CheckoutVC */,
+				242574231E0CBDF5004F1369 /* presentView */,
 			);
 			path = Timeperiod;
 			sourceTree = "<group>";
 		};
-		242574231E0CBDF5004F1369 /* CheckoutVC */ = {
+		242574231E0CBDF5004F1369 /* presentView */ = {
 			isa = PBXGroup;
 			children = (
 				242574241E0CBDF5004F1369 /* cell */,
-				2467D7D11E110C3800C4E0FB /* Timeperiod.storyboard */,
-				2467D7D31E11107A00C4E0FB /* CheckoutVC.h */,
-				2467D7D41E11107A00C4E0FB /* CheckoutVC.m */,
+				2441635C1E120C1D00F1B5D6 /* presentView.h */,
+				2441635D1E120C1D00F1B5D6 /* presentView.m */,
 			);
+			name = presentView;
 			path = CheckoutVC;
 			sourceTree = "<group>";
 		};
@@ -1290,7 +1288,6 @@
 				24F8B0271E0A232D0084926E /* 堂食图标.png in Resources */,
 				24F8B04A1E0A232D0084926E /* 实施总收入2-选中@2x.png in Resources */,
 				24F8B08C1E0A232D0084926E /* 确----定背景框@2x.png in Resources */,
-				2467D7D21E110C3800C4E0FB /* Timeperiod.storyboard in Resources */,
 				24F8B00B1E0A232D0084926E /* 显示密码图标@2x.png in Resources */,
 				24F8B0611E0A232D0084926E /* 按日-选中.png in Resources */,
 				24F8B0661E0A232D0084926E /* 按月-选中@2x.png in Resources */,
@@ -1476,7 +1473,6 @@
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
-				2467D7D51E11107A00C4E0FB /* CheckoutVC.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
@@ -1503,6 +1499,7 @@
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
+				2441635E1E120C1D00F1B5D6 /* presentView.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 				2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */,
 			);
