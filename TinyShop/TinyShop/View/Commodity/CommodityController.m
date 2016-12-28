@@ -213,7 +213,23 @@
     [self.showStore dismissStoreView];
 }
 
-
+-(void)selectedSwitch:(UISwitch *)redSwitch{
+    switch (redSwitch.tag) {
+        case 0:
+            NSLog(@"哈哈哈");
+            break;
+        case 1:
+            NSLog(@"哈哈");
+            break;
+        case 2:
+            NSLog(@"哈哈hahahah哈");
+            break;
+            
+        default:
+            NSLog(@"1111hahahahha");
+            break;
+    }
+}
 
 -(ShowStore *)showStore{
     if (!_showStore) {
@@ -222,6 +238,7 @@
     }
     return _showStore;
 }
+
 
 
 #pragma mark - 柱状图

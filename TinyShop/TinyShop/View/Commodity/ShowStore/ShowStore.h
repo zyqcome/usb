@@ -11,7 +11,7 @@
 
 @protocol ShowShoreDelegate <NSObject>
 -(void)selectedButton:(UIButton*)button;
-
+-(void)selectedSwitch:(UISwitch*)redSwitch;
 @end
 @interface ShowStore : UIView
 //传出外界赋值每个cell的数组,显示的位置在哪

@@ -10,7 +10,7 @@
 #import "ShowStoreCell.h"
 #define itemHeigth     70 *ScreenScale  //每项高度
 @interface ShowStore()
-<UITableViewDelegate,UITableViewDataSource>
+<UITableViewDelegate,UITableViewDataSource,redSwitchDelegate>
 
 //传出要赋值的表格视图的数组
 @property (strong, nonatomic) NSArray *items;
@@ -80,7 +80,8 @@
 -(void)closeButtonClicked:(UIButton *)sender {
     if ([self.delegate respondsToSelector:@selector(selectedButton:)]) {
         [self.delegate selectedButton:sender];
-    }}
+    }
+}
 
 
 #pragma mark - 数据源方法
@@ -90,6 +91,9 @@
     cell.titleLabel.text = self.items[indexPath.row];
     cell.titleLabel.font = [UIFont systemFontOfSize:21*ScreenScale];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.redSwitch.tag = indexPath.row;
+    cell.delegate = self;
 //
 //    if (indexPath.row == self.items.count - 1) {
 //        cell.lineView.hidden = YES;
@@ -121,6 +125,14 @@
     
 }
 
+#pragma mark - cell协议
+-(void)selected:(ShowStoreCell *)cell redSwitch:(UISwitch *)redSwitch{
+
+    if ([self.delegate respondsToSelector:@selector(selectedSwitch:)]) {
+        [self.delegate selectedSwitch:redSwitch];
+    }
+}
+
 #pragma - 动画方法
 
 - (void)showStoreView{
@@ -148,6 +160,8 @@
 - (void)selectBlock:(void (^)(ShowStore *, NSInteger))block{
     self.selectBlock = block;
 }
+
+
 
 #pragma mark - 懒加载
 - (NSMutableSet *)choseSet{

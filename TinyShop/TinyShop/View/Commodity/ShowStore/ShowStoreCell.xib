@@ -32,6 +32,9 @@
                         </constraints>
                         <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="redSwitchClicked:" destination="KGk-i7-Jjw" eventType="valueChanged" id="C7V-zY-u6G"/>
+                        </connections>
                     </switch>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apk-JV-gGx">
                         <rect key="frame" x="0.0" y="86" width="372" height="0.0"/>

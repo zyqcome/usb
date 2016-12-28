@@ -10,6 +10,12 @@
 
 @implementation ShowStoreCell
 
+- (IBAction)redSwitchClicked:(UISwitch *)sender {
+    if ([self.delegate respondsToSelector:@selector(selected:redSwitch:)]) {
+        [self.delegate selected:self redSwitch:sender];
+    }
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
