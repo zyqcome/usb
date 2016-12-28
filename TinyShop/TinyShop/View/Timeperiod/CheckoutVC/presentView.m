@@ -176,7 +176,15 @@
         make.right.mas_equalTo(self.btnSeceltAll.mas_left);
         make.size.mas_equalTo(CGSizeMake(40, 20));
     }];
-    
+    NSMutableArray *arry = [NSMutableArray new];
+    for (int i =0; i <10; i++) {
+        shopShow *sw = [shopShow new];
+        sw.shopname = @"OK";
+        sw.showIs = false;
+        [arry addObject:sw];
+    }
+    self.shopshowArry = [NSArray arrayWithArray:arry];
+    [self.tableview reloadData];
 }
 
 #pragma mark -按键响应
@@ -190,12 +198,23 @@
 #pragma mark -tableview
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell; //= [UITableView ]
+    static NSString *CellIdentifier = @"CellIdentifier";
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        //将Custom.xib中的所有对象载入
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.shopshowArry.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;//self.tableview.frame.size.height/self.shopshowArry.count;
 }
 
 @end

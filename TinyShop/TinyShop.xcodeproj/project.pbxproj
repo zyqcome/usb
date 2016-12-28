@@ -21,7 +21,6 @@
 		18D963731E0E037100A04AAB /* CommodityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D963711E0E037100A04AAB /* CommodityController.xib */; };
 		18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D963791E0E0B5400A04AAB /* NavigationController.m */; };
 		18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9637C1E0E230600A04AAB /* MyScrollView.m */; };
-		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
 		242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */; };
 		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
 		242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574341E0CC034004F1369 /* TimeperiodNethelper.m */; };
@@ -41,6 +40,8 @@
 		2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A51E10E92300C4E0FB /* MZLineView.m */; };
 		2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */; };
 		2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A91E10E92300C4E0FB /* ZFCirque.m */; };
+		247779C31E135BC500BCBB60 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247779C11E135BC500BCBB60 /* TableViewCell.m */; };
+		247779C41E135BC500BCBB60 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247779C21E135BC500BCBB60 /* TableViewCell.xib */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -264,8 +265,6 @@
 		18D963791E0E0B5400A04AAB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		18D9637B1E0E230600A04AAB /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
 		18D9637C1E0E230600A04AAB /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
-		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
 		2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodVC.m; sourceTree = "<group>"; };
 		2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeperiodVC.xib; sourceTree = "<group>"; };
@@ -305,6 +304,9 @@
 		2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
 		2467D7A81E10E92300C4E0FB /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
 		2467D7A91E10E92300C4E0FB /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
+		247779C01E135BC500BCBB60 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		247779C11E135BC500BCBB60 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		247779C21E135BC500BCBB60 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -664,8 +666,9 @@
 		242574241E0CBDF5004F1369 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				242574251E0CBDF5004F1369 /* TableViewCell.h */,
-				242574261E0CBDF5004F1369 /* TableViewCell.m */,
+				247779C01E135BC500BCBB60 /* TableViewCell.h */,
+				247779C11E135BC500BCBB60 /* TableViewCell.m */,
+				247779C21E135BC500BCBB60 /* TableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1397,6 +1400,7 @@
 				24F8B0321E0A232D0084926E /* 比例图标@2x.png in Resources */,
 				24F8B0591E0A232D0084926E /* 按周-选中.png in Resources */,
 				24F8B0491E0A232D0084926E /* 实施总收入2-选中.png in Resources */,
+				247779C41E135BC500BCBB60 /* TableViewCell.xib in Resources */,
 				24F8B05D1E0A232D0084926E /* 按年-选中.png in Resources */,
 				24F8B0A51E0A232D0084926E /* 历史记录.png in Resources */,
 				24F8B0A31E0A232D0084926E /* 会员信息.png in Resources */,
@@ -1489,13 +1493,13 @@
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
 				2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */,
 				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
-				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
 				1805B4641E0BF10800BC85E1 /* HomeController.m in Sources */,
 				F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */,
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
+				247779C31E135BC500BCBB60 /* TableViewCell.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,

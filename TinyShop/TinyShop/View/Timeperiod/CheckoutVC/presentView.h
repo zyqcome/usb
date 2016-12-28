@@ -16,7 +16,7 @@
 @interface presentView : UIView
 
 /** 表格选择数组 */
-@property (nonatomic,strong)NSArray<shopShow *> *shopshow;
+@property (nonatomic,strong)NSArray<shopShow *> *shopshowArry;
 -(void)ViewInit;
 
 @end

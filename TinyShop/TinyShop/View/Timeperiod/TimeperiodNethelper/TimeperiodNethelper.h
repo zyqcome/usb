@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TimeperiodProtocol.h"
+
+@interface linePointModel : NSObject
+@property(nonatomic,strong)NSString *time;
+@property(nonatomic,strong)NSString *value;
+@end
+
+
 
 @interface TimeperiodNethelper : NSObject
+@property(nonatomic,weak)id<TimeperiodProtocol> delege;
 -(void)getTimeperiodDate;
 @end
