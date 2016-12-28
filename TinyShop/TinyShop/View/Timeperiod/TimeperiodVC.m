@@ -12,7 +12,8 @@
 #import "UIView+Addtions.h"
 #import "presentView.h"
 #import "TimeperiodProtocol.h"
-@interface TimeperiodVC ()<TimeperiodProtocol>
+#import "ShowStore.h"
+@interface TimeperiodVC ()<TimeperiodProtocol,ShowShoreDelegate>
 {
     presentView *vw;
     NSArray<linePointModel *> *linChartArry;
@@ -21,6 +22,9 @@
     NSMutableArray<shopShow *> *shopArry;
 }
 @property (weak, nonatomic) IBOutlet UIView *viewLineChart;
+@property (nonatomic,strong)  ShowStore * showStore;
+@property (nonatomic,strong)  UIView * coverStore;
+
 @end
 
 @implementation TimeperiodVC
@@ -111,17 +115,19 @@
  */
 
 - (void)btnSection {
-    vw = [[presentView alloc] initWithFrame:CGRectMake(50, 50, 200, 400)];
-    vw.backgroundColor = [UIColor whiteColor];
-//    NSMutableArray *arry = [NSMutableArray new];
-//    for (int i =0; i <10; i++) {
-//        shopShow *sw = [shopShow new];
-//        sw.shopname = @"OK";
-//        sw.showIs = true;
-//        [arry addObject:sw];
-//    }
-    [vw ViewInit:shopArry];
-    [self.view addSubview:vw];
+//    vw = [[presentView alloc] initWithFrame:CGRectMake(50, 50, 200, 400)];
+//    vw.backgroundColor = [UIColor whiteColor];
+////    NSMutableArray *arry = [NSMutableArray new];
+////    for (int i =0; i <10; i++) {
+////        shopShow *sw = [shopShow new];
+////        sw.shopname = @"OK";
+////        sw.showIs = true;
+////        [arry addObject:sw];
+////    }
+//    [vw ViewInit:shopArry];
+//    [self.view addSubview:vw];
+    
+    [self showStoreClicked];
 }
 
 -(void)tbAction {
@@ -166,6 +172,39 @@
         sw.showIs = true;
         [shopArry addObject:sw];
     }
+}
+
+
+#pragma mark - 选择店铺弹出视图
+-(void)showStoreClicked{
+    // showStore遮盖btn
+    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverStore.backgroundColor = [UIColor grayColor];
+    _coverStore.alpha = 0.3;
+    
+    [self.navigationController.view addSubview:_coverStore];
+    [self.showStore showStoreView];
+    [self.navigationController.view addSubview:_showStore];
+}
+
+-(void)selectedButton:(UIButton *)button{
+    _coverStore.alpha = 0;
+    [_coverStore removeFromSuperview];
+    [self.showStore dismissStoreView];
+}
+
+
+
+-(ShowStore *)showStore{
+    NSMutableArray *shaparry = [NSMutableArray new];
+    for (shopShow * sw in shopArry) { //NSMutableArray<shopShow *> *shopArry;
+        [shaparry addObject:[NSString stringWithString:sw.shopname]];
+    }
+    if (!_showStore) {
+        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:shaparry];
+        _showStore.delegate = self;
+    }
+    return _showStore;
 }
 
 @end

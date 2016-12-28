@@ -42,7 +42,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self netRequest];
+//    [self netRequest];
 }
 
 - (void)viewDidLoad {
@@ -50,10 +50,10 @@
     [self setupUI];
 }
 #pragma mark - 网络请求
--(void)netRequest{
-    TimeperiodNethelper * timeHelper = [TimeperiodNethelper new];
-    NSLog(@"%@",timeHelper.UrlStr);
-}
+//-(void)netRequest{
+//    TimeperiodNethelper * timeHelper = [TimeperiodNethelper new];
+//    NSLog(@"%@",timeHelper.UrlStr);
+//}
 
 -(void)setupUI{
     //添加导航栏
