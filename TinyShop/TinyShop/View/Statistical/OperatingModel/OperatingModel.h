@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSString *access_token;//=b5e9f2327f88843907c481b9f00ac59d
 @property (nonatomic, strong) NSString *mac_code;//=2322323
 
+
+
 @end
