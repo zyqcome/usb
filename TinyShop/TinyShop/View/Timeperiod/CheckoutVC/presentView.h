@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @interface shopShow : NSObject
 @property (nonatomic,strong)NSString *shopname;
+@property (nonatomic,strong)NSString *shopid;
 @property (nonatomic,assign)BOOL showIs;
 @end
 
@@ -17,6 +18,12 @@
 
 /** 表格选择数组 */
 @property (nonatomic,strong)NSArray<shopShow *> *shopshowArry;
--(void)ViewInit;
+
+/**
+ 显示初始化
+
+ @param arry 店铺数组
+ */
+-(void)ViewInit:(NSArray *)arry;
 
 @end

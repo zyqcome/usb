@@ -26,8 +26,6 @@
 		18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D963791E0E0B5400A04AAB /* NavigationController.m */; };
 		18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9637C1E0E230600A04AAB /* MyScrollView.m */; };
 		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
-		2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574281E0CBDF5004F1369 /* CheckoutVC.m */; };
-		2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242574291E0CBDF5004F1369 /* CheckoutVC.xib */; };
 		242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */; };
 		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
 		242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574341E0CC034004F1369 /* TimeperiodNethelper.m */; };
@@ -46,6 +44,8 @@
 		2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A51E10E92300C4E0FB /* MZLineView.m */; };
 		2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */; };
 		2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467D7A91E10E92300C4E0FB /* ZFCirque.m */; };
+		247779C71E13AF0F00BCBB60 /* presentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247779C61E13AF0F00BCBB60 /* presentView.m */; };
+		247779C91E13B05A00BCBB60 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247779C81E13B05A00BCBB60 /* TableViewCell.xib */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -278,9 +278,6 @@
 		18D9637C1E0E230600A04AAB /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyScrollView.m; path = ../MyScrollView.m; sourceTree = "<group>"; };
 		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		242574271E0CBDF5004F1369 /* CheckoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutVC.h; sourceTree = "<group>"; };
-		242574281E0CBDF5004F1369 /* CheckoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutVC.m; sourceTree = "<group>"; };
-		242574291E0CBDF5004F1369 /* CheckoutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
 		2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
 		2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeperiodVC.m; sourceTree = "<group>"; };
 		2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeperiodVC.xib; sourceTree = "<group>"; };
@@ -318,6 +315,9 @@
 		2467D7A71E10E92300C4E0FB /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
 		2467D7A81E10E92300C4E0FB /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
 		2467D7A91E10E92300C4E0FB /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
+		247779C51E13AF0F00BCBB60 /* presentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presentView.h; sourceTree = "<group>"; };
+		247779C61E13AF0F00BCBB60 /* presentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presentView.m; sourceTree = "<group>"; };
+		247779C81E13B05A00BCBB60 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -699,9 +699,8 @@
 			isa = PBXGroup;
 			children = (
 				242574241E0CBDF5004F1369 /* cell */,
-				242574271E0CBDF5004F1369 /* CheckoutVC.h */,
-				242574281E0CBDF5004F1369 /* CheckoutVC.m */,
-				242574291E0CBDF5004F1369 /* CheckoutVC.xib */,
+				247779C51E13AF0F00BCBB60 /* presentView.h */,
+				247779C61E13AF0F00BCBB60 /* presentView.m */,
 			);
 			path = CheckoutVC;
 			sourceTree = "<group>";
@@ -711,6 +710,7 @@
 			children = (
 				242574251E0CBDF5004F1369 /* TableViewCell.h */,
 				242574261E0CBDF5004F1369 /* TableViewCell.m */,
+				247779C81E13B05A00BCBB60 /* TableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1382,6 +1382,7 @@
 				24F8B0601E0A232D0084926E /* 按日-未选@2x.png in Resources */,
 				24F8B03E1E0A232D0084926E /* 人数-未选@2x.png in Resources */,
 				24F8B00D1E0A232D0084926E /* 登录按钮-@2x.png in Resources */,
+				247779C91E13B05A00BCBB60 /* TableViewCell.xib in Resources */,
 				24F8B03C1E0A232D0084926E /* 人均-选中@2x.png in Resources */,
 				24F8B05E1E0A232D0084926E /* 按年-选中@2x.png in Resources */,
 				24F8B0BD1E0A232D0084926E /* 87.png in Resources */,
@@ -1408,7 +1409,6 @@
 				24F8B0431E0A232D0084926E /* 会员消费2-选中.png in Resources */,
 				24F8B0141E0A232D0084926E /* 滚动条.png in Resources */,
 				24F8B0501E0A232D0084926E /* 桌数-未选@2x.png in Resources */,
-				2425742F1E0CBDF5004F1369 /* CheckoutVC.xib in Resources */,
 				24F8B0741E0A232D0084926E /* 销售额未选.png in Resources */,
 				24F8B0791E0A232D0084926E /* 影子@2x.png in Resources */,
 				24F8B0711E0A232D0084926E /* 份数-选中.png in Resources */,
@@ -1526,7 +1526,6 @@
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
 				242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */,
 				242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */,
-				2425742E1E0CBDF5004F1369 /* CheckoutVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				188751C31E110F5C0089014F /* SQMenuShowCell.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
@@ -1537,6 +1536,7 @@
 				188751C51E110F5C0089014F /* SQMenuShowView.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */,
+				247779C71E13AF0F00BCBB60 /* presentView.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
 				2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */,
 				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,

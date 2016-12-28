@@ -16,6 +16,9 @@
 {
     presentView *vw;
     NSArray<linePointModel *> *linChartArry;
+    MZLineView *lineView;
+    //店铺选择
+    NSMutableArray<shopShow *> *shopArry;
 }
 @property (weak, nonatomic) IBOutlet UIView *viewLineChart;
 @end
@@ -29,6 +32,9 @@
     timeperiodNethelper.delege =self;
     //获取所有店铺信息
     [timeperiodNethelper getTimeperiodDate];
+    
+    //返回所有店铺名称id
+    [self getAllShopArryNameId];
     
     //添加导航栏
     UIBarButtonItem *one = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackAction)];
@@ -46,21 +52,18 @@
 
 /**
  显示折线图
+
+ @param titleStore 横轴数组
+ @param incomeStore 纵轴数组
  */
--(void)showLineChart {
+-(void)showLineChartTitleStore:(NSArray *)titleStore  IncomeStore:(NSArray *)incomeStore{
     //显现显示折线图
     
-    MZLineView *lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 0, self.viewLineChart.width,self.viewLineChart.height-60)];
-    NSMutableArray *titleArry = [NSMutableArray new];
-    NSMutableArray *incomeArry = [NSMutableArray new];
-    for (linePointModel *lm in linChartArry) {
-        [titleArry addObject:[lm.time stringByAppendingString:@"时"]];
-        [incomeArry addObject:lm.value];
-    }
-    lineView.titleStore = titleArry;//@[@"0时",@"1时",@"2时",@"3时",@"4时",@"5时",@"6时",@"7时",@"8时",@"9时",@"10时",@"11时",@"12时",@"13时",@"14时",@"15时",@"16时",@"17时",@"18时",@"19时",@"20时",@"21时",@"22时",@"23时"];
+    lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 0, self.viewLineChart.width,self.viewLineChart.height-60)];
+    lineView.titleStore =titleStore;
     lineView.bottomMargin = 50;
     lineView.incomeBottomMargin = 65;
-    lineView.incomeStore = incomeArry;//@[@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",];
+    lineView.incomeStore = incomeStore;
     
     [self.viewLineChart addSubview:lineView];
     lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
@@ -71,10 +74,8 @@
         NSLog(@"选中第%@个",@(index));
     };
     [lineView storkePath];
-    //[lineView removeFromSuperview];
     
 }
-
 /*
 #pragma mark - Navigation
 
@@ -90,21 +91,37 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+/**
+ -(NSArray *)strAllShopListArry {
+ //数据模拟
+ LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+ NSMutableArray *resultArry = [NSMutableArray new];
+ //获取-所有分店
+ shopShow *sw = [shopShow new];
+ NSString *mutStr = loginViewMode.shop.shop_id;
+ //加上登陆店铺本身
+ [resultArry addObject:mutStr];
+ for (int i=0; i< loginViewMode.shop.subs.count; i++) {
+ ShopSubModel *shopsubModel = loginViewMode.shop.subs[i];
+ NSString *str = [NSString stringWithString:shopsubModel.shop_id];
+ [resultArry addObject:str];
+ }
+ return resultArry;
+ }
+ */
+
 - (void)btnSection {
-    /***
-    vw = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
-    vw.backgroundColor = [UIColor grayColor];
-    UIButton *tb = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    [tb addTarget:self action:@selector(tbAction) forControlEvents:UIControlEventTouchUpInside];
-    tb.backgroundColor = [UIColor blackColor];
-    [vw addSubview:tb];
+    vw = [[presentView alloc] initWithFrame:CGRectMake(50, 50, 200, 400)];
+    vw.backgroundColor = [UIColor whiteColor];
+//    NSMutableArray *arry = [NSMutableArray new];
+//    for (int i =0; i <10; i++) {
+//        shopShow *sw = [shopShow new];
+//        sw.shopname = @"OK";
+//        sw.showIs = true;
+//        [arry addObject:sw];
+//    }
+    [vw ViewInit:shopArry];
     [self.view addSubview:vw];
-     */
-    vw = [[presentView alloc] initWithFrame:CGRectMake(50, 50, 200, 400)];//initWithWidth:100 Height:200];
-    vw.backgroundColor = [UIColor grayColor];
-    [vw ViewInit];
-    [self.view addSubview:vw];
-    
 }
 
 -(void)tbAction {
@@ -117,9 +134,38 @@
         //获取到linechart数据
         linChartArry = [NSArray arrayWithArray:(NSArray *)ms];
         //显示折线图
-        [self showLineChart];
+        [lineView removeFromSuperview];
+        NSMutableArray *titleArry = [NSMutableArray new];
+        NSMutableArray *incomeArry = [NSMutableArray new];
+        for (linePointModel *lm in linChartArry) {
+            [titleArry addObject:[lm.time stringByAppendingString:@"时"]];
+            [incomeArry addObject:lm.value];
+        }
+        
+        [self showLineChartTitleStore:titleArry IncomeStore:incomeArry];
     }
     
+}
+
+#pragma mark -获取状态
+-(void)getAllShopArryNameId {
+    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+    shopArry = [NSMutableArray new];
+    
+    shopShow *sw = [shopShow new];
+    sw.shopname = [NSString stringWithString:loginViewMode.shop.shop_name];
+    sw.shopid = [NSString stringWithString:loginViewMode.shop.shop_id];
+    sw.showIs = true;
+    [shopArry addObject:sw];
+    
+    for (int i=0; i< loginViewMode.shop.subs.count; i++) {
+        ShopSubModel *shopsubModel = loginViewMode.shop.subs[i];
+        sw = [shopShow new];
+        sw.shopname = [NSString stringWithString:shopsubModel.shop_name];
+        sw.shopid = [NSString stringWithString:shopsubModel.shop_id];
+        sw.showIs = true;
+        [shopArry addObject:sw];
+    }
 }
 
 @end

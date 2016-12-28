@@ -28,5 +28,9 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)btnSelectAction:(id)sender {
+    _Blseleclt = ( _Blseleclt ? false : true );
+    [self.btn setImage:[UIImage imageNamed:( _Blseleclt ? @"选中" : @"未选中")] forState:UIControlStateNormal];
+}
 
 @end

@@ -67,7 +67,7 @@
 -(UIButton *)btnSeceltAll {
     if (!_btnSeceltAll) {
         _btnSeceltAll = [UIButton new];
-        [_btnSeceltAll addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+        [_btnSeceltAll addTarget:self action:@selector(selectAllShop) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnSeceltAll;
 }
@@ -84,7 +84,7 @@
 -(void)dataInit {
 
 }
--(void)ViewInit {
+-(void)ViewInit:(NSArray *)arry {
     //标题栏
     self.viewTitle = [UIView new];
     [self addSubview:self.viewTitle];
@@ -126,6 +126,7 @@
     //关闭按键
     [self.viewTitle addSubview:self.btnClose];
     [self.btnClose setImage:[UIImage imageNamed:@"关闭icon"] forState:UIControlStateNormal];
+    [self.btnClose setTitle:@"" forState:UIControlStateNormal];
     [self.btnClose mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.viewTitle.mas_centerY);
         make.height.mas_equalTo(self.viewTitle.mas_height);
@@ -155,7 +156,7 @@
         make.bottom.mas_equalTo(self.viewStatus.mas_bottom).with.offset(-5);
     }];
     
-//三层
+    //选中所有店铺
     [self.statusChildView addSubview:self.btnSeceltAll];
     [self.btnSeceltAll setImage:[UIImage imageNamed:@"未全选框"] forState:UIControlStateNormal];
     [self.btnSeceltAll mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -164,6 +165,8 @@
         make.width.mas_equalTo(self.btnSeceltAll.mas_height);
         make.right.mas_equalTo(self.statusChildView.mas_right);
     }];
+    
+    
     UILabel *label = [UILabel new];
     label.text = @"全选";
     label.textAlignment = NSTextAlignmentCenter;
@@ -176,13 +179,6 @@
         make.right.mas_equalTo(self.btnSeceltAll.mas_left);
         make.size.mas_equalTo(CGSizeMake(40, 20));
     }];
-    NSMutableArray *arry = [NSMutableArray new];
-    for (int i =0; i <10; i++) {
-        shopShow *sw = [shopShow new];
-        sw.shopname = @"OK";
-        sw.showIs = false;
-        [arry addObject:sw];
-    }
     self.shopshowArry = [NSArray arrayWithArray:arry];
     [self.tableview reloadData];
 }
@@ -205,7 +201,10 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:nil options:nil];
         cell = [nib objectAtIndex:0];
     }
-
+    cell.label.text = self.shopshowArry[indexPath.row].shopname;
+    cell.Blseleclt = self.shopshowArry[indexPath.row].showIs;
+    [cell.btn setImage:[UIImage imageNamed:(self.shopshowArry[indexPath.row].showIs ? @"选中" : @"未选中")] forState:UIControlStateNormal];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
