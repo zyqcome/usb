@@ -7,14 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MZLineView.h"
+#import "UIView+Addtions.h"
 @class MyScrollView;
 @protocol UIButtonSelectedDelegate <NSObject>
--(void)selected:(MyScrollView *)scoll Button:(UIButton*)button Label:(UILabel *)caiLabel;
+-(void)selected:(MyScrollView *)scoll Button:(UIButton*)button;
 
 @end
 @interface MyScrollView : UIView
+
+//一个网格宽度
+@property(nonatomic, assign) CGFloat singleWidth;
+
 @property (nonatomic,assign)  id<UIButtonSelectedDelegate>  delegate;
 @property (nonatomic,strong)  NSArray * TitleLableArray;
+@property (nonatomic,strong)  NSArray * colorArray;
 
 
 @end
