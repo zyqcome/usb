@@ -11,10 +11,11 @@
 #import "SQMenuShowView.h"
 #import "BarView.h"
 #import "ColorDefine.h"
+#import "ShowStore.h"
 
 #define BASE_TAG 20130
 
-@interface CommodityController ()<UIButtonSelectedDelegate>
+@interface CommodityController ()<UIButtonSelectedDelegate,ShowShoreDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentWidth;
@@ -28,18 +29,31 @@
 @property (strong, nonatomic)  SQMenuShowView *showView;
 @property (nonatomic,strong)  UIButton * coverBtn;
 @property (nonatomic,assign)  BOOL  isShow;
-
-//@property (nonatomic, strong) NSArray *colors;
-//@property (nonatomic, strong) NSArray *types;
 @property (nonatomic, strong) BarView *barChartView;
+
+@property (nonatomic,strong)  ShowStore * showStore;
+@property (nonatomic,strong)  UIView * coverStore;
+
+
+
 @end
 
 @implementation CommodityController
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [self netRequest];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
 }
+#pragma mark - 网络请求
+//-(void)netRequest{
+//    TimeperiodNethelper * timeHelper = [TimeperiodNethelper new];
+//    NSLog(@"%@",timeHelper.UrlStr);
+//}
 
 -(void)setupUI{
     //添加导航栏
@@ -91,7 +105,7 @@
     _scollView.delegate = self;
     
     _TitleLableArray = [NSArray array];
-    _TitleLableArray = @[@"川菜",@"家常菜",@"小吃",@"热菜",@"凉菜",@"汤菜",@"哈哈",@"哈哈",@"哈哈",@"哈哈"];
+    _TitleLableArray = @[@"川菜",@"家常菜",@"小吃",@"热菜",@"凉菜",@"汤菜",@"烧菜",@"干锅",@"油炸",@"拌菜"];
     _scollView.TitleLableArray = self.TitleLableArray;
     _scollView.tag = 836914;
     
@@ -130,6 +144,7 @@
         switch (index) {
             case 0:
                 NSLog(@"1");
+                [self showStoreClicked];
                 break;
             case 1:
                 NSLog(@"2");
@@ -141,21 +156,21 @@
         
     }];
     
-    // 初始化遮盖btn
+    // popview遮盖btn
     _coverBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
     _coverBtn.backgroundColor = [UIColor grayColor];
     _coverBtn.alpha = 0;
     // 添加点击事件
     [_coverBtn addTarget:self action:@selector(dismissViewClicked) forControlEvents:UIControlEventTouchUpInside];
-}
+    }
 
 -(void)rightButtonClicked{
     _isShow = !_isShow;
     if (_isShow) {
         _coverBtn.alpha = 0.3;
-        [self.view addSubview:_coverBtn];
+        [self.navigationController.view addSubview:_coverBtn];
         [self.showView showView];
-        [self.view addSubview:_showView];
+        [self.navigationController.view addSubview:_showView];
     }else{
         _coverBtn.alpha = 0;
         [_coverBtn removeFromSuperview];
@@ -171,7 +186,6 @@
     [self.showView dismissView];
 }
 
-#pragma mark - 弹出视图懒加载
 - (SQMenuShowView *)showView{
     if (!_showView) {
         _showView = [[SQMenuShowView alloc]initWithFrame:(CGRect){Screen_W-(130*ScreenScale),(64+5),120*ScreenScale,0} items:@[@"选择店铺",@"选择日期",@"选择种类"] showPoint:(CGPoint){Screen_W-25,10}];
@@ -180,6 +194,51 @@
     }
     return _showView;
 }
+
+#pragma mark - 选择店铺弹出视图
+-(void)showStoreClicked{
+    // showStore遮盖btn
+    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverStore.backgroundColor = [UIColor grayColor];
+    _coverStore.alpha = 0.3;
+
+    [self.navigationController.view addSubview:_coverStore];
+    [self.showStore showStoreView];
+    [self.navigationController.view addSubview:_showStore];
+}
+
+-(void)selectedButton:(UIButton *)button{
+    _coverStore.alpha = 0;
+    [_coverStore removeFromSuperview];
+    [self.showStore dismissStoreView];
+}
+
+-(void)selectedSwitch:(UISwitch *)redSwitch{
+    switch (redSwitch.tag) {
+        case 0:
+            NSLog(@"哈哈哈");
+            break;
+        case 1:
+            NSLog(@"哈哈");
+            break;
+        case 2:
+            NSLog(@"哈哈hahahah哈");
+            break;
+            
+        default:
+            NSLog(@"1111hahahahha");
+            break;
+    }
+}
+
+-(ShowStore *)showStore{
+    if (!_showStore) {
+        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:@[@"云迈天行特色火锅",@"云迈天行-测试",@"云迈天行-张大帅",@"云迈天行-测试的"]];
+        _showStore.delegate = self;
+    }
+    return _showStore;
+}
+
 
 
 #pragma mark - 柱状图
@@ -225,9 +284,7 @@
     self.barChartView.incomeBottomMargin = 0;
     self.barChartView.brefixStr = @"份数";
     //self.barChartView.suffixStr = @"后缀";
-
- 
-    self.barChartView.incomeStore = @[@{_TitleLableArray[0]:@"10",_TitleLableArray[1]:@"5",@"小吃":@"1",@"热菜":@"0",@"凉菜":@"0",@"汤菜":@"8",@"哈哈":@"3",@"哈哈":@"0",@"哈哈":@"0",@"哈哈":@"3"},@{@"川菜":@"1",@"家常菜":@"3",@"小吃":@"0",@"热菜":@"5",@"凉菜":@"2",@"汤菜":@"0",@"哈哈":@"0",@"哈哈":@"0",@"哈哈":@"0",@"哈哈":@"6"}];
+    self.barChartView.incomeStore = @[@{_TitleLableArray[0]:@"10",_TitleLableArray[1]:@"5",_TitleLableArray[2]:@"1",_TitleLableArray[3]:@"0",_TitleLableArray[4]:@"0",_TitleLableArray[5]:@"8",_TitleLableArray[6]:@"3",_TitleLableArray[7]:@"0",_TitleLableArray[8]:@"0",_TitleLableArray[9]:@"3"},@{_TitleLableArray[0]:@"1",_TitleLableArray[1]:@"3",_TitleLableArray[2]:@"0",_TitleLableArray[3]:@"5",_TitleLableArray[4]:@"2",_TitleLableArray[5]:@"0",_TitleLableArray[6]:@"0",_TitleLableArray[7]:@"0",_TitleLableArray[8]:@"0",_TitleLableArray[9]:@"6"}];
     self.barChartView.allTypes = self.TitleLableArray;
     self.barChartView.colorStore = self.colorArray;
     [self.view addSubview:self.barChartView];
