@@ -11,6 +11,8 @@
 #import "HomeController.h"
 #import "DrawerController.h"
 #import "DHControllerViewController.h"
+#import "MZLineView.h"
+
 @interface LoginController ()
 //iphone7为110
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoTop;
@@ -200,8 +202,8 @@
             //登录成功
             if (_isRemember == YES ) {
                 [userDefaults setBool:YES forKey:@"isRemember"];
-                
             }
+            
 
             
         }
