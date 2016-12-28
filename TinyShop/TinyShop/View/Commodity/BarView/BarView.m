@@ -187,8 +187,11 @@
 {
     CGFloat centerX = 1+(self.singleWidth+1)*idx + self.singleWidth *0.5;
     CGFloat centerY = self.incomeTopMargin + self.incomeHeight*(1 - value/self.maxValue);
-    return CGPointMake(centerX, centerY);
+    if (self.maxValue == 0) {
+    centerY = self.incomeTopMargin + self.incomeHeight;
+    }
     
+    return CGPointMake(centerX, centerY);
 }
 - (void)selectAllType
 {
@@ -233,6 +236,9 @@
             //如果隐藏下标数字不包含typeindex
             if (![self.hiddenTypeIndexStore containsObject:@(typeIndex)]) {
                 height = [value floatValue]/self.maxValue * self.incomeHeight;
+                if (self.maxValue == 0) {
+                    height = 0;
+                }
                 barIncome += [value floatValue];
             }
             //取出对应的小块，改变高度
@@ -298,9 +304,14 @@
             CGFloat height = 0;
             //隐藏下标数组 不包含typeindex才显示
             if (![self.hiddenTypeIndexStore containsObject:@(typeIndex)]) {
+            
                 height = [value floatValue]/self.maxValue*self.incomeHeight;
+                if (self.maxValue == 0) {
+                    height = 0;
+                }
                 //记录收入
                 barIncome += [value floatValue];
+                
             }
             //2.1添加每个📊的小块
             [self addSingleBarWithHeight:height typeIndex:typeIndex barGrayView:barGrayView];

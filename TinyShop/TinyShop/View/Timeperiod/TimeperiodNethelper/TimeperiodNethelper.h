@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface TimeperiodNethelper : NSObject
+
+@property (nonatomic,strong) NSString *UrlStr;
+
+
 -(void)getTimeperiodDate;
+
+
 @end

@@ -188,6 +188,7 @@
                               @"user_password":_passwordTextField.text};
     
     [[NetworkTools sharedTooles]requestMethod:POST isJson:YES WithUrl:LoginUrl parematers:dict finished:^(id data, NSError *error) {
+//        NSLog(@"%@",dict)
     if (error) {
         NSLog(@"%@",error);
         return ;

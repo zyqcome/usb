@@ -48,13 +48,16 @@
  */
 -(void)getTimeperiodNetWorkset:(TimeperiodGetModel *)timeGtMl AllShopList:(NSString *)allShoplist {
 
-    NSString *UrlStr = [self strUrlGetMake:timeGtMl];
+    self.UrlStr = [self strUrlGetMake:timeGtMl];
+    NSLog(@"%@",timeGtMl.access_token);
     NSDictionary * dict = [self DicUrlPostMake:allShoplist];
-    [[NetworkTools sharedTooles] requestMethod:POST isJson:YES WithUrl:UrlStr parematers:dict finished:^(id data, NSError *error) {
+    
+    [[NetworkTools sharedTooles] requestMethod:POST isJson:YES WithUrl:self.UrlStr parematers:dict finished:^(id data, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
             return ;
         }
+        NSLog(@"%@",data);
     }];
 }
 

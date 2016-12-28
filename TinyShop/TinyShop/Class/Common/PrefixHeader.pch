@@ -44,4 +44,6 @@
 #import "ShopModel.h"
 #import "ShopSubModel.h"
 
+#import "TimeperiodNethelper.h"
+
 #endif /* PrefixHeader_pch */
