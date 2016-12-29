@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "OperatingModel.h"
 
+
 @interface OperationNetrequest : NSObject
 
--(void)getAllOperation;
+-(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime;
 
 @end

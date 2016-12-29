@@ -8,27 +8,45 @@
 
 #import "StatisticalViewController.h"
 //下拉菜单
-#import "PopupView.h"
-#import "PopupViewCell.h"
+#import "SQMenuShowView.h"
 //店铺cell
 #import "StoreTableViewCell.h"
+#import "ShowStore.h"
 //网络请求
 #import "OperationNetrequest.h"
+//折线图
+#import "MZLineView.h"
+#import "UIView+Addtions.h"
 
-@interface StatisticalViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+#import "presentView.h"
+
+@interface StatisticalViewController ()<ShowShoreDelegate>
+{
+    //店铺选择
+    NSMutableArray<shopShow *> *shopArry;
+}
 @property(nonatomic,strong)NSArray *buttonImageArray; //未选中按钮图片
 @property(nonatomic,strong)NSArray *buttonSelImageArray;//选中的按钮图片
 @property(nonatomic,strong)NSMutableArray *buttonMutableAry;//存放按钮
-@property(nonatomic,strong)UILabel *label;   //统计文字的label
 @property(nonatomic,strong)UIView *backgroundView; //毛玻璃
-@property(nonatomic,strong)UITableView *storeTableview; //店铺tableview
 @property(nonatomic,strong)NSMutableArray *storeMtbArray; //保存店铺cell的label
-@property(nonatomic,strong)NSMutableArray *allSwitchArray; //保存cell的switch
-@property(nonatomic,strong)UIButton *selectBtn; //全选按钮
 @property(nonatomic,strong)NSArray *dateImageArray; //日期图片(前四未选中，后四选中 )
-@property(nonatomic,strong)NSMutableArray *checkBtnArray; //保存查询方式的四个按钮
-@property(nonatomic,assign)NSInteger number;  //统计全选按钮
-@property(nonatomic,strong)UIDatePicker *datePicker;  //时间拾取器
+@property (nonatomic,strong)  ShowStore * showStore;
+@property (nonatomic,strong)  UIView * coverStore;
+
+//下拉菜单三个属性
+@property (strong, nonatomic)  SQMenuShowView *showView;
+@property (nonatomic,strong)  UIButton * coverBtn;
+@property (nonatomic,assign)  BOOL  isShow;
+
+@property(nonatomic,strong)MZLineView *lineView;//折线图
+@property(nonatomic,strong)NSMutableArray *timeMutableArray;//保存底部时间
+
+@property(nonatomic,strong)NSString *brefixStr; //前缀
+@property(nonatomic,strong)NSString *sumValueStr;  //统计label文字
+@property(nonatomic,strong)NSString *unitStr; //单位
+//addLineViewbrefixStr:@"收入" sumValue:@"实时总收入" unit:@"元"
 
 @end
 
@@ -37,16 +55,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
-    [self loadData];
     
-    //测试网络请求
+    //更多下拉按钮
+    [self addPopView];
+    //******网络请求
+    self.brefixStr = @"收入";
+    self.sumValueStr = @"实时总收入";
+    self.unitStr = @"元";
+    [self loadDatatype:@"sales" queryTime:@"day"];
+    
+}
+//折线图
+-(void)addLineViewbrefixStr:(NSString *)beforeStr sumValue:(NSString *)RTSumValue unit:(NSString *)unit{
+    
+    self.lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 145, self.view.width,self.view.height-144)];
+    [self.view addSubview:self.lineView];
+    //倾斜度
+    CGAffineTransform transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 15, 40);
+    transform = CGAffineTransformRotate(transform, M_PI*0.31);
+    self.lineView.labelTransform = transform;
+    self.lineView.bottomMargin = 65;
+    self.lineView.incomeBottomMargin = 30;
+    
+    self.lineView.titleStore = @[@"2016-11-11",@"2016-11-12",@"2016-11-13",@"2016-11-14",@"4时",@"5时",@"6时",@"7时",@"8时",@"9时",@"10时",@"11时",@"12时",@"13时",@"14时",@"15时",@"16时",@"17时",@"18时",@"19时",@"20时",@"21时",@"22时",@"23时"];
+    
+    self.lineView.brefixStr = beforeStr;
+    //    lineView.suffixStr = @"后缀";
+    self.lineView.incomeStore = @[@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",];
+    
+    self.lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
+        NSString *str = [RTSumValue stringByAppendingFormat:@"：%@",@(sumValue)];
+        NSLog(@"%@",str);
+        return [str stringByAppendingString:unit];
+    };
+    
+    self.lineView.selectCallback = ^(NSUInteger index){
+        NSLog(@"选中第%@个",@(index));
+    };
+    [self.lineView storkePath];
+    
+}
+-(void)loadDatatype:(NSString *)type queryTime:(NSString *)queryTime{
     OperationNetrequest *operation = [OperationNetrequest new];
-    [operation getAllOperation];
-    
+    [operation getAllOperationtype:type queryTime:queryTime];
+    //数据请求成功之后绘制 折线图
+    [self addLineViewbrefixStr:self.brefixStr sumValue:self.sumValueStr unit:self.unitStr ];
 }
--(void)loadData{
-    
-}
+
 
 -(void)setUI{
     //背景颜色
@@ -70,7 +125,7 @@
         [self.view addSubview:btn];
         }
     }
-    //两根横线
+    //横线
     UIView *lineView = [UIView new];
     lineView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:lineView];
@@ -79,32 +134,9 @@
         make.centerX.equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(Screen_W, 1));
     }];
-    UIView *lineView2 = [UIView new];
-    lineView2.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:lineView2];
-    [lineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(lineView.mas_bottom).offset(33);
-        make.centerX.equalTo(self.view.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(Screen_W, 1));
-    }];
-    //统计Label
-    _label = [UILabel new];
-    _label.text = @"总金额： 元";
-//    _label.backgroundColor = [UIColor blackColor];
-    _label.textColor = [UIColor redColor];
-    [self.view addSubview:_label];
-    [_label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(lineView.mas_bottom).offset(3);
-        make.left.equalTo(self.view.mas_left).offset(3);
-        make.size.mas_equalTo(CGSizeMake(200, 30));
-    }];
-    //更多
-    UIBarButtonItem *moreBtn = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(rightClicked)];
-    
-    self.navigationItem.rightBarButtonItem = moreBtn;
     
 }
-//五个按钮的点击事件
+//5个按钮
 -(void)statisticalClicked:(UIButton *)button{
     //先将所有按钮的图片设置为未选中
     NSInteger index = 0;
@@ -114,38 +146,94 @@
     }
     //再将点击的按钮图片替换为选中
     [button setImage:[UIImage imageNamed:self.buttonSelImageArray[button.tag-1000]] forState:UIControlStateNormal];
-    //刷新数据
+    //点击事件，刷新数据
     //先刷新数据，获取到数据之后再赋值
+    //先移除折线图，再绘制
+    [self.lineView removeFromSuperview];
     switch (button.tag) {
         case 1000:
-            self.label.text = [NSString stringWithFormat:@"总销售额：元"];
+            self.brefixStr = @"收入";
+            self.sumValueStr = @"实时总收入";
+            self.unitStr = @"元";
+            [self loadDatatype:@"sales" queryTime:@"day"];
             break;
         case 1001:
-            self.label.text = [NSString stringWithFormat:@"总桌数：桌"];
+            self.brefixStr = @"桌数";
+            self.sumValueStr = @"总桌数";
+            self.unitStr = @"桌";
+            [self loadDatatype:@"order_num" queryTime:@"day"];
             break;
         case 1002:
-            self.label.text = [NSString stringWithFormat:@"总人数：人"];
+            self.brefixStr = @"人数";
+            self.sumValueStr = @"总人数";
+            self.unitStr = @"人";
+            [self loadDatatype:@"people_num" queryTime:@"day"];
             break;
         case 1003:
-            self.label.text = [NSString stringWithFormat:@"总人均：元"];
+            self.brefixStr = @"人均";
+            self.sumValueStr = @"总人均";
+            self.unitStr = @"元";
+            [self loadDatatype:@"people_avg" queryTime:@"day"];
             break;
         default:
-            self.label.text = [NSString stringWithFormat:@"总餐时：时"];
+            self.brefixStr = @"餐时";
+            self.sumValueStr = @"总餐时";
+            self.unitStr = @"时";
+            [self loadDatatype:@"avg_meal" queryTime:@"day"];
             break;
     }
 }
-
-//右边按钮下拉菜单
--(void)rightClicked
-{
-    [PopupView addCellWithIcon:[UIImage imageNamed:@"点"] text:@"选择店铺" action:^{
-        [self setView];
+//右边”更多“下拉菜单
+-(void)addPopView{
+    //更多
+    UIBarButtonItem *moreBtn = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked)];
+    
+    self.navigationItem.rightBarButtonItem = moreBtn;
+    //    __weak typeof(self) weakSelf = self;
+    [self.showView selectBlock:^(SQMenuShowView *view, NSInteger index) {
+        [self dismissViewClicked];
+        
+        switch (index) {
+            case 0:
+                [self setView];
+                break;
+            default:
+                [self choiseTimeView];
+                break;
+        }
+        
     }];
-    [PopupView addCellWithIcon:[UIImage imageNamed:@"点"] text:@"选择时间" action:^{
-        [self choiseTimeView];
-    }];
-    [PopupView popupView];
+    
+    // 初始化遮盖btn
+    _coverBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverBtn.backgroundColor = [UIColor grayColor];
+    _coverBtn.alpha = 0;
+    // 添加点击事件
+    [_coverBtn addTarget:self action:@selector(dismissViewClicked) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)rightButtonClicked{
+    _isShow = !_isShow;
+    if (_isShow) {
+        _coverBtn.alpha = 0.3;
+        [self.view addSubview:_coverBtn];
+        [self.showView showView];
+        [self.view addSubview:_showView];
+    }else{
+        _coverBtn.alpha = 0;
+        [_coverBtn removeFromSuperview];
+        [self.showView dismissView];
+    }
+    
+}
+
+-(void)dismissViewClicked{
+    _isShow = !_isShow;
+    _coverBtn.alpha = 0;
+    [_coverBtn removeFromSuperview];
+    [self.showView dismissView];
+}
+
 //选择时间view
 -(void)choiseTimeView{
     //毛玻璃效果
@@ -178,15 +266,6 @@
         make.right.equalTo(view.mas_right).offset(-10);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
-    //线条
-    UIView *lineView = [UIView new];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    [view addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(removeBtn.mas_bottom).offset(10);
-        make.centerX.equalTo(view);
-        make.size.mas_equalTo(CGSizeMake(Screen_W-20, 2));
-    }];
     //选择查询方式
     UILabel *label = [UILabel new];
     label.text = @"选择查询方式";
@@ -194,182 +273,91 @@
     [view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view.mas_left).offset(50);
-        make.top.equalTo(lineView.mas_top).offset(20);
+        make.top.equalTo(view.mas_top).offset(100);
         make.size.mas_equalTo(CGSizeMake(200, 40));
     }];
     //四个查询按钮
     for (NSInteger index = 0; index < 4; index++) {
         UIButton *checkButton = [UIButton new];
         if (index == 3) {
-            //默认第一个选中
             [checkButton setImage:[UIImage imageNamed:self.dateImageArray[7]] forState:UIControlStateNormal];
             checkButton.tag = 2003;
-            [view addSubview:checkButton];
-            [checkButton mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(view.mas_left).offset(Screen_W/10+(Screen_W/5)*index);
-                make.top.equalTo(label.mas_bottom).offset(5);
-                make.size.mas_equalTo(CGSizeMake(Screen_W/5-5, 80));
-            }];
-            [self.checkBtnArray addObject:checkButton];
         }else{
         [checkButton setImage:[UIImage imageNamed:self.dateImageArray[index]] forState:UIControlStateNormal];
             checkButton.tag = 2000+index;
-            [view addSubview:checkButton];
-            [checkButton mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(view.mas_left).offset(Screen_W/10+(Screen_W/5)*index);
-                make.top.equalTo(label.mas_bottom).offset(5);
-                make.size.mas_equalTo(CGSizeMake(Screen_W/5-5, 80));
-            }];
-            [self.checkBtnArray addObject:checkButton];
         }
         [checkButton addTarget:self action:@selector(queryClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
-    //确定按钮
-    UIButton *sureBtn = [UIButton new];
-    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-    sureBtn.backgroundColor = [UIColor redColor];
-    [view addSubview:sureBtn];
-    [sureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(label.mas_bottom).offset(150);
-        make.centerX.equalTo(view);
-        make.size.mas_equalTo(CGSizeMake(300, 50));
-    }];
-    [sureBtn addTarget:self action:@selector(dateSureClicked:) forControlEvents:UIControlEventTouchUpInside];
-    //时间拾取器
-    NSDate *date = [NSDate date];
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *time = [formatter stringFromDate:date];
-    NSLog(@"%@",time);
-    self.datePicker = [UIDatePicker new];
-    //拾取器风格
-    self.datePicker.datePickerMode = UIDatePickerModeDate;
-    //设置地区标示
-    NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans_CN"];
-    [self.datePicker setLocale:locale];
-    //设置时区为当前时区
-    [self.datePicker setTimeZone:[NSTimeZone localTimeZone]];
-    //最小可选时间
-//    NSDate *minDate = [NSDate new];
-    //最大可选时间
-    self.datePicker.maximumDate = date;
-    [view addSubview:self.datePicker];
-    [self.datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view);
-        make.right.equalTo(view);
-        make.bottom.equalTo(view);
-    }];
-    
-}
--(void)dateSureClicked:(UIButton *)btn{
-    NSLog(@"%@",self.datePicker.date);
+
 }
 //选择日期按钮点击事件
 -(void)queryClicked:(UIButton *)btn{
-    //遍历，先将所有的按钮图片设置为未选中
-    NSInteger index = 0;
-    for (UIButton *btn in self.checkBtnArray) {
-        [btn setImage:[UIImage imageNamed:self.dateImageArray[index]] forState:UIControlStateNormal];
-        index++;
-    }
-    [btn setImage:[UIImage imageNamed:self.dateImageArray[btn.tag-1996]] forState:UIControlStateNormal];
     
 }
 //选择店铺view
 -(void)setView{
-    //毛玻璃效果
-    self.backgroundView = [UIView new];
-    self.backgroundView.backgroundColor = Color_RGBA(42, 42, 55, 0.4);
-    [self.view addSubview:self.backgroundView];
-    [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view.mas_centerX);
-        make.centerY.equalTo(self.view.mas_centerY);
-        make.size.mas_equalTo(CGSizeMake(Screen_W, Screen_H+64));
-    }];
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor whiteColor];
-    [self.backgroundView addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(90);
-        make.left.equalTo(self.view.mas_left).offset(10);
-        make.right.equalTo(self.view.mas_right).offset(-10);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-5);
-    }];
-    //x按钮
-    UIButton *removeBtn = [[UIButton alloc]init];
-    [removeBtn setImage:[UIImage imageNamed:@"显示密码图标"] forState:UIControlStateNormal];
-    removeBtn.backgroundColor = [UIColor yellowColor];
-    [removeBtn setTintColor:[UIColor redColor]];
-    [removeBtn addTarget:self action:@selector(removeClicked) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:removeBtn];
-    [removeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view.mas_top).offset(3);
-        make.right.equalTo(view.mas_right).offset(-10);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-    //tableview
-    self.storeTableview = [[UITableView alloc]init];
-    self.storeTableview.dataSource = self;
-    self.storeTableview.delegate = self;
-    //去掉底部多余线条
-    self.storeTableview.tableFooterView = [[UITableView alloc]initWithFrame:CGRectZero];
-    self.storeTableview.rowHeight = 50;
-    [view addSubview:self.storeTableview];
-    [self.storeTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(removeBtn.mas_bottom).offset(10);
-        make.left.equalTo(view.mas_left);
-        make.size.mas_equalTo(CGSizeMake(Screen_W-20, Screen_H*0.6));
-    }];
-    //全选按钮
-    self.selectBtn = [UIButton new];
-    [self.selectBtn setImage:[UIImage imageNamed:@"记住密码"] forState:UIControlStateNormal];
-    [self.selectBtn addTarget:self action:@selector(allBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:self.selectBtn];
-    [self.selectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(view.mas_right).offset(-50);
-        make.bottom.equalTo(view.mas_bottom).offset(-100);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-    //全选label
-    UILabel *allLabel = [[UILabel alloc]init];
-    allLabel.text = @"全选";
-    [view addSubview:allLabel];
-    [allLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(view.mas_bottom).offset(-100);
-        make.right.equalTo(self.selectBtn.mas_left).offset(-5);
-        make.size.mas_equalTo(CGSizeMake(50, 30));
-    }];
+    
+    [self showStoreClicked];
     
 }
-//全选按钮点击事件
--(void)allBtnClicked:(UIButton *)button{
-   static NSInteger index = 1;
+#pragma mark - 选择店铺弹出视图
+-(void)showStoreClicked{
+    // showStore遮盖btn
+    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverStore.backgroundColor = [UIColor grayColor];
+    _coverStore.alpha = 0.3;
     
-    if (index % 2 == 1) {
-        //非全选
-        for (UISwitch *sw in self.allSwitchArray) {
-            sw.on = NO;
-        }
-        for (UILabel *label in self.storeMtbArray) {
-            label.textColor = [UIColor lightGrayColor];
-        }
-        //全都不选，计数器设为0
-        self.number = 0;
-        [self.selectBtn setImage:[UIImage imageNamed:@"记住密码框"] forState:UIControlStateNormal];
-    }else{
-        //全选
-        for (UISwitch *sw in self.allSwitchArray) {
-            sw.on = YES;
-        }
-        for (UILabel *label in self.storeMtbArray) {
-            label.textColor = [UIColor redColor];
-        }
-        //全选，计数器设为4（店铺数据）
-        self.number = 4;
-        [self.selectBtn setImage:[UIImage imageNamed:@"记住密码"] forState:UIControlStateNormal];
+    [self.navigationController.view addSubview:_coverStore];
+    [self.showStore showStoreView];
+    [self.navigationController.view addSubview:_showStore];
+}
+
+-(void)selectedButton:(UIButton *)button{
+    _coverStore.alpha = 0;
+    [_coverStore removeFromSuperview];
+    [self.showStore dismissStoreView];
+}
+
+-(ShowStore *)showStore{
+    NSMutableArray *shaparry = [NSMutableArray new];
+    for (shopShow * sw in shopArry) { //NSMutableArray<shopShow *> *shopArry;
+        [shaparry addObject:[NSString stringWithString:sw.shopname]];
     }
-    index++;
+    if (!_showStore) {
+        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:@[@"qweewq",@"qweasd"]];//shaparry];
+        _showStore.delegate = self;
+    }
+    return _showStore;
 }
+
+-(void)selectedSwitch:(UISwitch *)redSwitch{
+    //    switch (redSwitch.tag) {
+    //        case 0:
+    //            NSLog(@"哈哈哈");
+    //            break;
+    //        case 1:
+    //            NSLog(@"哈哈");
+    //            break;
+    //        case 2:
+    //            NSLog(@"哈哈hahahah哈");
+    //            break;
+    //
+    //        default:
+    //            NSLog(@"1111hahahahha");
+    //            break;
+    //    }
+    NSLog(@"%@",@(redSwitch.tag));
+    if (redSwitch.isOn == true) {
+        shopArry[redSwitch.tag].showIs = true;
+        NSLog(@"打开");
+    } else {
+        shopArry[redSwitch.tag].showIs = true;
+        NSLog(@"关闭");
+    }
+    
+    
+}
+
 //x点击事件
 -(void)removeClicked{
     [self.backgroundView removeFromSuperview];
@@ -385,37 +373,6 @@
         //释放一些可再生资源
         
     }
-}
-#pragma tableview
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    StoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle]loadNibNamed:@"StoreTableViewCell" owner:self options:nil].firstObject;
-    }
-    cell.storeLabel.text = @"天棒";
-    cell.storeLabel.tag = 1000 + indexPath.row;
-    [self.storeMtbArray addObject:cell.storeLabel];
-    cell.MySwitch.on = YES;
-    cell.MySwitch.tag = 1000 + indexPath.row;
-    [cell.MySwitch addTarget:self action:@selector(onOrOff:) forControlEvents:UIControlEventValueChanged];
-    [self.allSwitchArray addObject:cell.MySwitch];
-    return cell;
-}
-//开关
--(void)onOrOff:(UISwitch *)MySwitch{
-    NSInteger index = MySwitch.tag - 1000;
-    UILabel *label = self.storeMtbArray[index];
-    if (MySwitch.on == YES) {
-        label.textColor = [UIColor redColor];
-    }else
-    label.textColor = [UIColor lightGrayColor];
 }
 #pragma 懒加载
 -(NSArray *)buttonImageArray{
@@ -442,23 +399,21 @@
     }
     return _storeMtbArray;
 }
--(NSMutableArray *)allSwitchArray{
-    if (!_allSwitchArray) {
-        _allSwitchArray = [NSMutableArray new];
-    }
-    return _allSwitchArray;
-}
+
 -(NSArray *)dateImageArray{
     if (!_dateImageArray) {
         _dateImageArray = @[@"按年-未选",@"按月-未选",@"按周-未选",@"按日-未选",@"按年-选中",@"按月-选中",@"按周-选中",@"按日-选中"];
     }
     return _dateImageArray;
 }
--(NSMutableArray *)checkBtnArray{
-    if (!_checkBtnArray) {
-        _checkBtnArray = [NSMutableArray new];
+#pragma mark - 弹出视图懒加载
+- (SQMenuShowView *)showView{
+    if (!_showView) {
+        _showView = [[SQMenuShowView alloc]initWithFrame:(CGRect){Screen_W-(130*ScreenScale),(64+5),120*ScreenScale,0} items:@[@"选择店铺",@"选择日期"] showPoint:(CGPoint){Screen_W-25,10}];
+        _showView.sq_backGroundColor = [UIColor whiteColor];
+        _showView.itemTextColor = [UIColor grayColor];
     }
-    return _checkBtnArray;
+    return _showView;
 }
 
 @end

@@ -245,8 +245,8 @@
 		F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */; };
 		F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */; };
 		F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */; };
-		F39963051E12022400312037 /* OperatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F39963041E12022400312037 /* OperatingModel.m */; };
-		F39963081E1202F100312037 /* OperationNetrequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F39963071E1202F100312037 /* OperationNetrequest.m */; };
+		F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FB1E14A93F000CF741 /* OperatingModel.m */; };
+		F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FE1E14AC23000CF741 /* OperationNetrequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -535,10 +535,10 @@
 		F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewCell.h; sourceTree = "<group>"; };
 		F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewCell.m; sourceTree = "<group>"; };
 		F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
-		F39963031E12022400312037 /* OperatingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatingModel.h; sourceTree = "<group>"; };
-		F39963041E12022400312037 /* OperatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingModel.m; sourceTree = "<group>"; };
-		F39963061E1202F100312037 /* OperationNetrequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationNetrequest.h; sourceTree = "<group>"; };
-		F39963071E1202F100312037 /* OperationNetrequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationNetrequest.m; sourceTree = "<group>"; };
+		F32676FA1E14A93F000CF741 /* OperatingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatingModel.h; sourceTree = "<group>"; };
+		F32676FB1E14A93F000CF741 /* OperatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingModel.m; sourceTree = "<group>"; };
+		F32676FD1E14AC23000CF741 /* OperationNetrequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationNetrequest.h; sourceTree = "<group>"; };
+		F32676FE1E14AC23000CF741 /* OperationNetrequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationNetrequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1220,9 +1220,7 @@
 		F30D1A371E0CBA7D008A1158 /* Statistical */ = {
 			isa = PBXGroup;
 			children = (
-				F39963021E12022400312037 /* OperatingModel */,
-				F39963061E1202F100312037 /* OperationNetrequest.h */,
-				F39963071E1202F100312037 /* OperationNetrequest.m */,
+				F32676F91E14A93F000CF741 /* OperatingModel */,
 				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
 				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
 				F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */,
@@ -1232,11 +1230,13 @@
 			path = Statistical;
 			sourceTree = "<group>";
 		};
-		F39963021E12022400312037 /* OperatingModel */ = {
+		F32676F91E14A93F000CF741 /* OperatingModel */ = {
 			isa = PBXGroup;
 			children = (
-				F39963031E12022400312037 /* OperatingModel.h */,
-				F39963041E12022400312037 /* OperatingModel.m */,
+				F32676FD1E14AC23000CF741 /* OperationNetrequest.h */,
+				F32676FE1E14AC23000CF741 /* OperationNetrequest.m */,
+				F32676FA1E14A93F000CF741 /* OperatingModel.h */,
+				F32676FB1E14A93F000CF741 /* OperatingModel.m */,
 			);
 			path = OperatingModel;
 			sourceTree = "<group>";
@@ -1275,7 +1275,7 @@
 				TargetAttributes = {
 					24F8AD971E0A19D10084926E = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = Z4752JFW6B;
+						DevelopmentTeam = XW88P7Q95Q;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1565,18 +1565,17 @@
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
 				247779D01E13D3B600BCBB60 /* ShowStore.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
-				F39963051E12022400312037 /* OperatingModel.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
 				2460EB241E0B974D00539038 /* ShopModel.m in Sources */,
 				F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
-				F39963081E1202F100312037 /* OperationNetrequest.m in Sources */,
 				242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */,
 				242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				188751C31E110F5C0089014F /* SQMenuShowCell.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
 				2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */,
+				F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */,
 				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
@@ -1597,6 +1596,7 @@
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
+				F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 				2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */,
@@ -1720,12 +1720,12 @@
 			baseConfigurationReference = EF9B8A70D125F2798A07DC7F /* Pods-TinyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z4752JFW6B;
+				DEVELOPMENT_TEAM = XW88P7Q95Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TinyShop/Class/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TinyShop/Class/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zyqcome.TinyShop;
+				PRODUCT_BUNDLE_IDENTIFIER = wccome.TinyShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1735,12 +1735,12 @@
 			baseConfigurationReference = 522AE0C33ACE2EA798C17CAE /* Pods-TinyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z4752JFW6B;
+				DEVELOPMENT_TEAM = XW88P7Q95Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TinyShop/Class/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TinyShop/Class/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zyqcome.TinyShop;
+				PRODUCT_BUNDLE_IDENTIFIER = wccome.TinyShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

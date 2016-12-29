@@ -15,7 +15,7 @@
 
 //日常运营分析所有数据获取
 
--(void)getAllOperation{
+-(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime{
     //数据模拟
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     //登陆名
@@ -35,7 +35,7 @@
     //获取-所有分店
     NSString *mutStr = [self strAllShopList];
     
-    [self getTimeperiodNetWorkset:operatingModel AllShopList:mutStr];
+    [self getTimeperiodNetWorkset:operatingModel AllShopList:mutStr type:type queryTime:queryTime];
 }
 /**
  日常运营分析-数据处理-网络请求
@@ -43,20 +43,15 @@
  @param timeGtMl 网络配置数据
  @param allShoplist 登陆返回的所有子店铺名单
  */
--(void)getTimeperiodNetWorkset:(OperatingModel *)timeGtMl AllShopList:(NSString *)allShoplist {
-    
+-(void)getTimeperiodNetWorkset:(OperatingModel *)timeGtMl AllShopList:(NSString *)allShoplist type:(NSString *)type queryTime:(NSString *)queryTime{
     NSString *UrlStr = [self strUrlGetMake:timeGtMl];
-    NSDictionary * dict = [self DicUrlPostMake:allShoplist];
+    NSDictionary * dict = [self DicUrlPostMake:allShoplist type:type queryTime:queryTime];
     [[NetworkTools sharedTooles] requestMethod:POST isJson:YES WithUrl:UrlStr parematers:dict finished:^(id data, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
             return ;
-        }else if([data[@"status"] isEqualToString:@"0"]){//如果为0，请求成功
-            id dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-            NSLog(@"日常运营分析数据：%@",dataDic);
-        }else{
-            //请求失败要做的事
         }
+        NSLog(@"%@",data);
     }];
 }
 /**
@@ -96,11 +91,11 @@
  @param allShoplist 选择店铺参数
  @return 返回Post 字典
  */
--(NSDictionary *)DicUrlPostMake:(NSString *)allShoplist {
+-(NSDictionary *)DicUrlPostMake:(NSString *)allShoplist type:(NSString *)type queryTime:(NSString *)queryTime{
     NSMutableDictionary *dictbody = [NSMutableDictionary new];
     //店铺ID
     [dictbody setObject:allShoplist forKey:@"shop_id"];
-    //类型统计
+    //类型统计  sales 销售额 order_num 订单数 people_num 人数 people_avg 人均消费 avg_meal 餐时
     [dictbody setObject:@"sales" forKey:@"statistical_type"];
     //按什么时间统计（年月日）
     [dictbody setObject:@"day" forKey:@"query"];
