@@ -55,6 +55,10 @@
 		24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9521E14A52E00CCD26D /* MZPieChartSet.m */; };
 		24E2A95A1E14A52F00CCD26D /* MZPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9541E14A52E00CCD26D /* MZPieChartView.m */; };
 		24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */; };
+		24E2A9601E14A64600CCD26D /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A95E1E14A64600CCD26D /* PieChartView.m */; };
+		24E2A9611E14A64600CCD26D /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2A95F1E14A64600CCD26D /* PieChartView.xib */; };
+		24E2A9661E14B15400CCD26D /* PieChartTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9641E14B15400CCD26D /* PieChartTableCell.m */; };
+		24E2A9671E14B15400CCD26D /* PieChartTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -343,6 +347,12 @@
 		24E2A9541E14A52E00CCD26D /* MZPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartView.m; sourceTree = "<group>"; };
 		24E2A9551E14A52E00CCD26D /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
 		24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
+		24E2A95D1E14A64600CCD26D /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		24E2A95E1E14A64600CCD26D /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		24E2A95F1E14A64600CCD26D /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
+		24E2A9631E14B15400CCD26D /* PieChartTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartTableCell.h; sourceTree = "<group>"; };
+		24E2A9641E14B15400CCD26D /* PieChartTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartTableCell.m; sourceTree = "<group>"; };
+		24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartTableCell.xib; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -710,6 +720,7 @@
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
 			isa = PBXGroup;
 			children = (
+				24E2A95C1E14A61100CCD26D /* PieChartView */,
 				24E2A94C1E14A52E00CCD26D /* PieChart */,
 				2467D7A01E10E7F400C4E0FB /* LineChart */,
 				242574661E0D5192004F1369 /* TimeperiodProtocol */,
@@ -840,6 +851,27 @@
 				24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */,
 			);
 			path = PieChart;
+			sourceTree = "<group>";
+		};
+		24E2A95C1E14A61100CCD26D /* PieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				24E2A9621E14B12C00CCD26D /* cell */,
+				24E2A95D1E14A64600CCD26D /* PieChartView.h */,
+				24E2A95E1E14A64600CCD26D /* PieChartView.m */,
+				24E2A95F1E14A64600CCD26D /* PieChartView.xib */,
+			);
+			path = PieChartView;
+			sourceTree = "<group>";
+		};
+		24E2A9621E14B12C00CCD26D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				24E2A9631E14B15400CCD26D /* PieChartTableCell.h */,
+				24E2A9641E14B15400CCD26D /* PieChartTableCell.m */,
+				24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		24F8AD8F1E0A19D10084926E = {
@@ -1374,6 +1406,7 @@
 				24F8B03D1E0A232D0084926E /* 人数-未选.png in Resources */,
 				24F8B0481E0A232D0084926E /* 实施总收入1@2x.png in Resources */,
 				24F8B06D1E0A232D0084926E /* 餐时-选中.png in Resources */,
+				24E2A9611E14A64600CCD26D /* PieChartView.xib in Resources */,
 				24F8B08F1E0A232D0084926E /* 会员信息图标1.png in Resources */,
 				24F8B0161E0A232D0084926E /* 会员信息wzg@2x.png in Resources */,
 				24F8B0801E0A232D0084926E /* 返回按钮.png in Resources */,
@@ -1409,6 +1442,7 @@
 				24F8B0761E0A232D0084926E /* 销售额选中.png in Resources */,
 				24F8B07B1E0A232D0084926E /* 弹框按钮@2x.png in Resources */,
 				24F8B06C1E0A232D0084926E /* 餐时-未选@2x.png in Resources */,
+				24E2A9671E14B15400CCD26D /* PieChartTableCell.xib in Resources */,
 				24F8B0B21E0A232D0084926E /* 影子导图@2x.png in Resources */,
 				24F8B0631E0A232D0084926E /* 按月-未选.png in Resources */,
 				24F8B03A1E0A232D0084926E /* 人均-未选@2x.png in Resources */,
@@ -1580,6 +1614,7 @@
 				24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */,
 				24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */,
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
+				24E2A9661E14B15400CCD26D /* PieChartTableCell.m in Sources */,
 				24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */,
 				247779D01E13D3B600BCBB60 /* ShowStore.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
@@ -1617,6 +1652,7 @@
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
+				24E2A9601E14A64600CCD26D /* PieChartView.m in Sources */,
 				2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

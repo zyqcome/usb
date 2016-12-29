@@ -13,6 +13,7 @@
 #import "presentView.h"
 #import "TimeperiodProtocol.h"
 #import "ShowStore.h"
+#import "PieChartView.h"
 @interface TimeperiodVC ()<TimeperiodProtocol,ShowShoreDelegate>
 {
     presentView *vw;
@@ -73,9 +74,13 @@
     lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
         return [NSString stringWithFormat:@"实时总收入:%.1f元",sumValue];
     };
-    
+    __weak typeof(self) weakSelf = self;
     lineView.selectCallback = ^(NSUInteger index){
+
         NSLog(@"选中第%@个",@(index));
+        PieChartView *svc = [PieChartView new];
+        [weakSelf.navigationController pushViewController:svc animated:YES];
+        
     };
     [lineView storkePath];
     
