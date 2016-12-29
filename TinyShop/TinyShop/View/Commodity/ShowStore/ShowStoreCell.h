@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 @class ShowStoreCell;
 @protocol redSwitchDelegate <NSObject>
--(void)selected:(ShowStoreCell * )cell redSwitch:(UISwitch*)redSwitch;
 
+-(void)selected:(ShowStoreCell * )cell redSwitch:(UISwitch*)redSwitch lebel:(UILabel*)titleLabel;
 
 @end
 @interface ShowStoreCell : UITableViewCell

@@ -12,10 +12,11 @@
 #import "BarView.h"
 #import "ColorDefine.h"
 #import "ShowStore.h"
+#import "SelectDate.h"
 
 #define BASE_TAG 20130
 
-@interface CommodityController ()<UIButtonSelectedDelegate,ShowShoreDelegate>
+@interface CommodityController ()<UIButtonSelectedDelegate,ShowShoreDelegate,SelectDateDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentWidth;
@@ -32,7 +33,10 @@
 @property (nonatomic, strong) BarView *barChartView;
 
 @property (nonatomic,strong)  ShowStore * showStore;
-@property (nonatomic,strong)  UIView * coverStore;
+@property (nonatomic,strong)  UIView * coverNoTouch;
+
+@property (nonatomic,strong)  SelectDate * SelectDate;
+@property (nonatomic,strong)  NSMutableArray * mArray;
 
 
 
@@ -137,17 +141,16 @@
     //更多
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    //    __weak typeof(self) weakSelf = self;
+        __weak typeof(self) weakSelf = self;
     [self.showView selectBlock:^(SQMenuShowView *view, NSInteger index) {
-        [self dismissViewClicked];
+        [weakSelf dismissViewClicked];
         
         switch (index) {
             case 0:
-                NSLog(@"1");
-                [self showStoreClicked];
+                [weakSelf showStoreClicked];
                 break;
             case 1:
-                NSLog(@"2");
+                [weakSelf showSelectDateClicked];
                 break;
             default:
                 NSLog(@"3");
@@ -198,46 +201,57 @@
 #pragma mark - 选择店铺弹出视图
 -(void)showStoreClicked{
     // showStore遮盖btn
-    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
-    _coverStore.backgroundColor = [UIColor grayColor];
-    _coverStore.alpha = 0.3;
+    _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:@[@"云迈天行特色火锅",@"云迈天行-测试",@"云迈天行-张大帅",@"云迈天行-测试的",@"云迈天行-测试的1",@"云迈天行-测试的2",@"云迈天行-测试的3",@"云迈天行-测试的4",@"云迈天行-测试的5",@"云迈天行-测试的6",@"云迈天行-测试的7",@"云迈天行-测试的8",@"云迈天行-测试的9",@"云迈天行-测试的10"]];
+    _showStore.delegate = self;
+    
+    _coverNoTouch = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverNoTouch.backgroundColor = [UIColor grayColor];
+    _coverNoTouch.alpha = 0.3;
 
-    [self.navigationController.view addSubview:_coverStore];
+    [self.navigationController.view addSubview:_coverNoTouch];
     [self.showStore showStoreView];
     [self.navigationController.view addSubview:_showStore];
 }
 
--(void)selectedButton:(UIButton *)button{
-    _coverStore.alpha = 0;
-    [_coverStore removeFromSuperview];
+-(void)selectedButton:(UIButton *)button mArray:(NSMutableArray *)mArray{
+    
+    NSLog(@"%@",mArray);
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
     [self.showStore dismissStoreView];
 }
 
--(void)selectedSwitch:(UISwitch *)redSwitch{
-    switch (redSwitch.tag) {
-        case 0:
-            NSLog(@"哈哈哈");
-            break;
-        case 1:
-            NSLog(@"哈哈");
-            break;
-        case 2:
-            NSLog(@"哈哈hahahah哈");
-            break;
-            
-        default:
-            NSLog(@"1111hahahahha");
-            break;
-    }
+#pragma mark - 选择日期
+-(void)showSelectDateClicked{
+    // showStore遮盖btn
+    _coverNoTouch = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverNoTouch.backgroundColor = [UIColor grayColor];
+    _coverNoTouch.alpha = 0.3;
+    
+    [self.navigationController.view addSubview:_coverNoTouch];
+    [self.SelectDate showSelectDateView];
+    [self.navigationController.view addSubview:_SelectDate];
 }
 
--(ShowStore *)showStore{
-    if (!_showStore) {
-        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:@[@"云迈天行特色火锅",@"云迈天行-测试",@"云迈天行-张大帅",@"云迈天行-测试的"]];
-        _showStore.delegate = self;
-    }
-    return _showStore;
+-(void)SelectDateButton:(UIButton *)button{
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
+    [self.SelectDate dismissSelectDateView];
 }
+
+
+-(SelectDate *)SelectDate{
+    if (!_SelectDate) {
+        _SelectDate = [[SelectDate alloc]initWithSelectDateFrame:CGRectMake(30, 64+25, Screen_W-60, 20)];
+        _SelectDate.delegate = self;
+    }
+    return _SelectDate;
+}
+
+
+
+
+
 
 
 
@@ -251,7 +265,7 @@
     return _colorArray;
 }
 
-#pragma mark- Color
+#pragma mark- 赋值颜色
 + (NSArray *)colorStoreByCount:(NSInteger)count
 {
     NSArray *moreColors =@[Color_RGBA(241, 54, 44, 1),Color_RGBA(23, 181, 249, 1),Color_RGBA(28, 130, 186, 1),Color_RGBA(254, 193, 32, 1),Color_RGBA(94, 183, 131, 1),Color_RGBA(71, 61, 144, 1),Color_RGBA(161, 85, 179, 1),Color_RGBA(225, 79, 54, 1),Color_RGBA(29, 209, 4, 1),Color_RGBA(199, 76, 254, 1)];

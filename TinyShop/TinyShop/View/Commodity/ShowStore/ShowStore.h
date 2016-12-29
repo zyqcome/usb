@@ -10,19 +10,19 @@
 @class ShowStore;
 
 @protocol ShowShoreDelegate <NSObject>
--(void)selectedButton:(UIButton*)button;
--(void)selectedSwitch:(UISwitch*)redSwitch;
+-(void)selectedButton:(UIButton*)button mArray:(NSMutableArray*)mArray;
 @end
 @interface ShowStore : UIView
 //传出外界赋值每个cell的数组,显示的位置在哪
 - (id)initWithStoreFrame:(CGRect)frame items:(NSArray <NSString *> *)items;
-//block传出点击方法
-@property (copy, nonatomic) void(^selectBlock)(ShowStore *view, NSInteger index);
 @property (nonatomic,assign)  id<ShowShoreDelegate>  delegate;
-
-- (void)selectBlock:(void(^)(ShowStore *view, NSInteger index))block;
+@property (nonatomic,strong) UIView * showView;
 
 - (void)showStoreView;
 - (void)dismissStoreView;
+
+@end
+
+@interface showView : UIView;
 
 @end
