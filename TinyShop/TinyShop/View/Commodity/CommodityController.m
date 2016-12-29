@@ -120,7 +120,6 @@
 
 //调用代理传过来的button事件
 -(void)selected:(MyScrollView *)scoll Button:(UIButton *)button{
-    NSLog(@"--%ld",(long)button.tag);
     NSInteger typeIndex = button.tag ;
     
     BOOL success = [self.barChartView hiddenOrShowTyped:typeIndex hiddenSign:!button.selected];
@@ -128,7 +127,7 @@
         return;
     }
     if (button.selected == NO) {
-        button.backgroundColor = [UIColor whiteColor];
+        button.backgroundColor = Color_RGBA(210, 210, 210, 1);
     }else{
         button.backgroundColor = self.colorArray[typeIndex];
     }
@@ -153,7 +152,7 @@
                 [weakSelf showSelectDateClicked];
                 break;
             default:
-                NSLog(@"3");
+
                 break;
         }
         
