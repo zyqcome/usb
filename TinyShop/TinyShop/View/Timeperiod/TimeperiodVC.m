@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewLineChart;
 @property (nonatomic,strong)  ShowStore * showStore;
 @property (nonatomic,strong)  UIView * coverStore;
+@property (nonatomic,strong)  UIView * coverNoTouch;
 
 @end
 
@@ -237,5 +238,11 @@
     
     
 }
-
+-(void)selectedButton:(UIButton *)button mArray:(NSMutableArray *)mArray{
+    
+    NSLog(@"%@",mArray);
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
+    [self.showStore dismissStoreView];
+}
 @end
