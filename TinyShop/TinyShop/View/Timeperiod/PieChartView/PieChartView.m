@@ -10,16 +10,26 @@
 #import "MZPieChartView.h"
 #import "Masonry.h"
 #import "PieChartTableCell.h"
-@interface PieChartView ()<UITableViewDelegate,UITableViewDataSource>
+#import "TimeperiodNethelper.h"
+#import "TimeperiodProtocol.h"
+
+@implementation  dishModel
+@end
+
+@implementation  PieChartModel
+@end
+
+@interface PieChartView ()<UITableViewDelegate,UITableViewDataSource,TimeperiodProtocol>
 {
     NSArray *valueStore;
     NSArray *textStore;
+    CGFloat *maxShopAddValue;//所有店铺经营和值
 }
 @property (nonatomic, strong) MZPieChartView *pieChartView;
 @property (weak, nonatomic) IBOutlet UIView *viewPieChart;
 @property (weak, nonatomic) IBOutlet UIView *viewtableview;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic,strong)NSArray<PieChartModel *> *pieChartarry;
 @end
 
 @implementation PieChartView
@@ -28,11 +38,17 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    valueStore=@[@"1",@"4",@"1",@"3",@"2",@"4",@"4",@"8",@"8",@"7",@"7",@"9",@"7",@"7",@"4",@"7",@"9",@"9",@"9",@"9",@"9",@"9",@"9"];
-    //text
-    textStore= @[@"西南大学",@"北京大学",@"清华大学",@"东京大学",@"南京大学",@"西南民族大学",@"浙江大学",@"复旦大学",@"西华大学",@"哈尔冰工业大学",@"四川大学",@"电子科技大学",@"西安科技大学",@"西南大学",@"重庆大学",@"斯坦福大学",@"哈佛",@"纽约大学",@"西南石油大学",@"云南大学",@"贵州大学",@"西北大学",@"北京邮电大学"];
+    self.tableView.separatorStyle = UITableViewCellEditingStyleNone;
     
-    [self createPieChartView];
+    TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    timeperiodNethelper.delege = self;
+    [timeperiodNethelper getApporderStatisticalDateShoplist:@"157,158,311" time:@"2016-12-28 22"];//157,158.311
+    
+    //valueStore=@[@"1",@"4",@"1",@"3",@"2",@"4",@"4",@"8",@"8",@"7",@"7",@"9",@"7",@"7",@"4",@"7",@"9",@"9",@"9",@"9",@"9",@"9",@"9"];
+    //text
+    //textStore= @[@"西南大学",@"北京大学",@"清华大学",@"东京大学",@"南京大学",@"西南民族大学",@"浙江大学",@"复旦大学",@"西华大学",@"哈尔冰工业大学",@"四川大学",@"电子科技大学",@"西安科技大学",@"西南大学",@"重庆大学",@"斯坦福大学",@"哈佛",@"纽约大学",@"西南石油大学",@"云南大学",@"贵州大学",@"西北大学",@"北京邮电大学"];
+    
+    //[self createPieChartView];
     
 }
 
@@ -181,12 +197,18 @@
     cell.Blseleclt = self.shopshowArry[indexPath.row].showIs;
     [cell.btn setImage:[UIImage imageNamed:(self.shopshowArry[indexPath.row].showIs ? @"选中" : @"未选中")] forState:UIControlStateNormal];
      */
+    if (self.pieChartarry.count == 1) {
+        cell.labelName.text = [self.pieChartarry[0].dishArry[indexPath.row].name stringByAppendingString:@"100%"];
+    } else {
+        cell.labelName.text = [self.pieChartarry[indexPath.row].name stringByAppendingString:@"100%"];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    NSUInteger row = self.pieChartarry.count == 1 ? self.pieChartarry[0].dishArry.count : self.pieChartarry.count;
+    return row;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -194,5 +216,70 @@
     [self.pieChartView selectOne:indexPath.row];
 }
 
+-(void)resetTimeperiod:(Received)sender Bl:(BOOL)bl message:(id)ms
+{
+    NSDictionary *dic = (NSDictionary *)ms;
+    NSArray *shoparry = dic[@"body"][@"branch"];
+    
+    NSMutableArray<PieChartModel *> *mutShoparry = [NSMutableArray new];
+    
+    for (NSDictionary *d in shoparry) {
+        PieChartModel *pieml = [PieChartModel new];
+        pieml.name = [d valueForKey:@"name"];
+        pieml.value = [d valueForKey:@"value"];
+        [mutShoparry addObject:pieml];
+    }
+    
+    NSDictionary *shopdishdic = dic[@"body"][@"vegetables"];//所有店铺
+    int i=0;
+    //d 所有店铺的字典
+    NSArray *keyarry = [shopdishdic allKeys];//获取key
+    for (NSString *strkey in keyarry) {
+        //店铺循环
+        NSMutableArray *mulArry = [NSMutableArray new];//缓存当前店铺的菜单
+        NSArray *disharry = [shopdishdic valueForKey:strkey];//店铺菜单 arry
+        for (NSDictionary *dish in disharry) {
+            //详解每个店铺的菜单
+            dishModel *dishml = [dishModel new];
+            dishml.name = [NSString stringWithFormat:@"%@",[dish valueForKey:@"name"]];
+            dishml.value = [NSString stringWithFormat:@"%@",[dish valueForKey:@"value"]];
+            [mulArry addObject:dishml];
+        }
+        if (mulArry.count !=0) {
+            mutShoparry[i].dishArry = [NSArray arrayWithArray:mulArry];
+        }
+        i=i+1;
+    }
+    self.pieChartarry = mutShoparry;
+    NSMutableArray *mulvalueStore = [NSMutableArray new];
+    NSMutableArray *multextStore = [NSMutableArray new];
+    if (self.pieChartarry.count == 1) {
+        //cell.labelName.text = [self.pieChartarry[0].dishArry[indexPath.row].name stringByAppendingString:@"100%"];
+        [self.pieChartarry[0].dishArry enumerateObjectsUsingBlock:^(dishModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [multextStore addObject:[NSString stringWithString:obj.name]];
+            [mulvalueStore addObject:[NSString stringWithString:obj.value]];
+        }];
+        
+    } else {
+        //cell.labelName.text = [self.pieChartarry[indexPath.row].name stringByAppendingString:@"100%"];
+        [self.pieChartarry enumerateObjectsUsingBlock:^(PieChartModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [multextStore addObject:[NSString stringWithString:obj.name]];
+            [mulvalueStore addObject:[NSString stringWithString:obj.value]];
+        }];
+    }
+    
+    valueStore=mulvalueStore;
+    textStore =multextStore;
+    [self createPieChartView];
+    [self.tableView reloadData];
+}
+
+
+-(NSArray<PieChartModel *> *)pieChartarry {
+    if (!_pieChartarry) {
+        _pieChartarry = [NSArray new];
+    }
+    return _pieChartarry;
+}
 
 @end

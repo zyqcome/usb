@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 typedef enum _Received {
     Received_lineChart = 0,//线性图表数据
+    Received_ApporderSubgraph = 1,
 //    Received = 1 << 0,
 //    Received = 1 << 1,
 //    Received = 1 << 2,

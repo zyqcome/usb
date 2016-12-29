@@ -15,8 +15,14 @@
 @end
 @implementation PieChartTableCell
 
+/**
+ 设置背景图
+
+ @param width 宽度百分百
+ @param color 颜色
+ */
 -(void)addviewPrecent:(CGFloat)width color:(UIColor *)color {
-    vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, self.backView.frame.size.height)];
+    vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.backView.frame.size.width * width, self.backView.frame.size.height)];
     vw.backgroundColor = color;
     [self.backView addSubview:vw];
 }
