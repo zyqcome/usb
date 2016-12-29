@@ -198,8 +198,6 @@
     [self.showStore dismissStoreView];
 }
 
-
-
 -(ShowStore *)showStore{
     NSMutableArray *shaparry = [NSMutableArray new];
     for (shopShow * sw in shopArry) { //NSMutableArray<shopShow *> *shopArry;

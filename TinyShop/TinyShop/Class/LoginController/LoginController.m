@@ -203,15 +203,14 @@
             //登录成功
             if (_isRemember == YES ) {
                 [userDefaults setBool:YES forKey:@"isRemember"];
+            
             }
-            
+            //创建标签控制器
+            DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
+            [self presentViewController:dhVC animated:NO completion:nil];
 
-            
         }
         
-    //创建标签控制器
-    DHControllerViewController * dhVC = [[DHControllerViewController alloc]init];
-    [self presentViewController:dhVC animated:NO completion:nil];
 
         
     }];

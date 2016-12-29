@@ -8,11 +8,15 @@
 
 #import "ShowStoreCell.h"
 
+@interface ShowStoreCell ()
+
+
+@end
 @implementation ShowStoreCell
 
 - (IBAction)redSwitchClicked:(UISwitch *)sender {
-    if ([self.delegate respondsToSelector:@selector(selected:redSwitch:)]) {
-        [self.delegate selected:self redSwitch:sender];
+    if ([self.delegate respondsToSelector:@selector(selected:redSwitch:lebel:)]) {
+        [self.delegate selected:self redSwitch:sender lebel:self.titleLabel];
     }
 }
 
