@@ -193,8 +193,6 @@
     [self.showStore dismissStoreView];
 }
 
-
-
 -(ShowStore *)showStore{
     NSMutableArray *shaparry = [NSMutableArray new];
     for (shopShow * sw in shopArry) { //NSMutableArray<shopShow *> *shopArry;
@@ -205,6 +203,34 @@
         _showStore.delegate = self;
     }
     return _showStore;
+}
+
+-(void)selectedSwitch:(UISwitch *)redSwitch{
+//    switch (redSwitch.tag) {
+//        case 0:
+//            NSLog(@"哈哈哈");
+//            break;
+//        case 1:
+//            NSLog(@"哈哈");
+//            break;
+//        case 2:
+//            NSLog(@"哈哈hahahah哈");
+//            break;
+//            
+//        default:
+//            NSLog(@"1111hahahahha");
+//            break;
+//    }
+    NSLog(@"%@",@(redSwitch.tag));
+    if (redSwitch.isOn == true) {
+        shopArry[redSwitch.tag].showIs = true;
+        NSLog(@"打开");
+    } else {
+        shopArry[redSwitch.tag].showIs = true;
+        NSLog(@"关闭");
+    }
+    
+    
 }
 
 @end
