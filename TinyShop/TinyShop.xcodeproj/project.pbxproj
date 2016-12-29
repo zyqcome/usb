@@ -50,6 +50,11 @@
 		247779D11E13D3B600BCBB60 /* ShowStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247779CE1E13D3B600BCBB60 /* ShowStoreCell.m */; };
 		247779D21E13D3B600BCBB60 /* ShowStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247779CF1E13D3B600BCBB60 /* ShowStoreCell.xib */; };
 		247779D41E13D4E400BCBB60 /* 关闭2.png in Resources */ = {isa = PBXBuildFile; fileRef = 247779D31E13D4E400BCBB60 /* 关闭2.png */; };
+		24E2A9571E14A52F00CCD26D /* MZPieChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A94E1E14A52E00CCD26D /* MZPieChartDataSet.m */; };
+		24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9501E14A52E00CCD26D /* MZPieChartFontColorSet.m */; };
+		24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9521E14A52E00CCD26D /* MZPieChartSet.m */; };
+		24E2A95A1E14A52F00CCD26D /* MZPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9541E14A52E00CCD26D /* MZPieChartView.m */; };
+		24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -330,6 +335,16 @@
 		247779CE1E13D3B600BCBB60 /* ShowStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowStoreCell.m; sourceTree = "<group>"; };
 		247779CF1E13D3B600BCBB60 /* ShowStoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowStoreCell.xib; sourceTree = "<group>"; };
 		247779D31E13D4E400BCBB60 /* 关闭2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭2.png"; sourceTree = "<group>"; };
+		24E2A94D1E14A52E00CCD26D /* MZPieChartDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartDataSet.h; sourceTree = "<group>"; };
+		24E2A94E1E14A52E00CCD26D /* MZPieChartDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartDataSet.m; sourceTree = "<group>"; };
+		24E2A94F1E14A52E00CCD26D /* MZPieChartFontColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartFontColorSet.h; sourceTree = "<group>"; };
+		24E2A9501E14A52E00CCD26D /* MZPieChartFontColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartFontColorSet.m; sourceTree = "<group>"; };
+		24E2A9511E14A52E00CCD26D /* MZPieChartSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartSet.h; sourceTree = "<group>"; };
+		24E2A9521E14A52E00CCD26D /* MZPieChartSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartSet.m; sourceTree = "<group>"; };
+		24E2A9531E14A52E00CCD26D /* MZPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartView.h; sourceTree = "<group>"; };
+		24E2A9541E14A52E00CCD26D /* MZPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartView.m; sourceTree = "<group>"; };
+		24E2A9551E14A52E00CCD26D /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
+		24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -701,6 +716,7 @@
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
 			isa = PBXGroup;
 			children = (
+				24E2A94C1E14A52E00CCD26D /* PieChart */,
 				2467D7A01E10E7F400C4E0FB /* LineChart */,
 				242574661E0D5192004F1369 /* TimeperiodProtocol */,
 				242574321E0CC010004F1369 /* TimeperiodNethelper */,
@@ -813,6 +829,23 @@
 				247779CF1E13D3B600BCBB60 /* ShowStoreCell.xib */,
 			);
 			path = ShowStore;
+			sourceTree = "<group>";
+		};
+		24E2A94C1E14A52E00CCD26D /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				24E2A94D1E14A52E00CCD26D /* MZPieChartDataSet.h */,
+				24E2A94E1E14A52E00CCD26D /* MZPieChartDataSet.m */,
+				24E2A94F1E14A52E00CCD26D /* MZPieChartFontColorSet.h */,
+				24E2A9501E14A52E00CCD26D /* MZPieChartFontColorSet.m */,
+				24E2A9511E14A52E00CCD26D /* MZPieChartSet.h */,
+				24E2A9521E14A52E00CCD26D /* MZPieChartSet.m */,
+				24E2A9531E14A52E00CCD26D /* MZPieChartView.h */,
+				24E2A9541E14A52E00CCD26D /* MZPieChartView.m */,
+				24E2A9551E14A52E00CCD26D /* UIView+Addtions.h */,
+				24E2A9561E14A52E00CCD26D /* UIView+Addtions.m */,
+			);
+			path = PieChart;
 			sourceTree = "<group>";
 		};
 		24F8AD8F1E0A19D10084926E = {
@@ -1562,7 +1595,10 @@
 				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
 				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
+				24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */,
+				24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */,
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
+				24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */,
 				247779D01E13D3B600BCBB60 /* ShowStore.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
@@ -1577,6 +1613,8 @@
 				2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */,
 				F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */,
 				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
+				24E2A9571E14A52F00CCD26D /* MZPieChartDataSet.m in Sources */,
+				24E2A95A1E14A52F00CCD26D /* MZPieChartView.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				188751C51E110F5C0089014F /* SQMenuShowView.m in Sources */,
