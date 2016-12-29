@@ -161,8 +161,6 @@
     self.selectBlock = block;
 }
 
-
-
 #pragma mark - 懒加载
 - (NSMutableSet *)choseSet{
     if (!_choseSet) {

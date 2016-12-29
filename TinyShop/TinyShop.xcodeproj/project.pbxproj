@@ -245,6 +245,8 @@
 		F30D1A611E0CCDF5008A1158 /* PopupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A561E0CCDF5008A1158 /* PopupViewCell.m */; };
 		F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */; };
 		F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */; };
+		F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FB1E14A93F000CF741 /* OperatingModel.m */; };
+		F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FE1E14AC23000CF741 /* OperationNetrequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -533,6 +535,10 @@
 		F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewCell.h; sourceTree = "<group>"; };
 		F30D1A631E0D13E0008A1158 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewCell.m; sourceTree = "<group>"; };
 		F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
+		F32676FA1E14A93F000CF741 /* OperatingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatingModel.h; sourceTree = "<group>"; };
+		F32676FB1E14A93F000CF741 /* OperatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingModel.m; sourceTree = "<group>"; };
+		F32676FD1E14AC23000CF741 /* OperationNetrequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationNetrequest.h; path = OperatingModel/OperationNetrequest.h; sourceTree = "<group>"; };
+		F32676FE1E14AC23000CF741 /* OperationNetrequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationNetrequest.m; path = OperatingModel/OperationNetrequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1214,6 +1220,9 @@
 		F30D1A371E0CBA7D008A1158 /* Statistical */ = {
 			isa = PBXGroup;
 			children = (
+				F32676F91E14A93F000CF741 /* OperatingModel */,
+				F32676FD1E14AC23000CF741 /* OperationNetrequest.h */,
+				F32676FE1E14AC23000CF741 /* OperationNetrequest.m */,
 				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
 				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
 				F30D1A621E0D13E0008A1158 /* StoreTableViewCell.h */,
@@ -1221,6 +1230,15 @@
 				F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */,
 			);
 			path = Statistical;
+			sourceTree = "<group>";
+		};
+		F32676F91E14A93F000CF741 /* OperatingModel */ = {
+			isa = PBXGroup;
+			children = (
+				F32676FA1E14A93F000CF741 /* OperatingModel.h */,
+				F32676FB1E14A93F000CF741 /* OperatingModel.m */,
+			);
+			path = OperatingModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1557,6 +1575,7 @@
 				188751C31E110F5C0089014F /* SQMenuShowCell.m in Sources */,
 				1805B45B1E0BE89C00BC85E1 /* DrawerController.m in Sources */,
 				2467D7AC1E10E92300C4E0FB /* UIView+Addtions.m in Sources */,
+				F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */,
 				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
@@ -1577,6 +1596,7 @@
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
+				F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
 				2460EB181E0B84D700539038 /* UserModel.m in Sources */,
 				2467D7AB1E10E92300C4E0FB /* MZLineView.m in Sources */,
