@@ -16,6 +16,8 @@
 //日常运营分析所有数据获取
 
 -(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime{
+    //请求数据时，将bool 值设为NO。请求到数据之后将bool值设为YES
+//    self.networkBlock(NO);
     //数据模拟
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     //登陆名
@@ -52,6 +54,15 @@
             return ;
         }
         NSLog(@"%@",data);
+        if (data) {
+            
+            NSDictionary *body = data[@"body"];
+            NSArray *dateAry = [body allKeys];
+            NSArray *detailAry = [body allValues] ;
+        
+        //请求之后、数据存入后 回调
+        self.networkBlock(YES,dateAry,detailAry);
+        }
     }];
 }
 /**
@@ -96,7 +107,7 @@
     //店铺ID
     [dictbody setObject:allShoplist forKey:@"shop_id"];
     //类型统计  sales 销售额 order_num 订单数 people_num 人数 people_avg 人均消费 avg_meal 餐时
-    [dictbody setObject:@"sales" forKey:@"statistical_type"];
+    [dictbody setObject:type forKey:@"statistical_type"];
     //按什么时间统计（年月日）
     [dictbody setObject:@"day" forKey:@"query"];
     //开始时间

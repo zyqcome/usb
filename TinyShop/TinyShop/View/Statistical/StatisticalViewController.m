@@ -7,6 +7,8 @@
 //
 
 #import "StatisticalViewController.h"
+//模型
+#import "OperatingModel.h"
 //下拉菜单
 #import "SQMenuShowView.h"
 //店铺cell
@@ -66,7 +68,7 @@
     
 }
 //折线图
--(void)addLineViewbrefixStr:(NSString *)beforeStr sumValue:(NSString *)RTSumValue unit:(NSString *)unit{
+-(void)addLineViewbrefixStr:(NSString *)beforeStr sumValue:(NSString *)RTSumValue unit:(NSString *)unit titleStore:(NSArray *)modelStore incomeStore:(NSArray *)modelIncome{
     
     self.lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 145, self.view.width,self.view.height-144)];
     [self.view addSubview:self.lineView];
@@ -76,12 +78,13 @@
     self.lineView.labelTransform = transform;
     self.lineView.bottomMargin = 65;
     self.lineView.incomeBottomMargin = 30;
-    
-    self.lineView.titleStore = @[@"2016-11-11",@"2016-11-12",@"2016-11-13",@"2016-11-14",@"4时",@"5时",@"6时",@"7时",@"8时",@"9时",@"10时",@"11时",@"12时",@"13时",@"14时",@"15时",@"16时",@"17时",@"18时",@"19时",@"20时",@"21时",@"22时",@"23时"];
+    //收入数据
+    self.lineView.titleStore = modelStore;
     
     self.lineView.brefixStr = beforeStr;
     //    lineView.suffixStr = @"后缀";
-    self.lineView.incomeStore = @[@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"50",@"0",@"50",@"50",];
+    //底部时间
+    self.lineView.incomeStore = modelIncome;
     
     self.lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
         NSString *str = [RTSumValue stringByAppendingFormat:@"：%@",@(sumValue)];
@@ -98,8 +101,13 @@
 -(void)loadDatatype:(NSString *)type queryTime:(NSString *)queryTime{
     OperationNetrequest *operation = [OperationNetrequest new];
     [operation getAllOperationtype:type queryTime:queryTime];
-    //数据请求成功之后绘制 折线图
-    [self addLineViewbrefixStr:self.brefixStr sumValue:self.sumValueStr unit:self.unitStr ];
+    //数据请求成功之后用代码块回调
+    operation.networkBlock = ^(BOOL a,NSArray *dateAry,NSArray *detailAry){
+        if (a) {
+            [self addLineViewbrefixStr:self.brefixStr sumValue:self.sumValueStr unit:self.unitStr titleStore:dateAry incomeStore:detailAry];
+        }
+    };
+    
 }
 
 
