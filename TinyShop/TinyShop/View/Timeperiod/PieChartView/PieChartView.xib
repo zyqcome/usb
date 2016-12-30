@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PieChartView">
+            <connections>
+                <outlet property="tableView" destination="VXf-pJ-kIM" id="1ac-i6-mbY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPieChart" destination="13x-yR-B8p" id="cUI-Oc-9Wn"/>
+                <outlet property="viewtableview" destination="bvK-gu-gos" id="250-aN-nCY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13x-yR-B8p">
+                    <rect key="frame" x="0.0" y="64" width="375" height="303"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-gu-gos">
+                    <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXf-pJ-kIM">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="i5M-Pr-FkT" id="Zhf-EV-WdS"/>
+                                <outlet property="delegate" destination="i5M-Pr-FkT" id="vT5-hk-abN"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="VXf-pJ-kIM" secondAttribute="bottom" id="LIq-Dt-yEp"/>
+                        <constraint firstItem="VXf-pJ-kIM" firstAttribute="top" secondItem="bvK-gu-gos" secondAttribute="top" id="d6L-rq-g10"/>
+                        <constraint firstItem="VXf-pJ-kIM" firstAttribute="leading" secondItem="bvK-gu-gos" secondAttribute="leading" id="ui9-E6-ih3"/>
+                        <constraint firstAttribute="trailing" secondItem="VXf-pJ-kIM" secondAttribute="trailing" id="y9R-op-3HY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bvK-gu-gos" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="55M-bz-9mk"/>
+                <constraint firstItem="13x-yR-B8p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="9P0-4x-L4d"/>
+                <constraint firstAttribute="trailing" secondItem="13x-yR-B8p" secondAttribute="trailing" id="DK1-Ip-O3q"/>
+                <constraint firstAttribute="trailing" secondItem="bvK-gu-gos" secondAttribute="trailing" id="IHk-pP-KhT"/>
+                <constraint firstItem="bvK-gu-gos" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mag-LV-Afl"/>
+                <constraint firstItem="bvK-gu-gos" firstAttribute="top" secondItem="13x-yR-B8p" secondAttribute="bottom" id="U0I-mH-J68"/>
+                <constraint firstItem="13x-yR-B8p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bUq-Vw-70J"/>
+                <constraint firstAttribute="bottom" secondItem="bvK-gu-gos" secondAttribute="bottom" id="qss-IF-Ijd"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -19,4 +19,11 @@
 @interface TimeperiodNethelper : NSObject
 @property(nonatomic,weak)id<TimeperiodProtocol> delege;
 -(void)getTimeperiodDate;
+
+/**
+ 获取子店铺数据-时间
+
+ @param ShopList <#ShopList description#>
+ */
+-(void)getApporderStatisticalDateShoplist:(NSString *)ShopList time:(NSString *)timer;
 @end

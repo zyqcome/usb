@@ -13,6 +13,7 @@
 #import "presentView.h"
 #import "TimeperiodProtocol.h"
 #import "ShowStore.h"
+#import "PieChartView.h"
 @interface TimeperiodVC ()<TimeperiodProtocol,ShowShoreDelegate>
 {
     presentView *vw;
@@ -23,7 +24,8 @@
 }
 @property (weak, nonatomic) IBOutlet UIView *viewLineChart;
 @property (nonatomic,strong)  ShowStore * showStore;
-@property (nonatomic,strong)  UIView * coverStore;
+
+@property (nonatomic,strong)  UIView * coverNoTouch;
 
 @end
 
@@ -73,9 +75,13 @@
     lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
         return [NSString stringWithFormat:@"实时总收入:%.1f元",sumValue];
     };
-    
+    __weak typeof(self) weakSelf = self;
     lineView.selectCallback = ^(NSUInteger index){
+
         NSLog(@"选中第%@个",@(index));
+        PieChartView *svc = [PieChartView new];
+        [weakSelf.navigationController pushViewController:svc animated:YES];
+        
     };
     [lineView storkePath];
     
@@ -178,18 +184,18 @@
 #pragma mark - 选择店铺弹出视图
 -(void)showStoreClicked{
     // showStore遮盖btn
-    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
-    _coverStore.backgroundColor = [UIColor grayColor];
-    _coverStore.alpha = 0.3;
+    _coverNoTouch = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverNoTouch.backgroundColor = [UIColor grayColor];
+    _coverNoTouch.alpha = 0.3;
     
-    [self.navigationController.view addSubview:_coverStore];
+    [self.navigationController.view addSubview:_coverNoTouch];
     [self.showStore showStoreView];
     [self.navigationController.view addSubview:_showStore];
 }
 
 -(void)selectedButton:(UIButton *)button{
-    _coverStore.alpha = 0;
-    [_coverStore removeFromSuperview];
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
     [self.showStore dismissStoreView];
 }
 
@@ -232,5 +238,11 @@
     
     
 }
-
+-(void)selectedButton:(UIButton *)button mArray:(NSMutableArray *)mArray{
+    
+    NSLog(@"%@",mArray);
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
+    [self.showStore dismissStoreView];
+}
 @end
