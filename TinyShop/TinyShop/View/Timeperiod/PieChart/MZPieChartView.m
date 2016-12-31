@@ -424,6 +424,7 @@
     self.textLabel.text = self.dataSet.textStore[index];
     
     self.selectIndex = index;
+    self.selectOne(index);
 }
 
 - (NSInteger)findIndexByAngle:(CGFloat)angle

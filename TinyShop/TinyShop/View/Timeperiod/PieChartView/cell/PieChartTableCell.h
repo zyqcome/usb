@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPercent;
 -(void)addviewPrecent:(CGFloat)width color:(UIColor *)color ;
 @property (weak, nonatomic) IBOutlet UIView *backView;
+@property (weak, nonatomic) IBOutlet UIView *backcolorView;
+@property (weak, nonatomic) IBOutlet UIButton *colorBtn;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 @end

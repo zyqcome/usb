@@ -22,9 +22,23 @@
  @param color 颜色
  */
 -(void)addviewPrecent:(CGFloat)width color:(UIColor *)color {
-    vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.backView.frame.size.width * width, self.backView.frame.size.height)];
-    vw.backgroundColor = color;
-    [self.backView addSubview:vw];
+    //float i = self.backView.bounds.size.height;
+    //vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.backView.frame.size.width * width, 18)];
+    vw = [UIView new];
+    if (width != 0) {
+     self.backcolorView.backgroundColor  = color;
+        [self.lineView setAlpha:0];
+        vw.backgroundColor = color;
+        [self.backView addSubview:vw];
+        [vw mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.mas_equalTo(self.backView.mas_centerY);
+            make.height.mas_equalTo(self.backView.mas_height);
+            make.left.mas_equalTo(self.backView.mas_left);
+            make.width.mas_equalTo(self.backView.mas_width).multipliedBy(width);
+        }];
+    } else {
+        [self.lineView setAlpha:1];
+    }
 }
 
 - (void)awakeFromNib {

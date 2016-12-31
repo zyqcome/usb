@@ -23,7 +23,8 @@
 {
     NSArray *valueStore;
     NSArray *textStore;
-    CGFloat *maxShopAddValue;//所有店铺经营和值
+    float maxShopAddValue;//所有店铺经营和值
+    NSInteger pieChartSecelt;
 }
 @property (nonatomic, strong) MZPieChartView *pieChartView;
 @property (weak, nonatomic) IBOutlet UIView *viewPieChart;
@@ -36,13 +37,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+#pragma mark -数据初始化
+    pieChartSecelt  = -1;
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellEditingStyleNone;
     
     TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
     timeperiodNethelper.delege = self;
-    [timeperiodNethelper getApporderStatisticalDateShoplist:@"157,158,311" time:@"2016-12-28 22"];//157,158.311
+    [timeperiodNethelper getApporderStatisticalDateShoplist:self.displayshoplist time:self.displayshopdate];//157,158.311
     
     //valueStore=@[@"1",@"4",@"1",@"3",@"2",@"4",@"4",@"8",@"8",@"7",@"7",@"9",@"7",@"7",@"4",@"7",@"9",@"9",@"9",@"9",@"9",@"9",@"9"];
     //text
@@ -68,7 +72,7 @@
 */
 - (void)createPieChartView
 {
-    self.pieChartView = [[MZPieChartView alloc]initWithFrame:CGRectMake(-30,-30,self.viewPieChart.width,self.viewPieChart.height)];
+    self.pieChartView = [[MZPieChartView alloc]initWithFrame:CGRectMake(0,0,self.viewPieChart.width,self.viewPieChart.width)];
     [self.viewPieChart addSubview:self.pieChartView];
     //饼状图设置
     self.pieChartView.set = [self set];
@@ -93,7 +97,7 @@
 */
 }
 
-#pragma mark- Button Action
+#pragma mark- Piechat Action
 
 - (void)selectPieChart
 {
@@ -168,8 +172,11 @@
 
 - (SelectCallBack)select
 {
+    __weak typeof(self) weakSelf = self;
     return ^(NSInteger index){
         NSLog(@"选中第%ld个",index);
+        pieChartSecelt = index;
+        [weakSelf.tableView reloadData];
     };
 }
 
@@ -177,8 +184,11 @@
 
 - (DeselectCallBack)deselect
 {
+    __weak typeof(self) weakSelf = self;
     return ^{
         NSLog(@"取消选中饼状图");
+        pieChartSecelt = -1;
+        [weakSelf.tableView reloadData];
     };
 }
 
@@ -190,17 +200,24 @@
         //将Custom.xib中的所有对象载入
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PieChartTableCell" owner:nil options:nil];
         cell = [nib objectAtIndex:0];
-        [cell addviewPrecent:200 color:self.dataSet.colorStore[indexPath.row]];
     }
-    /**
-    cell.label.text = self.shopshowArry[indexPath.row].shopname;
-    cell.Blseleclt = self.shopshowArry[indexPath.row].showIs;
-    [cell.btn setImage:[UIImage imageNamed:(self.shopshowArry[indexPath.row].showIs ? @"选中" : @"未选中")] forState:UIControlStateNormal];
-     */
+    float bili =0;
     if (self.pieChartarry.count == 1) {
-        cell.labelName.text = [self.pieChartarry[0].dishArry[indexPath.row].name stringByAppendingString:@"100%"];
+        bili = [self.pieChartarry[0].dishArry[indexPath.row].value floatValue]/maxShopAddValue;
+        cell.labelName.text = self.pieChartarry[0].dishArry[indexPath.row].name;//stringByAppendingString:[NSString stringWithFormat:@"%f%%",bili]];
+        cell.labelPercent.text = [NSString stringWithFormat:@"%d%%",(int)(bili*100)];
+        [cell addviewPrecent:bili color:self.dataSet.colorStore[indexPath.row]];
     } else {
-        cell.labelName.text = [self.pieChartarry[indexPath.row].name stringByAppendingString:@"100%"];
+        bili = [self.pieChartarry[indexPath.row].value floatValue]/maxShopAddValue;
+        cell.labelName.text = [self.pieChartarry[indexPath.row].name stringByAppendingString:[NSString stringWithFormat:@"%d%%",(int)(bili*100)]];
+        cell.labelPercent.text = self.pieChartarry[indexPath.row].value;
+        cell.colorBtn.backgroundColor = self.dataSet.colorStore[indexPath.row];
+        [cell addviewPrecent:0 color:self.dataSet.colorStore[indexPath.row]];
+        if (pieChartSecelt == indexPath.row) {
+            cell.labelName.textColor = [UIColor redColor];
+        } else {
+            cell.labelName.textColor = [UIColor blackColor];
+        }
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -216,6 +233,14 @@
     [self.pieChartView selectOne:indexPath.row];
 }
 
+-(NSArray<PieChartModel *> *)pieChartarry {
+    if (!_pieChartarry) {
+        _pieChartarry = [NSArray new];
+    }
+    return _pieChartarry;
+}
+
+#pragma mark -数据刷新代理
 -(void)resetTimeperiod:(Received)sender Bl:(BOOL)bl message:(id)ms
 {
     NSDictionary *dic = (NSDictionary *)ms;
@@ -231,55 +256,55 @@
     }
     
     NSDictionary *shopdishdic = dic[@"body"][@"vegetables"];//所有店铺
-    int i=0;
     //d 所有店铺的字典
     NSArray *keyarry = [shopdishdic allKeys];//获取key
+    int i=0;
     for (NSString *strkey in keyarry) {
         //店铺循环
+        NSArray *disharry = [shopdishdic valueForKey:strkey];//取出店铺的菜单
         NSMutableArray *mulArry = [NSMutableArray new];//缓存当前店铺的菜单
-        NSArray *disharry = [shopdishdic valueForKey:strkey];//店铺菜单 arry
-        for (NSDictionary *dish in disharry) {
-            //详解每个店铺的菜单
-            dishModel *dishml = [dishModel new];
-            dishml.name = [NSString stringWithFormat:@"%@",[dish valueForKey:@"name"]];
-            dishml.value = [NSString stringWithFormat:@"%@",[dish valueForKey:@"value"]];
-            [mulArry addObject:dishml];
+        if (disharry.count == 0) {
+        } else {
+            for (NSDictionary *dish in disharry) {
+                dishModel *dishml = [dishModel new];
+                dishml.name = [NSString stringWithFormat:@"%@",[dish valueForKey:@"name"]];
+                dishml.value = [NSString stringWithFormat:@"%@",[dish valueForKey:@"value"]];
+                [mulArry addObject:dishml];
+            }
+            mutShoparry[i].dishArry = mulArry;
+            i++;
         }
-        if (mulArry.count !=0) {
-            mutShoparry[i].dishArry = [NSArray arrayWithArray:mulArry];
-        }
-        i=i+1;
     }
+    //获取饼图显示数组
     self.pieChartarry = mutShoparry;
     NSMutableArray *mulvalueStore = [NSMutableArray new];
     NSMutableArray *multextStore = [NSMutableArray new];
+    maxShopAddValue = 0;
     if (self.pieChartarry.count == 1) {
-        //cell.labelName.text = [self.pieChartarry[0].dishArry[indexPath.row].name stringByAppendingString:@"100%"];
         [self.pieChartarry[0].dishArry enumerateObjectsUsingBlock:^(dishModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [multextStore addObject:[NSString stringWithString:obj.name]];
             [mulvalueStore addObject:[NSString stringWithString:obj.value]];
+            //统计显示数据-这个是只有一个店铺，那么，统计的就是店铺中的菜品数据
+            //CGFloat *maxShopAddValue;//所有店铺经营和值
+            maxShopAddValue += [obj.value floatValue];
         }];
         
     } else {
-        //cell.labelName.text = [self.pieChartarry[indexPath.row].name stringByAppendingString:@"100%"];
         [self.pieChartarry enumerateObjectsUsingBlock:^(PieChartModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [multextStore addObject:[NSString stringWithString:obj.name]];
             [mulvalueStore addObject:[NSString stringWithString:obj.value]];
+            maxShopAddValue += [obj.value floatValue];
         }];
     }
     
     valueStore=mulvalueStore;
     textStore =multextStore;
+    //绘制饼图
     [self createPieChartView];
+    
+    pieChartSecelt  = -1;
+    //刷新表格
     [self.tableView reloadData];
-}
-
-
--(NSArray<PieChartModel *> *)pieChartarry {
-    if (!_pieChartarry) {
-        _pieChartarry = [NSArray new];
-    }
-    return _pieChartarry;
 }
 
 @end

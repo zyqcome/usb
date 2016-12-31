@@ -44,6 +44,28 @@
     [self getTimeperiodNetWorkset:timeperiodGetModel AllShopList:mutStr];
 }
 
+-(void)getTimeperiodDate:(NSString *)ShopList {
+    //数据模拟
+    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+    //登陆名
+    loginViewMode.shop_account = loginViewMode.shop_account;//@"yljkrg";//@"ymtxtshg";
+    //员工id
+    loginViewMode.user_account = loginViewMode.user_account;//@"ymtx";//@"001";
+    //登陆配置信息
+    TimeperiodGetModel *timeperiodGetModel = [TimeperiodGetModel new];
+    timeperiodGetModel.client_type = @"ios";//固定参数
+    timeperiodGetModel.client_version = @"2.0";//固定参数
+    timeperiodGetModel.client_token = @"2a8242f0858bbbde9c5dcbd0a0008e5a";//固定参数
+    timeperiodGetModel.shop_id = loginViewMode.shop.shop_id;
+    timeperiodGetModel.mgr_base_id = loginViewMode.user.mgr_base_id;
+    timeperiodGetModel.access_token = loginViewMode.user.mgr_login_token;
+    timeperiodGetModel.mac_code=@"";
+    
+    //获取-所有分店
+    //NSString *mutStr = [self strAllShopList];
+    
+    [self getTimeperiodNetWorkset:timeperiodGetModel AllShopList:ShopList];
+}
 
 -(void)getApporderStatisticalDateShoplist:(NSString *)ShopList time:(NSString *)timer {
     //数据模拟
@@ -93,15 +115,29 @@
             linePm.value = [dic valueForKey:key];
             [reArry addObject:linePm];
         }
-        [self.delege resetTimeperiod:Received_lineChart Bl:YES message:[reArry sortedArrayUsingComparator:^NSComparisonResult(linePointModel *  _Nonnull obj1, linePointModel *  _Nonnull obj2) {
+        NSDate *date= [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"hh"];
+        NSString *hhString = [dateFormatter stringFromDate:date];
+        NSNumber  *inthh = [NSNumber numberWithInt:[hhString intValue] ];
+        reArry = [[reArry sortedArrayUsingComparator:^NSComparisonResult(linePointModel *  _Nonnull obj1, linePointModel *  _Nonnull obj2) {
             NSComparisonResult result;
-            NSString *s1 = obj1.time;//[obj1.time stringByReplacingOccurrencesOfString:@"时" withString:@""];
-            NSString *s2 = obj2.time;//[obj2.time stringByReplacingOccurrencesOfString:@"时" withString:@""];
+            NSString *s1 = obj1.time;
+            NSString *s2 = obj2.time;
             NSNumber *o1 = [NSNumber numberWithFloat:[s1 floatValue]];
             NSNumber *o2 = [NSNumber numberWithFloat:[s2 floatValue]];
             result = [o1 compare:o2];
             return result;
-        }]];
+        }] mutableCopy];
+        NSMutableArray *mutarry = [NSMutableArray new];
+        for (int i= [inthh intValue]; i < reArry.count; i++) {
+            [mutarry addObject:reArry[i]];
+        }
+        for (int i=0; i<[inthh intValue]; i++) {
+            [mutarry addObject:reArry[i]];
+        }
+        [self.delege resetTimeperiod:Received_lineChart Bl:YES message:mutarry];
+        
     }];
 }
 /**
@@ -145,19 +181,6 @@
     }];
 }
 
-///**
-// 排序函数
-//
-// @param other other
-// @return return
-// */
-//- (NSComparisonResult) myCompare:(linePointModel *)other {
-//    //这里可以作适当的修正后再比较
-//    //int result = ([selfintValue]>>1) - ([other intValue]>>1);
-//    //这里可以控制排序的顺序和逆序
-//    //return result < 0 ?NSOrderedDescending : result >0 ?NSOrderedAscending :NSOrderedSame;
-////    int selfint =
-//}
 
 -(NSString *)strAllShopList {
     //数据模拟

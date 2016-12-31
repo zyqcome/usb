@@ -15,11 +15,12 @@
 @end
 
 
-
 @interface TimeperiodNethelper : NSObject
 @property(nonatomic,weak)id<TimeperiodProtocol> delege;
--(void)getTimeperiodDate;
 
+-(NSString *)strAllShopList;
+-(void)getTimeperiodDate;
+-(void)getTimeperiodDate:(NSString *)ShopList;
 /**
  获取子店铺数据-时间
 

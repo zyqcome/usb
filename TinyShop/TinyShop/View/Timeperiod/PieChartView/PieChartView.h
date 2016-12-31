@@ -20,5 +20,9 @@
 @property (nonatomic, strong)NSArray<dishModel *> *dishArry;
 @end
 @interface PieChartView : UIViewController
+/** 请求数据的店铺列表 */
+@property (nonatomic, strong)NSString *displayshoplist;
+@property (nonatomic, strong)NSString *displayshopdate;
+
 
 @end
