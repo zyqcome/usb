@@ -27,4 +27,5 @@
  @param ShopList <#ShopList description#>
  */
 -(void)getApporderStatisticalDateShoplist:(NSString *)ShopList time:(NSString *)timer;
+-(void)getMemberinformationViewDate:(NSString *)ShopList;
 @end

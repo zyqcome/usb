@@ -26,6 +26,13 @@
 		18D963731E0E037100A04AAB /* CommodityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D963711E0E037100A04AAB /* CommodityController.xib */; };
 		18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D963791E0E0B5400A04AAB /* NavigationController.m */; };
 		18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9637C1E0E230600A04AAB /* MyScrollView.m */; };
+		242090061E177E7C00880836 /* MemberinformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 242090041E177E7C00880836 /* MemberinformationView.m */; };
+		242090071E177E7C00880836 /* MemberinformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242090051E177E7C00880836 /* MemberinformationView.xib */; };
+		2420900B1E1790D300880836 /* vipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2420900A1E1790D300880836 /* vipModel.m */; };
+		242090111E17956400880836 /* vipcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2420900F1E17956400880836 /* vipcell.m */; };
+		242090121E17956400880836 /* vipcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242090101E17956400880836 /* vipcell.xib */; };
+		2420901A1E179F0500880836 /* consumptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 242090181E179F0500880836 /* consumptionView.m */; };
+		2420901B1E179F0500880836 /* consumptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242090191E179F0500880836 /* consumptionView.xib */; };
 		2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574261E0CBDF5004F1369 /* TableViewCell.m */; };
 		242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425742B1E0CBDF5004F1369 /* TimeperiodVC.m */; };
 		242574311E0CBDF5004F1369 /* TimeperiodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2425742C1E0CBDF5004F1369 /* TimeperiodVC.xib */; };
@@ -294,6 +301,17 @@
 		18D963791E0E0B5400A04AAB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		18D9637B1E0E230600A04AAB /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScrollView.h; path = ../MyScrollView.h; sourceTree = "<group>"; };
 		18D9637C1E0E230600A04AAB /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyScrollView.m; path = ../MyScrollView.m; sourceTree = "<group>"; };
+		242090031E177E7C00880836 /* MemberinformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberinformationView.h; sourceTree = "<group>"; };
+		242090041E177E7C00880836 /* MemberinformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberinformationView.m; sourceTree = "<group>"; };
+		242090051E177E7C00880836 /* MemberinformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberinformationView.xib; sourceTree = "<group>"; };
+		242090091E1790D300880836 /* vipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vipModel.h; sourceTree = "<group>"; };
+		2420900A1E1790D300880836 /* vipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vipModel.m; sourceTree = "<group>"; };
+		2420900E1E17956400880836 /* vipcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vipcell.h; sourceTree = "<group>"; };
+		2420900F1E17956400880836 /* vipcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vipcell.m; sourceTree = "<group>"; };
+		242090101E17956400880836 /* vipcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vipcell.xib; sourceTree = "<group>"; };
+		242090171E179F0500880836 /* consumptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consumptionView.h; sourceTree = "<group>"; };
+		242090181E179F0500880836 /* consumptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = consumptionView.m; sourceTree = "<group>"; };
+		242090191E179F0500880836 /* consumptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = consumptionView.xib; sourceTree = "<group>"; };
 		242574251E0CBDF5004F1369 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		242574261E0CBDF5004F1369 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		2425742A1E0CBDF5004F1369 /* TimeperiodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodVC.h; sourceTree = "<group>"; };
@@ -734,6 +752,48 @@
 				18D963791E0E0B5400A04AAB /* NavigationController.m */,
 			);
 			path = NavgitionContrller;
+			sourceTree = "<group>";
+		};
+		24208FFF1E177E0C00880836 /* Memberinformation */ = {
+			isa = PBXGroup;
+			children = (
+				242090131E179ED600880836 /* consumptionView */,
+				2420900C1E1794C700880836 /* cell */,
+				242090081E1790C200880836 /* vipModel */,
+				242090031E177E7C00880836 /* MemberinformationView.h */,
+				242090041E177E7C00880836 /* MemberinformationView.m */,
+				242090051E177E7C00880836 /* MemberinformationView.xib */,
+			);
+			path = Memberinformation;
+			sourceTree = "<group>";
+		};
+		242090081E1790C200880836 /* vipModel */ = {
+			isa = PBXGroup;
+			children = (
+				242090091E1790D300880836 /* vipModel.h */,
+				2420900A1E1790D300880836 /* vipModel.m */,
+			);
+			path = vipModel;
+			sourceTree = "<group>";
+		};
+		2420900C1E1794C700880836 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2420900E1E17956400880836 /* vipcell.h */,
+				2420900F1E17956400880836 /* vipcell.m */,
+				242090101E17956400880836 /* vipcell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		242090131E179ED600880836 /* consumptionView */ = {
+			isa = PBXGroup;
+			children = (
+				242090171E179F0500880836 /* consumptionView.h */,
+				242090181E179F0500880836 /* consumptionView.m */,
+				242090191E179F0500880836 /* consumptionView.xib */,
+			);
+			path = consumptionView;
 			sourceTree = "<group>";
 		};
 		242574221E0CBDF5004F1369 /* Timeperiod */ = {
@@ -1291,6 +1351,7 @@
 				242574221E0CBDF5004F1369 /* Timeperiod */,
 				F30D1A371E0CBA7D008A1158 /* Statistical */,
 				18D9636E1E0E035800A04AAB /* Commodity */,
+				24208FFF1E177E0C00880836 /* Memberinformation */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1393,6 +1454,7 @@
 				24F8B0521E0A232D0084926E /* 桌数-选中-@2x.png in Resources */,
 				24F8B0541E0A232D0084926E /* 箭头@2x.png in Resources */,
 				24F8B0701E0A232D0084926E /* 份数-未选@2x.png in Resources */,
+				2420901B1E179F0500880836 /* consumptionView.xib in Resources */,
 				24F8B04E1E0A232D0084926E /* 支付类型2-选中@2x.png in Resources */,
 				180E0E3F1E0AA79E0074ACBA /* LoginController.xib in Resources */,
 				24F8B0921E0A232D0084926E /* 历史记录图标@2x.png in Resources */,
@@ -1504,6 +1566,7 @@
 				24F8B0B91E0A232D0084926E /* 120.png in Resources */,
 				24F8B0601E0A232D0084926E /* 未选3@2x.png in Resources */,
 				24F8B03E1E0A232D0084926E /* 人数-未选@2x.png in Resources */,
+				242090071E177E7C00880836 /* MemberinformationView.xib in Resources */,
 				24F8B00D1E0A232D0084926E /* 登录按钮-@2x.png in Resources */,
 				247779C91E13B05A00BCBB60 /* TableViewCell.xib in Resources */,
 				24F8B03C1E0A232D0084926E /* 人均-选中@2x.png in Resources */,
@@ -1518,6 +1581,7 @@
 				24F8B0091E0A232D0084926E /* logo@2x.png in Resources */,
 				24F8B0A81E0A232D0084926E /* 商品运营分析@2x.png in Resources */,
 				24F8B0B41E0A232D0084926E /* 成本分析图标@2x.png in Resources */,
+				242090121E17956400880836 /* vipcell.xib in Resources */,
 				24F8B0871E0A232D0084926E /* 未全选框.png in Resources */,
 				24F8B07C1E0A232D0084926E /* 红色点.png in Resources */,
 				24F8B01C1E0A232D0084926E /* 搜索图标@2x.png in Resources */,
@@ -1647,6 +1711,7 @@
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
 				24E2A9661E14B15400CCD26D /* PieChartTableCell.m in Sources */,
 				24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */,
+				2420900B1E1790D300880836 /* vipModel.m in Sources */,
 				247779D01E13D3B600BCBB60 /* ShowStore.m in Sources */,
 				180E0E3E1E0AA79E0074ACBA /* LoginController.m in Sources */,
 				180E0E2E1E0A80C50074ACBA /* NetworkTools.m in Sources */,
@@ -1673,7 +1738,9 @@
 				247779D11E13D3B600BCBB60 /* ShowStoreCell.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
 				2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */,
+				242090111E17956400880836 /* vipcell.m in Sources */,
 				242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */,
+				2420901A1E179F0500880836 /* consumptionView.m in Sources */,
 				2425742D1E0CBDF5004F1369 /* TableViewCell.m in Sources */,
 				24F8ADBB1E0A1C4D0084926E /* AppDelegate.m in Sources */,
 				2460EB281E0B9B1F00539038 /* LoginViewMode.m in Sources */,
@@ -1682,6 +1749,7 @@
 				180E0E311E0A80CE0074ACBA /* UITextField+TextFieldRange.m in Sources */,
 				24F8ADBD1E0A1C4D0084926E /* main.m in Sources */,
 				2460EB211E0B96C100539038 /* RoleDiscountsModel.m in Sources */,
+				242090061E177E7C00880836 /* MemberinformationView.m in Sources */,
 				18D9637A1E0E0B5400A04AAB /* NavigationController.m in Sources */,
 				F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */,
 				242574621E0D10F4004F1369 /* EntityTools.m in Sources */,
