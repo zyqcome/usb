@@ -240,7 +240,7 @@
     return _pieChartarry;
 }
 
-#pragma mark -数据刷新代理
+#pragma mark -数据刷新代理 
 -(void)resetTimeperiod:(Received)sender Bl:(BOOL)bl message:(id)ms
 {
     NSDictionary *dic = (NSDictionary *)ms;
