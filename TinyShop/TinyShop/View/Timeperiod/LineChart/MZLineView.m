@@ -51,7 +51,7 @@
     if (self) {
         self.singleWidth = 60;
         self.bottomMargin = 20;
-        self.incomeTopMargin = 60;
+        self.incomeTopMargin = 70;
         self.incomeBottomMargin= 80;
         self.labelTransform = CGAffineTransformIdentity;
         self.selectIndex = -1;
@@ -66,7 +66,7 @@
 {
     
     if (!_topLabel) {
-        _topLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 25)];
+        _topLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 350, 25)];
         _topLabel.textColor = MAIN_COLOR;
         _topLabel.font = FONT(18);
         _topLabel.text = self.topTitleCallBack(self.sumValue);
@@ -283,7 +283,7 @@
         //btn.hidden = YES;
     }
 }
-
+//画线
 -(void)addLayerByStart:(CGPoint)startPoint end:(CGPoint)endPiont {
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint:startPoint];
@@ -292,8 +292,19 @@
     layer.path = bezierPath.CGPath;
     layer.lineWidth = 3;
     layer.strokeColor = [MAIN_COLOR CGColor];
+    //添加动画
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    //画的时间
+    basicAnimation.duration = 1;
+    //开始值
+    basicAnimation.fromValue = @(0);
+    basicAnimation.toValue = @(1);
+    
+    basicAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    [layer addAnimation:basicAnimation forKey:@"strokeEnd"];
     [self.backGrayView.layer addSublayer:layer];
     [self.lineLayerStore addObject:layer];
+    
 }
 
 -(void)addCircleAnimation:(CGPoint)center tag:(NSUInteger)tag {
