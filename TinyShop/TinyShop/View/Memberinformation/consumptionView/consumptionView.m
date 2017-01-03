@@ -7,16 +7,27 @@
 //
 
 #import "consumptionView.h"
-
-@interface consumptionView ()
-
+#import "TimeperiodProtocol.h"
+//#import "MZOrderHeaderView.h"
+// #import "MZTypeTableViewCell.h"
+//#import "MZOrderModel.h"
+@interface consumptionView ()<TimeperiodProtocol>
+{
+    NSArray<orderModel *> *orderArry;
+}
+@property (weak, nonatomic) IBOutlet UIView *displayView;
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation consumptionView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSLog(@"ok");
+    //数据请求
+    TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    timeperiodNethelper.delege = self;
+    [timeperiodNethelper getconsumptionViewViewDate:self.vipmodel.shop_id VipId:self.vipmodel.vip_base_id];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +44,41 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)resetTimeperiod:(Received)sender Bl:(BOOL)bl message:(id)ms {
+    __weak __typeof(self)weakSelf = self;
+    NSArray *dicArry = ((NSDictionary *)ms)[@"body"];
+//    if (dicArry.count ==0 ) {
+//        weakSelf.vipModelArry = [NSArray new];
+//        [weakSelf.tableview reloadData];
+//        return;
+//    } else {
+        orderArry = [ReflectionClassTools DicArrygetModelsArry:dicArry Class:@"orderModel"];
+    for (orderModel *orml in orderArry) {
+        orml.goods = [ReflectionClassTools DicArrygetModelsArry:orml.goods Class:@"goodsModel"];
+    }
+        NSLog(@"OK");
+//        [weakSelf.tableview reloadData];
+//    }
+}
 
+#pragma mark -tableviewdelegate
+
+#pragma mark- Getter
+-(UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain ];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        //注册cell
+//        [_tableView registerClass:[MZTypeTableViewCell class] forCellReuseIdentifier:@"MZTypeTableViewCell"];
+        //注册section header
+//        [_tableView registerClass:[MZOrderHeaderView class] forHeaderFooterViewReuseIdentifier:@"MZOrderHeaderView"];
+        //section header 高度
+        _tableView.sectionHeaderHeight = 100;
+        //        _tableView.tableFooterView = [UIView new];
+        //        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _tableView;
+}
 @end

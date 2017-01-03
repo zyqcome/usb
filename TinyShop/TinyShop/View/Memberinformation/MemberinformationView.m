@@ -60,7 +60,7 @@
     //数据请求
     TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
     timeperiodNethelper.delege = self;
-    [timeperiodNethelper getMemberinformationViewDate:shopArry[0].shopid];//157,158.311
+    [timeperiodNethelper getMemberinformationViewDate:shopArry[0].shopid];
     
 
     
@@ -124,6 +124,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     consumptionView *svc = [consumptionView new];
+    svc.vipmodel = self.vipModelArry[indexPath.row];
     [self.navigationController pushViewController:svc animated:YES];
 }
 

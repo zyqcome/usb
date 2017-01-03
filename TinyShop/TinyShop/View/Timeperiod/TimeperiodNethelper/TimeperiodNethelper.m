@@ -67,7 +67,7 @@
     [self getTimeperiodNetWorkset:timeperiodGetModel AllShopList:ShopList];
 }
 
--(void)getMemberinformationViewDate:(NSString *)ShopList {
+-(TimeperiodGetModel *)getTimeperiodGetModel {
     //数据模拟
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     //登陆名
@@ -83,9 +83,22 @@
     timeperiodGetModel.mgr_base_id = loginViewMode.user.mgr_base_id;
     timeperiodGetModel.access_token = loginViewMode.user.mgr_login_token;
     timeperiodGetModel.mac_code=@"";
-    
-    //获取-所有分店
-    //NSString *mutStr = [self strAllShopList];
+    return timeperiodGetModel;
+}
+
+/**
+ 获取会员详细信息
+
+ @param ShopList 店铺列表
+ */
+-(void)getconsumptionViewViewDate:(NSString *)ShopList VipId:(NSString *)vipid{
+    TimeperiodGetModel *timeperiodGetModel = [self getTimeperiodGetModel];
+    [self getconsumptionNetWorksetUrl:AppdailyDetailedOrders  mode:timeperiodGetModel AllShopList:ShopList vipid:vipid];
+}
+
+-(void)getMemberinformationViewDate:(NSString *)ShopList {
+    TimeperiodGetModel *timeperiodGetModel = [self getTimeperiodGetModel];
+
     
     //[self getTimeperiodNetWorkset:timeperiodGetModel AllShopList:ShopList];
     [self getTimeperiodNetWorksetUrl:Appviplist  mode:timeperiodGetModel AllShopList:ShopList];
@@ -185,8 +198,8 @@
 
 -(void)getTimeperiodNetWorksetUrl:(NSString *)url mode:(TimeperiodGetModel *)timeGtMl AllShopList:(NSString *)allShoplist {
     
-    NSString *UrlStr = [self strUrlGetMakeUrl:url mode:timeGtMl];//[self strUrlGetMake:timeGtMl];
-    NSDictionary * dict = [self DicUrlMemberinformationMake:allShoplist];//[self DicUrlPostMake:allShoplist];
+    NSString *UrlStr = [self strUrlGetMakeUrl:url mode:timeGtMl];
+    NSDictionary * dict = [self DicUrlMemberinformationMake:allShoplist];
     [[NetworkTools sharedTooles] requestMethod:POST isJson:YES WithUrl:UrlStr parematers:dict finished:^(id data, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
@@ -195,7 +208,21 @@
         [self.delege resetTimeperiod:Received_ApporderSubgraph Bl:YES message:data];
     }];
 }
-
+/**
+ 客户详情网络服务
+ */
+-(void)getconsumptionNetWorksetUrl:(NSString *)url mode:(TimeperiodGetModel *)timeGtMl AllShopList:(NSString *)allShoplist vipid:(NSString *)vipid {
+    
+    NSString *UrlStr = [self strUrlGetMakeUrl:url mode:timeGtMl];
+    NSDictionary * dict = [self DicUrlconsumptionViewMake:allShoplist vipid:vipid];
+    [[NetworkTools sharedTooles] requestMethod:POST isJson:YES WithUrl:UrlStr parematers:dict finished:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+            return ;
+        }
+        [self.delege resetTimeperiod:Received_ApporderSubgraph Bl:YES message:data];
+    }];
+}
 
 -(NSString *)strAllShopList {
     //数据模拟
@@ -231,6 +258,13 @@
 -(NSDictionary *)DicUrlMemberinformationMake:(NSString *)allShoplist {
     NSDictionary * dictbody = @{@"shop_id":allShoplist,
                                 @"vip_mobile":@"",
+                                @"limit":@"0,10"};
+    NSDictionary * dict = @{@"body":dictbody};
+    return dict;
+}
+-(NSDictionary *)DicUrlconsumptionViewMake:(NSString *)allShoplist  vipid:(NSString *)vipid{
+    NSDictionary * dictbody = @{@"shop_id":allShoplist,
+                                @"vip_id":vipid,
                                 @"limit":@"0,10"};
     NSDictionary * dict = @{@"body":dictbody};
     return dict;

@@ -28,4 +28,11 @@
  */
 -(void)getApporderStatisticalDateShoplist:(NSString *)ShopList time:(NSString *)timer;
 -(void)getMemberinformationViewDate:(NSString *)ShopList;
+
+/**
+ 获取会员详细信息
+ 
+ @param ShopList 店铺列表
+ */
+-(void)getconsumptionViewViewDate:(NSString *)ShopList VipId:(NSString *)vipid;
 @end

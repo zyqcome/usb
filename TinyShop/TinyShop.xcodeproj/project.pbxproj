@@ -67,6 +67,7 @@
 		24E2A9611E14A64600CCD26D /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2A95F1E14A64600CCD26D /* PieChartView.xib */; };
 		24E2A9661E14B15400CCD26D /* PieChartTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9641E14B15400CCD26D /* PieChartTableCell.m */; };
 		24E2A9671E14B15400CCD26D /* PieChartTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */; };
+		24EA44FE1E1B918100152E62 /* orderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EA44FD1E1B918100152E62 /* orderModel.m */; };
 		24F8ADA61E0A19D10084926E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA41E0A19D10084926E /* Main.storyboard */; };
 		24F8ADA81E0A19D10084926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA71E0A19D10084926E /* Assets.xcassets */; };
 		24F8ADAB1E0A19D10084926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F8ADA91E0A19D10084926E /* LaunchScreen.storyboard */; };
@@ -376,6 +377,8 @@
 		24E2A9631E14B15400CCD26D /* PieChartTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartTableCell.h; sourceTree = "<group>"; };
 		24E2A9641E14B15400CCD26D /* PieChartTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartTableCell.m; sourceTree = "<group>"; };
 		24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartTableCell.xib; sourceTree = "<group>"; };
+		24EA44FC1E1B918100152E62 /* orderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderModel.h; sourceTree = "<group>"; };
+		24EA44FD1E1B918100152E62 /* orderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderModel.m; sourceTree = "<group>"; };
 		24F8AD981E0A19D10084926E /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F8ADA51E0A19D10084926E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F8ADA71E0A19D10084926E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -789,6 +792,8 @@
 		242090131E179ED600880836 /* consumptionView */ = {
 			isa = PBXGroup;
 			children = (
+				24EA44FF1E1B95F100152E62 /* tableView */,
+				24EA44FB1E1B916100152E62 /* model */,
 				242090171E179F0500880836 /* consumptionView.h */,
 				242090181E179F0500880836 /* consumptionView.m */,
 				242090191E179F0500880836 /* consumptionView.xib */,
@@ -951,6 +956,22 @@
 				24E2A9651E14B15400CCD26D /* PieChartTableCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		24EA44FB1E1B916100152E62 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				24EA44FC1E1B918100152E62 /* orderModel.h */,
+				24EA44FD1E1B918100152E62 /* orderModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		24EA44FF1E1B95F100152E62 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tableView;
 			sourceTree = "<group>";
 		};
 		24F8AD8F1E0A19D10084926E = {
@@ -1705,6 +1726,7 @@
 				188751CC1E113D2E0089014F /* BarView.m in Sources */,
 				F30D1A3A1E0CBA7D008A1158 /* StatisticalViewController.m in Sources */,
 				2460EB1B1E0B952800539038 /* RightsModel.m in Sources */,
+				24EA44FE1E1B918100152E62 /* orderModel.m in Sources */,
 				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
 				24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */,
 				24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */,

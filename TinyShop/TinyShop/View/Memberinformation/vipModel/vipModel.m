@@ -8,5 +8,6 @@
 
 #import "vipModel.h"
 
+
 @implementation vipModel
 @end

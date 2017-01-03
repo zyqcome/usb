@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "vipModel.h"
 @interface consumptionView : UIViewController
+
+@property (nonatomic,strong)vipModel *vipmodel;
 
 @end
