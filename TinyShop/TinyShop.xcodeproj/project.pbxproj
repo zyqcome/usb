@@ -58,6 +58,7 @@
 		247779D11E13D3B600BCBB60 /* ShowStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247779CE1E13D3B600BCBB60 /* ShowStoreCell.m */; };
 		247779D21E13D3B600BCBB60 /* ShowStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247779CF1E13D3B600BCBB60 /* ShowStoreCell.xib */; };
 		247779D41E13D4E400BCBB60 /* 关闭2.png in Resources */ = {isa = PBXBuildFile; fileRef = 247779D31E13D4E400BCBB60 /* 关闭2.png */; };
+		24C604B51E1C92EA00F4D3B5 /* MZOrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C604B41E1C92EA00F4D3B5 /* MZOrderHeaderView.m */; };
 		24E2A9571E14A52F00CCD26D /* MZPieChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A94E1E14A52E00CCD26D /* MZPieChartDataSet.m */; };
 		24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9501E14A52E00CCD26D /* MZPieChartFontColorSet.m */; };
 		24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2A9521E14A52E00CCD26D /* MZPieChartSet.m */; };
@@ -361,6 +362,8 @@
 		247779CE1E13D3B600BCBB60 /* ShowStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowStoreCell.m; sourceTree = "<group>"; };
 		247779CF1E13D3B600BCBB60 /* ShowStoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowStoreCell.xib; sourceTree = "<group>"; };
 		247779D31E13D4E400BCBB60 /* 关闭2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭2.png"; sourceTree = "<group>"; };
+		24C604B31E1C92EA00F4D3B5 /* MZOrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZOrderHeaderView.h; sourceTree = "<group>"; };
+		24C604B41E1C92EA00F4D3B5 /* MZOrderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZOrderHeaderView.m; sourceTree = "<group>"; };
 		24E2A94D1E14A52E00CCD26D /* MZPieChartDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartDataSet.h; sourceTree = "<group>"; };
 		24E2A94E1E14A52E00CCD26D /* MZPieChartDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartDataSet.m; sourceTree = "<group>"; };
 		24E2A94F1E14A52E00CCD26D /* MZPieChartFontColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartFontColorSet.h; sourceTree = "<group>"; };
@@ -920,6 +923,22 @@
 			path = ShowStore;
 			sourceTree = "<group>";
 		};
+		24C604AB1E1C92DF00F4D3B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		24C604B21E1C92EA00F4D3B5 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				24C604B31E1C92EA00F4D3B5 /* MZOrderHeaderView.h */,
+				24C604B41E1C92EA00F4D3B5 /* MZOrderHeaderView.m */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		24E2A94C1E14A52E00CCD26D /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +989,8 @@
 		24EA44FF1E1B95F100152E62 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
+				24C604B21E1C92EA00F4D3B5 /* Header */,
+				24C604AB1E1C92DF00F4D3B5 /* Cell */,
 			);
 			path = tableView;
 			sourceTree = "<group>";
@@ -1753,6 +1774,7 @@
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				185C457A1E14AA8A00614A57 /* SelectDate.m in Sources */,
+				24C604B51E1C92EA00F4D3B5 /* MZOrderHeaderView.m in Sources */,
 				188751C51E110F5C0089014F /* SQMenuShowView.m in Sources */,
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */,

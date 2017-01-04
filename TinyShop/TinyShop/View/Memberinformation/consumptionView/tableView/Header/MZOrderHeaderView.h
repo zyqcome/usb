@@ -11,8 +11,12 @@
 typedef void (^SectionCallBack)(NSUInteger section);
 @interface MZOrderHeaderView : UITableViewHeaderFooterView
 
+
+
 @property (nonatomic, assign) NSUInteger section;
 
 @property (nonatomic, copy) SectionCallBack didSelectSection;
+
+@property (nonatomic,strong)orderModel *ordermodel;
 
 @end
