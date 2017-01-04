@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *foodType; // = "0";
 @property (nonatomic, strong) NSString *name; // = "味碟"
 @end
-
+ 
 
 @interface orderModel : NSObject
 @property (nonatomic, strong) NSString *order_shopping_volume_fee; // = "0.00";
