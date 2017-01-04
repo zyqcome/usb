@@ -15,15 +15,24 @@
 @end
 
 
-
 @interface TimeperiodNethelper : NSObject
 @property(nonatomic,weak)id<TimeperiodProtocol> delege;
--(void)getTimeperiodDate;
 
+-(NSString *)strAllShopList;
+-(void)getTimeperiodDate;
+-(void)getTimeperiodDate:(NSString *)ShopList;
 /**
  获取子店铺数据-时间
 
  @param ShopList <#ShopList description#>
  */
 -(void)getApporderStatisticalDateShoplist:(NSString *)ShopList time:(NSString *)timer;
+-(void)getMemberinformationViewDate:(NSString *)ShopList;
+
+/**
+ 获取会员详细信息
+ 
+ @param ShopList 店铺列表
+ */
+-(void)getconsumptionViewViewDate:(NSString *)ShopList VipId:(NSString *)vipid;
 @end

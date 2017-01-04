@@ -12,6 +12,7 @@
 #import "TimeperiodVC.h"
 #import "StatisticalViewController.h"
 #import "CommodityController.h"
+#import "MemberinformationView.h"
 @interface HomeController ()
 @property (nonatomic,strong)  HomeController * homeVc;
 @property (nonatomic,strong) DrawerController *leftVc;
@@ -105,7 +106,10 @@
         }
             break;
         case 3:
-            
+        {
+            MemberinformationView *svc = [MemberinformationView new];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
             break;
         case 4:
         

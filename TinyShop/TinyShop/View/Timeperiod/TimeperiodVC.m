@@ -27,6 +27,8 @@
 
 @property (nonatomic,strong)  UIView * coverNoTouch;
 
+@property (nonatomic,strong)  NSString *cashshopArry;
+
 @end
 
 @implementation TimeperiodVC
@@ -65,7 +67,7 @@
 -(void)showLineChartTitleStore:(NSArray *)titleStore  IncomeStore:(NSArray *)incomeStore{
     //显现显示折线图
     
-    lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 0, self.viewLineChart.width,self.viewLineChart.height-60)];
+    lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 0, self.viewLineChart.width,self.viewLineChart.height-80)];
     lineView.titleStore =titleStore;
     lineView.bottomMargin = 50;
     lineView.incomeBottomMargin = 65;
@@ -77,9 +79,30 @@
     };
     __weak typeof(self) weakSelf = self;
     lineView.selectCallback = ^(NSUInteger index){
-
+#pragma mark -折线图点击相应
         NSLog(@"选中第%@个",@(index));
+        
+        //时间日期设置
+        //获取当前时间
+        NSDate *date= [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"hh"];
+        NSString *hhString = [dateFormatter stringFromDate:date];
+        //判断当前小时
+        if ([linChartArry[index].time intValue] < [hhString intValue]) {
+            //选择的时间不现在的时间 早，说明是今天的数据
+            //date = [NSDate dateWithTimeIntervalSinceNow:-1*24*60*60]; //一天前
+        } else {
+            //选择的时间不现在的时间 晚，说明是昨天的数据
+            date = [NSDate dateWithTimeIntervalSinceNow:-1*24*60*60]; //一天前
+        }
+        [dateFormatter setDateFormat:@"yyyy-MM-dd "];
+        NSString *dateString = [dateFormatter stringFromDate:date];
+        dateString = [dateString stringByAppendingString:[NSString stringWithFormat:@"%02lu",(unsigned long)index]];
+        
         PieChartView *svc = [PieChartView new];
+        svc.displayshoplist = weakSelf.cashshopArry;
+        svc.displayshopdate = dateString;
         [weakSelf.navigationController pushViewController:svc animated:YES];
         
     };
@@ -178,6 +201,8 @@
         sw.showIs = true;
         [shopArry addObject:sw];
     }
+    TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+    _cashshopArry = [timeperiodNethelper strAllShopList];
 }
 
 
@@ -211,38 +236,27 @@
     return _showStore;
 }
 
--(void)selectedSwitch:(UISwitch *)redSwitch{
-//    switch (redSwitch.tag) {
-//        case 0:
-//            NSLog(@"哈哈哈");
-//            break;
-//        case 1:
-//            NSLog(@"哈哈");
-//            break;
-//        case 2:
-//            NSLog(@"哈哈hahahah哈");
-//            break;
-//            
-//        default:
-//            NSLog(@"1111hahahahha");
-//            break;
-//    }
-    NSLog(@"%@",@(redSwitch.tag));
-    if (redSwitch.isOn == true) {
-        shopArry[redSwitch.tag].showIs = true;
-        NSLog(@"打开");
-    } else {
-        shopArry[redSwitch.tag].showIs = true;
-        NSLog(@"关闭");
-    }
-    
-    
-}
 -(void)selectedButton:(UIButton *)button mArray:(NSMutableArray *)mArray{
-    
     NSLog(@"%@",mArray);
     _coverNoTouch.alpha = 0;
     [_coverNoTouch removeFromSuperview];
     [self.showStore dismissStoreView];
+    
+    if (mArray.count >0) {
+        __block NSString *shoplist = @"";
+        [mArray enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            shoplist = [shoplist stringByAppendingString:shopArry[[obj intValue]].shopid];
+            if (idx !=  (mArray.count -1)) {
+                shoplist = [shoplist stringByAppendingString:@","];
+            }
+        }];
+        self.cashshopArry = shoplist;
+        TimeperiodNethelper *timeperiodNethelper = [TimeperiodNethelper new];
+        timeperiodNethelper.delege =self;
+        [timeperiodNethelper getTimeperiodDate:shoplist];
+    } else {
+        NSLog(@"至少选择一个店铺");
+    }
+
 }
 @end
