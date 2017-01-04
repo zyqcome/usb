@@ -347,7 +347,7 @@
     }
 
 }
-//选择日期按钮点击事件
+//选择日期按钮点击事件    哦
 -(void)queryClicked:(UIButton *)btn{
     //先移除，再创建一个新的
     [self.datePickerView removeFromSuperview];
