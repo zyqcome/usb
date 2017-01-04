@@ -16,6 +16,6 @@ typedef void(^NetworkBlock)(BOOL a,NSArray *dateAry,NSArray *detailAry) ;
 
 @property(nonatomic,copy)NetworkBlock networkBlock; //网络请求之后回调
 
--(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime;
+-(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime storeIDMtbAry:(NSMutableArray *)storeMtbAry;
 
 @end

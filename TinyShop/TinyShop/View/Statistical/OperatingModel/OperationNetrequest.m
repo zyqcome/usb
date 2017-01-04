@@ -15,9 +15,8 @@
 
 //日常运营分析所有数据获取
 
--(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime{
-    //请求数据时，将bool 值设为NO。请求到数据之后将bool值设为YES
-//    self.networkBlock(NO);
+-(void)getAllOperationtype:(NSString *)type queryTime:(NSString *)queryTime storeIDMtbAry:(NSMutableArray *)storeMtbAry{
+    //
     //数据模拟
     LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
     //登陆名
@@ -34,8 +33,9 @@
     operatingModel.access_token=loginViewMode.user.mgr_login_token;
     operatingModel.mac_code=@"";
     
-    //获取-所有分店
-    NSString *mutStr = [self strAllShopList];
+    NSString *mutStr;
+    
+        mutStr = [self strAllShopListstoreIDMtbAry:storeMtbAry];
     
     [self getTimeperiodNetWorkset:operatingModel AllShopList:mutStr type:type queryTime:queryTime];
 }
@@ -60,7 +60,7 @@
             NSArray *dateAry = [body allKeys];
             NSArray *detailAry = [body allValues] ;
         
-        //请求之后、数据存入后 回调
+        //请求之后、数据存入后 block回调
         self.networkBlock(YES,dateAry,detailAry);
         }
     }];
@@ -109,30 +109,25 @@
     //类型统计  sales 销售额 order_num 订单数 people_num 人数 people_avg 人均消费 avg_meal 餐时
     [dictbody setObject:type forKey:@"statistical_type"];
     //按什么时间统计（年月日）
-    [dictbody setObject:@"day" forKey:@"query"];
+    [dictbody setObject:queryTime forKey:@"query"];
     //开始时间
-    [dictbody setObject:@"2016-12-1" forKey:@"s_time"];
+    [dictbody setObject:@"2016-12-20" forKey:@"s_time"];
     //结束时间
-    [dictbody setObject:@"2016-12-27" forKey:@"e_time"];
+    [dictbody setObject:@"2017-1-3" forKey:@"e_time"];
     NSDictionary * dict = @{@"body":dictbody};
     return dict;
 }
 //拼接POST参数
--(NSString *)strAllShopList {
-    //数据模拟
-    LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
-    //获取-所有分店
-    NSString *mutStr = loginViewMode.shop.shop_id;
-    //加上登陆店铺本身
-    mutStr = [mutStr stringByAppendingString:@","];
-    for (int i=0; i< loginViewMode.shop.subs.count; i++) {
-        ShopSubModel *shopsubModel = loginViewMode.shop.subs[i];
-        mutStr=[mutStr stringByAppendingString:shopsubModel.shop_id];
-        //中间拼接的逗号-最后一个特殊处理
-        if (i < (loginViewMode.shop.subs.count -1)) {
-            mutStr = [mutStr stringByAppendingString:@","];
+-(NSString *)strAllShopListstoreIDMtbAry:(NSMutableArray *)storeMtbAry{
+    NSString *mutStr = @"";
+    for (int i=0; i < storeMtbAry.count; i++) {
+            mutStr=[mutStr stringByAppendingString:storeMtbAry[i]];
+            //中间拼接的逗号-最后一个特殊处理
+            if (i < (storeMtbAry.count - 1)) {
+                mutStr = [mutStr stringByAppendingString:@","];
+            }
         }
-    }
+    
     return mutStr;
 }
 /**
