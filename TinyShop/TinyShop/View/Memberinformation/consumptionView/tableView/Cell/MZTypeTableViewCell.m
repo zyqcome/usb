@@ -117,25 +117,27 @@ UITableViewDataSource
 }
 
 #pragma mark- Setter
--(void)setTypeModel:(goodsModel *)typeModel
+-(void)setTypeModel:(AA *)typeModel
 {
-    _typeModel = typeModel;
+    _typeModelAA = typeModel;
     
     self.typeBackground.backgroundColor = [self colorByIndex:0];
     self.secondColor = [self colorByIndex:1];
     self.thirdColor = [self colorByIndex:2];
-    self.typeLabel.text = self.typeModel.kindName;
-    self.goodsTableView.rowHeight = self.typeModel.goodCellHeight;
-
-     [self.detialLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-         if (self.typeModel.typeCellIndex == 0) {
-             make.height.mas_equalTo(40);
-         }else{
-             
-             make.height.mas_equalTo(0);
-         }
-         
-     }];
+    self.typeLabel.text = self.typeModelAA.kindName;
+    self.goodsTableView.rowHeight = 40;//self.typeModel.goodCellHeight;
+/**
+ [self.detialLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+ if (self.typeModel.typeCellIndex == 0) {
+ make.height.mas_equalTo(40);
+ }else{
+ 
+ make.height.mas_equalTo(0);
+ }
+ 
+ }];
+ 
+ */
     [self.goodsTableView reloadData];
 }
 
@@ -143,6 +145,7 @@ UITableViewDataSource
 - (UIColor *)colorByIndex:(NSUInteger)colorIndex
 {
     UIColor *color = [UIColor whiteColor];
+    /*
     switch (self.typeModel.typeCellIndex % 2) {
         case 0://偶数
             if (colorIndex == 0) {
@@ -166,6 +169,7 @@ UITableViewDataSource
         default:
             break;
     }
+     */
     return color;
 }
 
@@ -173,7 +177,7 @@ UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.typeModel.goods.count;
+    return self.typeModelAA.goods.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -181,8 +185,8 @@ UITableViewDataSource
     MZGoodTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:@"MZGoodTableViewCell" forIndexPath:indexPath];
     goodCell.leftColor = self.secondColor;
     goodCell.rightColor = self.thirdColor;
-    goodCell.goodCellHeight = self.typeModel.goodCellHeight;
-    goodCell.goodModel = self.typeModel.goods[indexPath.row];
+    goodCell.goodCellHeight = 30;//self.typeModel.goodCellHeight;
+    goodCell.goodModel = self.typeModelAA.goods[indexPath.row];
     goodCell.contentView.backgroundColor = [UIColor whiteColor];
     return goodCell;
 }

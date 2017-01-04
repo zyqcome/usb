@@ -40,6 +40,9 @@
 		242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574381E0CC668004F1369 /* TimeperiodGetModel.m */; };
 		242574621E0D10F4004F1369 /* EntityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574611E0D10F4004F1369 /* EntityTools.m */; };
 		242574651E0D252E004F1369 /* DHControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242574641E0D252E004F1369 /* DHControllerViewController.m */; };
+		243A1A4F1E1D0BA600DF4A0E /* A.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A1A4E1E1D0BA600DF4A0E /* A.m */; };
+		243A1A521E1D192100DF4A0E /* MZGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A1A511E1D192100DF4A0E /* MZGoodTableViewCell.m */; };
+		243A1A551E1D1C7300DF4A0E /* MZTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A1A541E1D1C7300DF4A0E /* MZTypeTableViewCell.m */; };
 		2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB101E0B7F2100539038 /* ReflectionClassTools.m */; };
 		2460EB181E0B84D700539038 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB171E0B84D700539038 /* UserModel.m */; };
 		2460EB1B1E0B952800539038 /* RightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460EB1A1E0B952800539038 /* RightsModel.m */; };
@@ -330,6 +333,12 @@
 		242574631E0D252E004F1369 /* DHControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHControllerViewController.h; sourceTree = "<group>"; };
 		242574641E0D252E004F1369 /* DHControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHControllerViewController.m; sourceTree = "<group>"; };
 		242574671E0D51B0004F1369 /* TimeperiodProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeperiodProtocol.h; sourceTree = "<group>"; };
+		243A1A4D1E1D0BA600DF4A0E /* A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A.h; sourceTree = "<group>"; };
+		243A1A4E1E1D0BA600DF4A0E /* A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A.m; sourceTree = "<group>"; };
+		243A1A501E1D192100DF4A0E /* MZGoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZGoodTableViewCell.h; sourceTree = "<group>"; };
+		243A1A511E1D192100DF4A0E /* MZGoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZGoodTableViewCell.m; sourceTree = "<group>"; };
+		243A1A531E1D1C7300DF4A0E /* MZTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTypeTableViewCell.h; sourceTree = "<group>"; };
+		243A1A541E1D1C7300DF4A0E /* MZTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTypeTableViewCell.m; sourceTree = "<group>"; };
 		2460EB0F1E0B7F2100539038 /* ReflectionClassTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionClassTools.h; sourceTree = "<group>"; };
 		2460EB101E0B7F2100539038 /* ReflectionClassTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionClassTools.m; sourceTree = "<group>"; };
 		2460EB161E0B84D700539038 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -932,6 +941,10 @@
 		24C604AB1E1C92DF00F4D3B5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				243A1A501E1D192100DF4A0E /* MZGoodTableViewCell.h */,
+				243A1A511E1D192100DF4A0E /* MZGoodTableViewCell.m */,
+				243A1A531E1D1C7300DF4A0E /* MZTypeTableViewCell.h */,
+				243A1A541E1D1C7300DF4A0E /* MZTypeTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -988,6 +1001,8 @@
 			children = (
 				24EA44FC1E1B918100152E62 /* orderModel.h */,
 				24EA44FD1E1B918100152E62 /* orderModel.m */,
+				243A1A4D1E1D0BA600DF4A0E /* A.h */,
+				243A1A4E1E1D0BA600DF4A0E /* A.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1777,6 +1792,7 @@
 				F30D1A651E0D13E0008A1158 /* StoreTableViewCell.m in Sources */,
 				24E2A9581E14A52F00CCD26D /* MZPieChartFontColorSet.m in Sources */,
 				24E2A95B1E14A52F00CCD26D /* UIView+Addtions.m in Sources */,
+				243A1A4F1E1D0BA600DF4A0E /* A.m in Sources */,
 				18D963721E0E037100A04AAB /* CommodityController.m in Sources */,
 				24E2A9661E14B15400CCD26D /* PieChartTableCell.m in Sources */,
 				24E2A9591E14A52F00CCD26D /* MZPieChartSet.m in Sources */,
@@ -1788,6 +1804,7 @@
 				F30D1A601E0CCDF5008A1158 /* PopupView.m in Sources */,
 				1805B43C1E0B76FF00BC85E1 /* NSString+MD5.m in Sources */,
 				242574391E0CC668004F1369 /* TimeperiodGetModel.m in Sources */,
+				243A1A521E1D192100DF4A0E /* MZGoodTableViewCell.m in Sources */,
 				242574301E0CBDF5004F1369 /* TimeperiodVC.m in Sources */,
 				2460EB1E1E0B960300539038 /* RightsSubsModel.m in Sources */,
 				188751C31E110F5C0089014F /* SQMenuShowCell.m in Sources */,
@@ -1796,6 +1813,7 @@
 				F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */,
 				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
 				24E2A9571E14A52F00CCD26D /* MZPieChartDataSet.m in Sources */,
+				243A1A551E1D1C7300DF4A0E /* MZTypeTableViewCell.m in Sources */,
 				24E2A95A1E14A52F00CCD26D /* MZPieChartView.m in Sources */,
 				F38D27101E1605A200EA6F84 /* CustomPickerView.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,

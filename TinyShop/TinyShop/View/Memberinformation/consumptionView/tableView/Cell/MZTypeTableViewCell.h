@@ -20,6 +20,6 @@
 //对应此类型的食物tableview
 @property (nonatomic,strong) UITableView *goodsTableView;
 //对应的类型model
-@property (nonatomic,strong) goodsModel *typeModel;
+@property (nonatomic,strong) AA *typeModelAA;
 
 @end

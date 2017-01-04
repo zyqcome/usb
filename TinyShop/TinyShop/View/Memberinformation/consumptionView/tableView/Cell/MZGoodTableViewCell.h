@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "A.h"
 //#import "MZGoodsModel.h"
 @interface MZGoodTableViewCell : UITableViewCell
 

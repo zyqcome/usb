@@ -32,6 +32,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+
     self.selecButton.frame = self.bounds;
 }
 
@@ -41,7 +42,8 @@
     if (!_selecButton) {
         _selecButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_selecButton addTarget:self action:@selector(taped) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:_selecButton];
+        //[self.selecButton setBackgroundColor:[UIColor blueColor]];
+        [self addSubview:_selecButton];
     }
     return _selecButton;
 }

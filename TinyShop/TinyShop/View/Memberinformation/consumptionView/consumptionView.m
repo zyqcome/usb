@@ -10,10 +10,16 @@
 #import "TimeperiodProtocol.h"
 #import "MZOrderHeaderView.h"
 
+//#import "consumptionModel.h"
+#import "A.h"
+
+//#import "MZGoodTableViewCell.h"
+#import "MZTypeTableViewCell.h"
 @interface consumptionView ()<TimeperiodProtocol,UITableViewDelegate,UITableViewDataSource>
 {
     NSArray<orderModel *> *orderArry;
     NSMutableArray *ordergoodsShowArrry;
+    NSArray<A *> *consumptionArry;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *displayView;
@@ -39,8 +45,8 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    //        //注册cell
-    ////        [_tableView registerClass:[MZTypeTableViewCell class] forCellReuseIdentifier:@"MZTypeTableViewCell"];
+    //注册cell
+    [_tableView registerClass:[MZGoodTableViewCell class] forCellReuseIdentifier:@"MZGoodTableViewCell"];
     //注册section header
     [self.tableView registerClass:[MZOrderHeaderView class] forHeaderFooterViewReuseIdentifier:@"MZOrderHeaderView"];
     //section header 高度
@@ -81,6 +87,67 @@
         [ary addObject:@(NO)];
     }
     ordergoodsShowArrry = ary;
+    
+    
+    //折叠菜单配置
+    //缓存
+    NSMutableArray<A *> *mulconarry = [NSMutableArray  new];
+    A *a = [A new];
+    for (orderModel *or in orderArry) {
+        NSMutableArray<AA *> *mulcongoodsml = [NSMutableArray new];
+        for (goodsModel *gd in or.goods) {
+            //遍历菜品
+            //如果 菜品缓存为空
+            if (mulcongoodsml.count == 0) {
+                //第一个菜品 gd 声明 添加到 mulcongoodsml 中
+                goodsModel *newgd = [goodsModel new];
+                newgd = gd;
+                AA *aa = [AA new];
+                aa.kindName = newgd.kindName;
+                aa.goods = [NSMutableArray new];
+                [aa.goods addObject:newgd];//收录
+                [mulcongoodsml addObject:aa];
+            } else {
+                //缓存不为空，先查找没有相同的类型
+                BOOL yese = false;
+                /**
+                for (AA *aaa in mulcongoodsml) {
+                    if ([aaa.kindName isEqualToString:gd.kindName] == true) {
+                        goodsModel *newgd = [goodsModel new];
+                        newgd = gd;
+                        [aaa.goods addObject:newgd];
+                        yese = true;
+                    }
+                }
+                 */
+                for (int i =0; i<mulcongoodsml.count; i++) {
+                    AA *aaa = mulcongoodsml[i];
+                    if ([aaa.kindName isEqualToString:gd.kindName] == true) {
+                        goodsModel *newgd = [goodsModel new];
+                        newgd = gd;
+                        [aaa.goods addObject:newgd];
+                        yese = true;
+                    }
+                }
+                if (yese == false) {
+                    //没有相同的类型再次新建
+                    goodsModel *newgd = [goodsModel new];
+                    newgd = gd;
+                    AA *aa = [AA new];
+                    aa.kindName = newgd.kindName;
+                    aa.goods = [NSMutableArray new];
+                    [aa.goods addObject:newgd];//收录
+                    [mulcongoodsml addObject:aa];
+                }
+            }
+            
+        }
+        //[. addObject:mulcongoodsml];
+        a.goods = mulcongoodsml;
+        [mulconarry addObject:a];
+    }
+    consumptionArry = mulconarry;
+    
     [weakSelf.tableView reloadData];
 //    }
 }
@@ -88,17 +155,18 @@
 #pragma mark -tableviewdelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell        = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MZTypeTableViewCell *cell        = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if ( cell == nil )
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[MZTypeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor yellowColor];
     }
+    cell.typeModelAA = consumptionArry[indexPath.section].goods[indexPath.row];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [ordergoodsShowArrry[section] boolValue] == true ? orderArry[section].goods.count : 0;
+    return [ordergoodsShowArrry[section] boolValue] == true ?  1 : 0;
 }
 
 //-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -110,7 +178,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 20;
+    return 100;
 }
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 //
@@ -144,17 +212,11 @@
     __weak typeof(self) weakSelf = self;
     orderHeaderView.didSelectSection = ^(NSUInteger section_x){
 #pragma make -表格头选择
-        //MZOrderModel *orderModel = weakSelf.orderDatasource[section_x];
-        //orderModel.sectionOpenSign = !orderModel.sectionOpenSign;
-        //[weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section_x] withRowAnimation:UITableViewRowAnimationFade];
-        static NSUInteger last;
-        if (last == section_x) {
+        if ([ordergoodsShowArrry[section] boolValue] == true) {
             ordergoodsShowArrry[section] = @(NO);
         } else {
             ordergoodsShowArrry[section] = @(YES);
-            ordergoodsShowArrry[last] = @(NO);
         }
-        last = section_x;
         NSLog(@"OK");
         [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section_x] withRowAnimation:UITableViewRowAnimationFade];
     };
@@ -162,21 +224,4 @@
 }
 
 #pragma mark- Getter
-//-(UITableView *)tableView
-//{
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain ];
-//        _tableView.delegate = self;
-//        _tableView.dataSource = self;
-//        //注册cell
-////        [_tableView registerClass:[MZTypeTableViewCell class] forCellReuseIdentifier:@"MZTypeTableViewCell"];
-//        //注册section header
-////        [_tableView registerClass:[MZOrderHeaderView class] forHeaderFooterViewReuseIdentifier:@"MZOrderHeaderView"];
-//        //section header 高度
-//        _tableView.sectionHeaderHeight = 100;
-//        //        _tableView.tableFooterView = [UIView new];
-//        //        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    }
-//    return _tableView;
-//}
 @end

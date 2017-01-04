@@ -133,6 +133,7 @@
     return _goodTotalPriceLabel;
 }
 #pragma mark- Setter
+
 -(void)setGoodModel:(goodsModel *)goodModel
 {
     _goodModel = goodModel;
