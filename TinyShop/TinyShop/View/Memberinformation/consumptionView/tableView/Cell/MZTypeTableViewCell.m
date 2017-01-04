@@ -125,7 +125,7 @@ UITableViewDataSource
     self.secondColor = [self colorByIndex:1];
     self.thirdColor = [self colorByIndex:2];
     self.typeLabel.text = self.typeModelAA.kindName;
-    self.goodsTableView.rowHeight = 40;//self.typeModel.goodCellHeight;
+    self.goodsTableView.rowHeight = CELLHIGHT* self.typeModelAA.goods.count;//self.typeModel.goodCellHeight;
 /**
  [self.detialLabel mas_updateConstraints:^(MASConstraintMaker *make) {
  if (self.typeModel.typeCellIndex == 0) {
@@ -185,9 +185,10 @@ UITableViewDataSource
     MZGoodTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:@"MZGoodTableViewCell" forIndexPath:indexPath];
     goodCell.leftColor = self.secondColor;
     goodCell.rightColor = self.thirdColor;
-    goodCell.goodCellHeight = 30;//self.typeModel.goodCellHeight;
-    goodCell.goodModel = self.typeModelAA.goods[indexPath.row];
-    goodCell.contentView.backgroundColor = [UIColor whiteColor];
+    goodCell.goodCellHeight = CELLHIGHT;//self.typeModel.goodCellHeight;
+    //goodCell.goodModel = self.typeModelAA.goods[indexPath.row];
+    goodCell.contentView.backgroundColor = [UIColor grayColor];
+    [goodCell setGoodModel:self.typeModelAA.goods[indexPath.row]];
     return goodCell;
 }
 

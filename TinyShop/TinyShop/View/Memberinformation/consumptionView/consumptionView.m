@@ -161,7 +161,8 @@
         cell = [[MZTypeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor yellowColor];
     }
-    cell.typeModelAA = consumptionArry[indexPath.section].goods[indexPath.row];
+    //cell.typeModelAA = consumptionArry[indexPath.section].goods[indexPath.row];
+    [cell setTypeModel:consumptionArry[indexPath.section].goods[indexPath.row]];
     return cell;
 }
 
@@ -178,7 +179,12 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    float height=0;
+    A *a = consumptionArry[indexPath.section];
+    for (AA *aa in a.goods) {
+        height = height + aa.goods.count * CELLHIGHT;
+    }
+    return height;
 }
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 //

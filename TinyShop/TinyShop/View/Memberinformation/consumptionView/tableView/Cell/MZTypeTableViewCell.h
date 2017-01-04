@@ -22,4 +22,6 @@
 //对应的类型model
 @property (nonatomic,strong) AA *typeModelAA;
 
+-(void)setTypeModel:(AA *)typeModel;
+
 @end

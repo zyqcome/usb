@@ -24,6 +24,9 @@
 // 偏移屏幕0.8
 #define LeftVcOffSet Screen_W * 0.8
 
+// 固定cell 高度
+#define CELLHIGHT 50
+
 
 #import "NetWorkConfig.h"
 #import "ReflectionClassTools.h"
