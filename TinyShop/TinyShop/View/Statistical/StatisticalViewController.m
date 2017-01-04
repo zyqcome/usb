@@ -11,6 +11,7 @@
 #import "OperatingModel.h"
 //下拉菜单
 #import "SQMenuShowView.h"
+#import "presentView.h"
 //店铺cell
 #import "StoreTableViewCell.h"
 #import "ShowStore.h"
@@ -20,8 +21,13 @@
 #import "MZLineView.h"
 #import "UIView+Addtions.h"
 
+//饼状图界面
+#import "SecondPieChartViewController.h"
+//自定义pickerView
+#import "CustomPickerView.h"
+//登录后获得的数据模型
+#import "LoginViewMode.h"
 
-#import "presentView.h"
 
 @interface StatisticalViewController ()<ShowShoreDelegate>
 {
@@ -32,14 +38,15 @@
 @property(nonatomic,strong)NSArray *buttonSelImageArray;//选中的按钮图片
 @property(nonatomic,strong)NSMutableArray *buttonMutableAry;//存放按钮
 @property(nonatomic,strong)UIView *backgroundView; //毛玻璃
-@property(nonatomic,strong)NSMutableArray *storeMtbArray; //保存店铺cell的label
+@property(nonatomic,strong)NSMutableArray *storeLabelMtbArray; //保存店铺cell的label
 @property(nonatomic,strong)NSArray *dateImageArray; //日期图片(前四未选中，后四选中 )
-@property (nonatomic,strong)  ShowStore * showStore;
-@property (nonatomic,strong)  UIView * coverStore;
 
-//下拉菜单三个属性
+
+//下拉菜单属性
+@property (nonatomic,strong)  ShowStore * showStore;
 @property (strong, nonatomic)  SQMenuShowView *showView;
 @property (nonatomic,strong)  UIButton * coverBtn;
+@property (nonatomic,strong)  UIView * coverNoTouch;
 @property (nonatomic,assign)  BOOL  isShow;
 
 @property(nonatomic,strong)MZLineView *lineView;//折线图
@@ -48,11 +55,16 @@
 @property(nonatomic,strong)NSString *brefixStr; //前缀
 @property(nonatomic,strong)NSString *sumValueStr;  //统计label文字
 @property(nonatomic,strong)NSString *unitStr; //单位
-//addLineViewbrefixStr:@"收入" sumValue:@"实时总收入" unit:@"元"
+
+@property(nonatomic, strong)CustomPickerView *datePickerView; //自定义时间拾取器
+@property(nonatomic,strong)NSMutableArray *storeMtbAry; //店铺数组
+@property(nonatomic,strong)NSMutableArray *selectStoreMtbAry; //存放所有的店铺id
+@property(nonatomic, strong)NSMutableArray *selectStoreIDMtbAry; //存放选择的店铺ID
 
 @end
 
 @implementation StatisticalViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,11 +72,42 @@
     //
     //更多下拉按钮
     [self addPopView];
+    
+    //网络请求参数格式，时间默认设置为天  店铺默认设置为所有店铺  统计默认为销售额  开始时间设置为当前时间  结束时间设置为当前时间前十天(天)
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:@"day" forKey:@"queryTime"];
+    [ud setObject:self.selectStoreMtbAry forKey:@"storeID"];
+    [ud setObject:@"sales" forKey:@"type"];
+    //获取当前时间
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *date = [formatter stringFromDate:[NSDate date]];
+    NSLog(@"%@",date);
+    [ud setObject:date forKey:@"end_time"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *comps = nil;
+    
+    comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitMonth fromDate:[NSDate new]];
+    
+    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
+    
+    [adcomps setYear:0];
+    
+    [adcomps setMonth:0];
+    
+    [adcomps setDay:-10];
+    NSDate *newdate = [calendar dateByAddingComponents:adcomps toDate:[NSDate new] options:0];
+    NSString *beforDate = [formatter stringFromDate:newdate];
+    [ud setObject:beforDate forKey:@"start_time"];
+    NSLog(@"---前两个月 =%@",beforDate);
+    
     //******网络请求
     self.brefixStr = @"收入";
     self.sumValueStr = @"实时总收入";
     self.unitStr = @"元";
-    [self loadDatatype:@"sales" queryTime:@"day"];
+    [self loadDatatype:[ud objectForKey:@"type"] queryTime:[ud objectForKey:@"queryTime"] storeIDMtbAry:[ud objectForKey:@"storeID"]];
+    
     
 }
 //折线图
@@ -91,16 +134,18 @@
         NSLog(@"%@",str);
         return [str stringByAppendingString:unit];
     };
-    
+    __weak typeof(self) weakSelf = self;
     self.lineView.selectCallback = ^(NSUInteger index){
         NSLog(@"选中第%@个",@(index));
+        SecondPieChartViewController *svc = [SecondPieChartViewController new];
+        [weakSelf.navigationController pushViewController:svc animated:YES];
     };
     [self.lineView storkePath];
     
 }
--(void)loadDatatype:(NSString *)type queryTime:(NSString *)queryTime{
+-(void)loadDatatype:(NSString *)type queryTime:(NSString *)queryTime storeIDMtbAry:(NSMutableArray *)storeMtbAry{
     OperationNetrequest *operation = [OperationNetrequest new];
-    [operation getAllOperationtype:type queryTime:queryTime];
+    [operation getAllOperationtype:type queryTime:queryTime storeIDMtbAry:storeMtbAry];
     //数据请求成功之后用代码块回调
     operation.networkBlock = ^(BOOL a,NSArray *dateAry,NSArray *detailAry){
         if (a) {
@@ -144,7 +189,7 @@
     }];
     
 }
-//5个按钮
+//5个按钮点击事件
 -(void)statisticalClicked:(UIButton *)button{
     //先将所有按钮的图片设置为未选中
     NSInteger index = 0;
@@ -158,38 +203,40 @@
     //先刷新数据，获取到数据之后再赋值
     //先移除折线图，再绘制
     [self.lineView removeFromSuperview];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     switch (button.tag) {
         case 1000:
             self.brefixStr = @"收入";
             self.sumValueStr = @"实时总收入";
             self.unitStr = @"元";
-            [self loadDatatype:@"sales" queryTime:@"day"];
+            [ud setObject:@"sales" forKey:@"type"];
             break;
         case 1001:
             self.brefixStr = @"桌数";
             self.sumValueStr = @"总桌数";
             self.unitStr = @"桌";
-            [self loadDatatype:@"order_num" queryTime:@"day"];
+            [ud setObject:@"order_num" forKey:@"type"];
             break;
         case 1002:
             self.brefixStr = @"人数";
             self.sumValueStr = @"总人数";
             self.unitStr = @"人";
-            [self loadDatatype:@"people_num" queryTime:@"day"];
+            [ud setObject:@"people_num" forKey:@"type"];
             break;
         case 1003:
             self.brefixStr = @"人均";
             self.sumValueStr = @"总人均";
             self.unitStr = @"元";
-            [self loadDatatype:@"people_avg" queryTime:@"day"];
+            [ud setObject:@"people_avg" forKey:@"type"];
             break;
         default:
             self.brefixStr = @"餐时";
             self.sumValueStr = @"总餐时";
             self.unitStr = @"时";
-            [self loadDatatype:@"avg_meal" queryTime:@"day"];
+            [ud setObject:@"avg_meal" forKey:@"type"];
             break;
     }
+    [self loadDatatype:[ud objectForKey:@"type"] queryTime:[ud objectForKey:@"queryTime"] storeIDMtbAry:[ud objectForKey:@"storeID"]];
 }
 //右边”更多“下拉菜单
 -(void)addPopView{
@@ -202,10 +249,10 @@
         [self dismissViewClicked];
         
         switch (index) {
-            case 0:
-                [self setView];
+            case 0://加载店铺
+                [self showStoreClicked];
                 break;
-            default:
+            default://选择时间
                 [self choiseTimeView];
                 break;
         }
@@ -247,7 +294,7 @@
     //毛玻璃效果
     self.backgroundView = [UIView new];
     self.backgroundView.backgroundColor = Color_RGBA(42, 42, 55, 0.4);
-    [self.view addSubview:self.backgroundView];
+    [self.navigationController.view addSubview:self.backgroundView];
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
         make.centerY.equalTo(self.view.mas_centerY);
@@ -291,82 +338,80 @@
             [checkButton setImage:[UIImage imageNamed:self.dateImageArray[7]] forState:UIControlStateNormal];
             checkButton.tag = 2003;
         }else{
+//            checkButton.frame = CGRectMake(80+Screen_W/6*index, 100, Screen_W/5+10, 80);
         [checkButton setImage:[UIImage imageNamed:self.dateImageArray[index]] forState:UIControlStateNormal];
             checkButton.tag = 2000+index;
         }
+        [view addSubview:checkButton];
         [checkButton addTarget:self action:@selector(queryClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
 
 }
 //选择日期按钮点击事件
 -(void)queryClicked:(UIButton *)btn{
-    
+    //先移除，再创建一个新的
+    [self.datePickerView removeFromSuperview];
+    self.datePickerView = [CustomPickerView new];
+    [self.backgroundView addSubview:self.datePickerView];
 }
-//选择店铺view
--(void)setView{
-    
-    [self showStoreClicked];
-    
-}
+
 #pragma mark - 选择店铺弹出视图
 -(void)showStoreClicked{
     // showStore遮盖btn
-    _coverStore = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
-    _coverStore.backgroundColor = [UIColor grayColor];
-    _coverStore.alpha = 0.3;
+    _coverNoTouch = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_W, Screen_H)];
+    _coverNoTouch.backgroundColor = [UIColor grayColor];
+    _coverNoTouch.alpha = 0.3;
     
-    [self.navigationController.view addSubview:_coverStore];
+    [self.navigationController.view addSubview:_coverNoTouch];
     [self.showStore showStoreView];
     [self.navigationController.view addSubview:_showStore];
 }
 
--(void)selectedButton:(UIButton *)button{
-    _coverStore.alpha = 0;
-    [_coverStore removeFromSuperview];
-    [self.showStore dismissStoreView];
-}
-
 -(ShowStore *)showStore{
+    //将网络请求下来的店铺添加到选择店铺上
+    LoginViewMode *loginMode = [LoginViewMode shareUserInfo];
+    [self.storeMtbAry addObject:loginMode.shop.shop_name];
+    for (NSInteger index = 0; index < loginMode.shop.subs.count; index++) {
+        ShopSubModel *spml = loginMode.shop.subs[index];
+        [self.storeMtbAry addObject:spml.shop_name];
+    }
     NSMutableArray *shaparry = [NSMutableArray new];
     for (shopShow * sw in shopArry) { //NSMutableArray<shopShow *> *shopArry;
         [shaparry addObject:[NSString stringWithString:sw.shopname]];
     }
     if (!_showStore) {
-        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:@[@"qweewq",@"qweasd"]];//shaparry];
+        _showStore = [[ShowStore alloc]initWithStoreFrame:(CGRect){30,(64+5),Screen_W-60,20} items:self.storeMtbAry];//shaparry];
         _showStore.delegate = self;
     }
     return _showStore;
 }
-
--(void)selectedSwitch:(UISwitch *)redSwitch{
-    //    switch (redSwitch.tag) {
-    //        case 0:
-    //            NSLog(@"哈哈哈");
-    //            break;
-    //        case 1:
-    //            NSLog(@"哈哈");
-    //            break;
-    //        case 2:
-    //            NSLog(@"哈哈hahahah哈");
-    //            break;
-    //
-    //        default:
-    //            NSLog(@"1111hahahahha");
-    //            break;
-    //    }
-    NSLog(@"%@",@(redSwitch.tag));
-    if (redSwitch.isOn == true) {
-        shopArry[redSwitch.tag].showIs = true;
-        NSLog(@"打开");
-    } else {
-        shopArry[redSwitch.tag].showIs = true;
-        NSLog(@"关闭");
+//选择店铺x按钮
+-(void)selectedButton:(UIButton *)button mArray:(NSMutableArray *)mArray{
+    
+    if (button.tag != 0) {
+        //先将折线图移除
+        [self.lineView removeFromSuperview];
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        //点击的是确定按钮   先将选择的店铺数组置空
+        self.selectStoreIDMtbAry = nil;
+        
+        for (NSInteger index = 0; index < mArray.count; index++) {
+            NSInteger number = [mArray[index] intValue];
+            [self.selectStoreIDMtbAry addObject:self.selectStoreMtbAry[number]];
+        }
+//        NSLog(@"选中店铺的ID%@",self.selectStoreIDMtbAry);
+        [ud setObject:self.selectStoreIDMtbAry forKey:@"storeID"];
+        if (mArray.count > 0) {
+            //选择的店铺数，大于1 重新请求网络数据
+            [self loadDatatype:[ud objectForKey:@"type"] queryTime:[ud objectForKey:@"queryTime"] storeIDMtbAry:[ud objectForKey:@"storeID"]];
+        }
     }
-    
-    
+    _coverNoTouch.alpha = 0;
+    [_coverNoTouch removeFromSuperview];
+    [self.showStore dismissStoreView];
 }
 
-//x点击事件
+//选择时间x点击事件
 -(void)removeClicked{
     [self.backgroundView removeFromSuperview];
 }
@@ -402,10 +447,10 @@
     return _buttonMutableAry;
 }
 -(NSMutableArray *)storeMtbArray{
-    if (!_storeMtbArray) {
-        _storeMtbArray = [NSMutableArray new];
+    if (!_storeLabelMtbArray) {
+        _storeLabelMtbArray = [NSMutableArray new];
     }
-    return _storeMtbArray;
+    return _storeLabelMtbArray;
 }
 
 -(NSArray *)dateImageArray{
@@ -413,6 +458,34 @@
         _dateImageArray = @[@"按年-未选",@"按月-未选",@"按周-未选",@"按日-未选",@"按年-选中",@"按月-选中",@"按周-选中",@"按日-选中"];
     }
     return _dateImageArray;
+}
+-(NSMutableArray *)storeMtbAry{
+    if (!_storeMtbAry) {
+        _storeMtbAry = [NSMutableArray new];
+    }
+    return _storeMtbAry;
+}
+-(NSMutableArray *)selectStoreMtbAry{
+    if (!_selectStoreMtbAry) {
+        _selectStoreMtbAry = [NSMutableArray new];
+        //将网络请求到的数据添加进数组
+        LoginViewMode *loginViewMode = [LoginViewMode shareUserInfo];
+        //获取总店ID
+        NSString *mutStr = loginViewMode.shop.shop_id;
+        [self.selectStoreMtbAry addObject:mutStr];
+        for (int i=0; i< loginViewMode.shop.subs.count; i++) {
+            ShopSubModel *shopsubModel = loginViewMode.shop.subs[i];
+            mutStr = shopsubModel.shop_id;
+            [self.selectStoreMtbAry addObject:mutStr];
+        }
+    }
+    return _selectStoreMtbAry;
+}
+-(NSMutableArray *)selectStoreIDMtbAry{
+    if (!_selectStoreIDMtbAry) {
+        _selectStoreIDMtbAry = [NSMutableArray new];
+    }
+    return _selectStoreIDMtbAry;
 }
 #pragma mark - 弹出视图懒加载
 - (SQMenuShowView *)showView{

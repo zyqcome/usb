@@ -257,6 +257,8 @@
 		F30D1A661E0D13E0008A1158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30D1A641E0D13E0008A1158 /* StoreTableViewCell.xib */; };
 		F32676FC1E14A93F000CF741 /* OperatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FB1E14A93F000CF741 /* OperatingModel.m */; };
 		F32676FF1E14AC23000CF741 /* OperationNetrequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F32676FE1E14AC23000CF741 /* OperationNetrequest.m */; };
+		F38D270C1E15FD4D00EA6F84 /* SecondPieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D270B1E15FD4D00EA6F84 /* SecondPieChartViewController.m */; };
+		F38D27101E1605A200EA6F84 /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D270F1E1605A200EA6F84 /* CustomPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -567,6 +569,10 @@
 		F32676FB1E14A93F000CF741 /* OperatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingModel.m; sourceTree = "<group>"; };
 		F32676FD1E14AC23000CF741 /* OperationNetrequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationNetrequest.h; sourceTree = "<group>"; };
 		F32676FE1E14AC23000CF741 /* OperationNetrequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationNetrequest.m; sourceTree = "<group>"; };
+		F38D270A1E15FD4D00EA6F84 /* SecondPieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondPieChartViewController.h; sourceTree = "<group>"; };
+		F38D270B1E15FD4D00EA6F84 /* SecondPieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondPieChartViewController.m; sourceTree = "<group>"; };
+		F38D270E1E1605A200EA6F84 /* CustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
+		F38D270F1E1605A200EA6F84 /* CustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1298,6 +1304,8 @@
 		F30D1A371E0CBA7D008A1158 /* Statistical */ = {
 			isa = PBXGroup;
 			children = (
+				F38D270D1E16058400EA6F84 /* pickerView */,
+				F38D27091E15FC0400EA6F84 /* SecondPieChatView */,
 				F32676F91E14A93F000CF741 /* OperatingModel */,
 				F30D1A381E0CBA7D008A1158 /* StatisticalViewController.h */,
 				F30D1A391E0CBA7D008A1158 /* StatisticalViewController.m */,
@@ -1317,6 +1325,24 @@
 				F32676FB1E14A93F000CF741 /* OperatingModel.m */,
 			);
 			path = OperatingModel;
+			sourceTree = "<group>";
+		};
+		F38D27091E15FC0400EA6F84 /* SecondPieChatView */ = {
+			isa = PBXGroup;
+			children = (
+				F38D270A1E15FD4D00EA6F84 /* SecondPieChartViewController.h */,
+				F38D270B1E15FD4D00EA6F84 /* SecondPieChartViewController.m */,
+			);
+			path = SecondPieChatView;
+			sourceTree = "<group>";
+		};
+		F38D270D1E16058400EA6F84 /* pickerView */ = {
+			isa = PBXGroup;
+			children = (
+				F38D270E1E1605A200EA6F84 /* CustomPickerView.h */,
+				F38D270F1E1605A200EA6F84 /* CustomPickerView.m */,
+			);
+			path = pickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1663,6 +1689,7 @@
 				2467D7AD1E10E92300C4E0FB /* ZFCirque.m in Sources */,
 				24E2A9571E14A52F00CCD26D /* MZPieChartDataSet.m in Sources */,
 				24E2A95A1E14A52F00CCD26D /* MZPieChartView.m in Sources */,
+				F38D27101E1605A200EA6F84 /* CustomPickerView.m in Sources */,
 				2460EB611E0BB10A00539038 /* ShopSubModel.m in Sources */,
 				2460EB111E0B7F2100539038 /* ReflectionClassTools.m in Sources */,
 				185C457A1E14AA8A00614A57 /* SelectDate.m in Sources */,
@@ -1670,6 +1697,7 @@
 				1805B4371E0B694B00BC85E1 /* LogCategory.m in Sources */,
 				18D9637D1E0E230600A04AAB /* MyScrollView.m in Sources */,
 				247779C71E13AF0F00BCBB60 /* presentView.m in Sources */,
+				F38D270C1E15FD4D00EA6F84 /* SecondPieChartViewController.m in Sources */,
 				247779D11E13D3B600BCBB60 /* ShowStoreCell.m in Sources */,
 				242574351E0CC034004F1369 /* TimeperiodNethelper.m in Sources */,
 				2467D7AA1E10E92300C4E0FB /* GrayWhiteView.m in Sources */,
